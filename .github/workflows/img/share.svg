@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="39mm"
+   height="48mm"
+   viewBox="0 0 39 47.99999"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="share.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="3.5780222"
+     inkscape:cx="85.801592"
+     inkscape:cy="98.93734"
+     inkscape:window-width="1920"
+     inkscape:window-height="1055"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-text-baseline="false"
+     inkscape:snap-center="true"
+     scale-x="1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1384"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop1382" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.065;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1580-6"
+       cx="30.942181"
+       cy="-7.9198704"
+       transform="scale(1,-1)"
+       rx="7.8408313"
+       ry="7.7071004" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.065;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1580-6-1"
+       cx="8.218008"
+       cy="-24.053314"
+       transform="scale(1,-1)"
+       rx="7.8408313"
+       ry="7.7071004" />
+    <ellipse
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12.065;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1580-6-9"
+       cx="30.942183"
+       cy="-40.186756"
+       transform="scale(1,-1)"
+       rx="7.8408313"
+       ry="7.7071004" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.965;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 30.942179,7.9198702 8.218008,24.053314 30.942182,40.186755"
+       id="path1145" />
+  </g>
+</svg>

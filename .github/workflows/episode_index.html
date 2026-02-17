@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Tous les épisodes - 
+{% endblock title %}
+
+{% block content %}
+	<article>
+		<h2>Tous les épisodes</h2>
+		{% set show_all_items = true %}
+		{% include "last_episodes.html" %}
+	</article>
+{% endblock content %}
+

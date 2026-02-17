@@ -1,0 +1,41 @@
+
+{% macro partialEscape(text) %}
+	{# TODO other unescapes #}
+	{{ text | escape | replace(from="&lt;p&gt;", to="<p>") | safe }}
+{% endmacro partialEscape %}
+
+{% macro resolve_pattern(pattern, title, vars, variables, depth, replaced, stackedReplaced) %}
+	{% if depth == vars | length %}
+		{% set fic = tera_load_fic(name=pattern) %}
+		<tr>
+			<td>{{ replaced }}</td>
+			<td>
+				{% if fic is not containing("Lien") and fic is containing("_filename") %}
+					{% if fic.Titre %}
+						{{ fic.Titre }}
+						{% if fic.Auteur %}
+							<u>par {{fic.Auteur}}</u>
+						{% endif %}
+					{% else %}
+						{{ fic._filename }}
+					{% endif %}
+				{% endif %}
+			</td>
+		</tr>
+	{% else %}
+		{% if depth+1 == vars | length %}
+			<div class="tabcontent tab-{{stackedReplaced | replace(from=" ", to="-")}}">
+			<table class="program">
+				{% if vars | length > 1 %}
+					<h2>{{title}}&nbsp;: {{stackedReplaced}}</h2>
+				{% endif %}
+		{% endif %}
+		{% for value in variables[vars[depth]] %}
+			{{ self::resolve_pattern(pattern=pattern | replace(from="{"~vars[depth]~"}", to=value), title=title, vars=vars, variables=variables, depth=depth+1, replaced=value, stackedReplaced=stackedReplaced~" "~value | trim) }}
+		{% endfor %}
+		{% if depth+1 == vars | length %}
+			</table>
+			</div>
+		{% endif %}
+	{% endif %}
+{% endmacro resolve_pattern %}

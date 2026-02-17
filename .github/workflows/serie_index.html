@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Nos émissions - 
+{% endblock title %}
+
+{% block content %}
+	<article>
+		<h2>Nos émissions</h2>
+		{% set show_all_series = true %}
+		{% include "last_series.html" %}
+	</article>
+{% endblock content %}
+

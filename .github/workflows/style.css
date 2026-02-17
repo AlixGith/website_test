@@ -1,0 +1,397 @@
+/******************************************************************************
+ * 							General
+ *****************************************************************************/
+
+
+html, body {
+	margin:0;
+	padding:0;
+	font-family: luciole, tahoma;
+	font-size: 15px;
+}
+
+html, button {
+	color: {{data.config.TextColor}};
+	background-color: {{ data.config.BackgroundColor }};
+}
+
+u {
+	text-decoration: underline;
+}
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}
+
+main {
+	margin: auto;
+	min-height:82%;
+	min-height:82vh;
+	padding: 10px;
+	padding: 1vw;
+}
+
+body {
+	/*margin-top:3rem;*/
+	margin-bottom: 110px;
+	/*font-size: 17px;*/
+}
+
+a {
+	text-decoration: none;
+	color: {{data.config.MainColor}};
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 7em;
+}
+
+h2 {
+	font-size: 3em;
+	color: {{data.config.MainColor}};
+}
+
+h2::before {
+	content: "{{data.config | get(key='TitreBefore', default='')}}";
+}
+
+h2::after {
+	content: "{{data.config | get(key='TitreAfter', default='')}}";
+}
+
+button {
+	border-radius: 0;
+	border: 1px solid {{data.config.BorderColor}};
+}
+
+button:hover {
+	cursor:pointer;
+}
+
+
+/******************************************************************************
+ * 							Menu
+ *****************************************************************************/
+
+nav#mainmenu {
+	/*position: fixed;
+	top: 0;
+	left : 0;
+	*/
+	width: 100%;
+	font-size: 2em;
+	background-color: {{ data.config.ItemBackground}};
+}
+
+nav#mainmenu ul {
+	margin: 0;
+	padding: .5rem;
+	border-bottom: 1px solid {{ data.config.BorderColor }};
+}
+
+nav#mainmenu ul li {
+	display: inline-block;
+}
+
+nav#mainmenu ul li:not(:first-child)::before {
+	content: " · ";
+}
+
+nav#mainmenu img {
+	height: 1em;
+}
+
+/******************************************************************************
+ * 							header
+ *****************************************************************************/
+
+#top {
+	text-align: center;
+	margin-bottom: 10vh;
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+#top img.logo {
+	border-radius: 10%;
+	margin-top: 30px;
+	margin-top: 4vh;
+}
+
+#top > div:last-child {
+	margin:auto;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.playbuttons button {
+	border-radius: 10px;
+	padding: 3px 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+/******************************************************************************
+ * 							Footer
+ *****************************************************************************/
+
+footer {
+	text-align: center;
+	border-top: 1px solid {{data.config.BorderColor}};
+  	margin-top: 50px;
+	clear: both;
+}
+
+footer ul li {
+	display: inline;
+}
+
+footer ul li::before {
+	content: " - ";
+}
+footer ul li:first-child::before {
+	content: "";
+}
+
+footer ul {
+	margin-bottom: 0;
+}
+
+
+/******************************************************************************
+ * 					Petits carrés pour les séries au épisodes
+ *****************************************************************************/
+.flex_container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px auto 10px auto;
+	justify-content: flex-start;
+	gap: 10px;
+	gap: 1vw;
+}
+
+.flex_container > div {
+	/*flex: 0 0 350px;*/
+}
+
+.single_serie {
+	border: 3px {{ data.config.BorderColor }} solid;
+	border-radius: 20px;
+	width: 350px;
+	padding: 0;
+	margin: 5px;
+	background-color: {{ data.config.ItemBackground }};
+	/*float: left; /* For episode.html page */
+}
+
+.single_serie > header {
+	/*padding: 7px; /* Il faut être un peu large pour tous les niveaux de zoom? */
+}
+
+.single_serie > header h4, .single_serie > header p{
+	height: 2.3em;
+	height: 2lh;
+	overflow: hidden;
+	margin:0;
+	padding: 3px 3px 0 3px;
+	/* Ne fonctionne pas sur plusieures lignes
+	text-overflow: ellipsis;
+    text-overflow: "[...]";
+  	white-space: nowrap;*/
+}
+
+.single_serie > header h4 {
+	font-size: 30px;
+	padding-top: 10px;
+	font-weight: normal;
+}
+
+.single_serie > header span {
+	display: block;
+	text-align: right;
+	height: 1.1em;
+	padding: 3px;
+}
+
+.single_serie > header p {
+	text-align: right;
+}
+
+.single_serie > a > img, .single_serie > a {
+	height: 300px;
+	width: 300px;
+	vertical-align: top;
+	display: block;
+	margin: 5px auto;
+	border-radius: 5%;
+}
+
+.single_serie .actions {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.single_serie .actions > a {
+	display: block;
+	width: 48px;
+	height: 48px;
+	/*border-bottom: 1px solid black;*/
+	text-align: center;
+}
+
+.single_serie .actions a > img {
+	height: 95%;
+}
+
+.single_serie .actions > a > p {
+	padding-top: 15px;
+	padding-top: calc( 25px - .5em);
+}
+
+.single_serie audio {
+	width: 100%;
+	vertical-align: top;
+	border-radius: 0 0 17px 17px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/******************************************************************************
+ * 							Episode
+ *****************************************************************************/
+p.description {
+}
+
+article.single .single_serie {
+	float: left;
+	margin: 0 40px 40px 0;
+}
+
+article.single {
+	line-height: 1.3em;
+}
+
+/******************************************************************************
+ * 						Onglets de programme
+ *****************************************************************************/
+nav#prog {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px auto 10px auto;
+	justify-content: flex-start;
+	gap: 10px;
+	gap: 1vw;
+}
+
+nav#prog button {
+	background-color: {{ data.config.ItemBackground}};
+	font-size:1.5em;
+}
+
+nav#prog button.selected {
+	background-color: {{data.config.ItemBackground}};
+}
+
+.tabcontent table td:first-child {
+	text-align:right;
+}
+
+.tabcontent table {
+	text-align:left;
+}
+
+table.program td:first-child{
+	font-weight:bold;
+}
+table.program td:last-child,
+table.program th:last-child{
+	padding-left: 10px;
+}
+td:firstchild {
+	font-weight: bold;
+}
+
+.selectedTab {
+	border-width:4px;
+}
+
+
+/* Portables */
+
+@media only screen and (max-device-width: 600px) {
+	body {
+		margin-bottom: 403px;
+		font-size: 40px;
+	}
+	/*
+	p, a, span {
+		font-size: 22px;
+	}	
+/*
+	h1 {
+		font-size: 10em;
+	}
+	
+	h2 {
+		font-size: 6em;
+	}
+	nav#prog button {
+		font-size: 3em;
+	}
+	*/
+	nav#mainmenu {
+		font-size: 55px;
+	}
+	.single_serie {
+		width: 700px;
+	}
+	.single_serie > header h4{
+		font-size: 55px;
+	}
+	.single_serie > header p{
+		font-size: 40px;
+	}
+	.single_serie > a > img, .single_serie > a {
+		height: 600px;
+		width: 600px;
+	}
+	.single_serie .actions > a {
+		width: 96px;
+		height: 96px;
+	}
+}
+
+
+
+
+
+
+
+
+/* Needs precedence */
+.toshow {
+	display: none !important;
+}
+.tohide {
+}
+
+/* To fix anchor jumps hidden by menu */
+:target, .anchor {
+    scroll-margin-top: 100px;
+}
+
+
+
