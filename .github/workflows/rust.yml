@@ -20,3 +20,8 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+    - run: cargo doc
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: "target/docs"
