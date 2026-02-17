@@ -16,9 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Build binaries in "${{ matrix.BUILD_TARGET }}" mode
-        run: cargo build --profile ${{ matrix.BUILD_TARGET }}
-      - name: Run tests in "${{ matrix.BUILD_TARGET }}" mode
-        run: cargo test --profile ${{ matrix.BUILD_TARGET }}
+        run: cargo build 
+      - name: Run tests
+        run: cargo test
       - name: Login into crates.io
         run: cargo login ${{ secrets.CRATES_IO }}
       - name: Build binaries in "release" mode
