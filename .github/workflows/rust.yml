@@ -27,10 +27,8 @@ jobs:
         run: cargo clean --doc
       - name: Build docs
         run: cargo doc --no-deps
-      - name: Cargo build
-        run: cargo build --release
       - name: Add redirect
-        run: echo '<meta http-equiv="refresh" content="0;url=index.html">' > target/doc/index.html
+        run: echo '<meta http-equiv="refresh" content="0;url=website2/index.html">' > target/doc/index.html
       - name: Remove lock file
         run: rm target/doc/.lock
       - name: Upload artifact
