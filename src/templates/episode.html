@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{episode.Texte | default(value=episode._filename)}} - {% endblock title %}
+
+{% block content %}
+	<article>
+		<h2>{{ episode.Texte | default(value=episode._filename) }}</h2>
+		{% set item = episode %}
+		{% set serie_fic = serie.fic %}
+		<article class="single">
+			{% include "single_episode.html" %}
+			{% if not item.Audio %}
+			<p>L’audio de cet épisode n’est pas encore disponible. Repassez plus tard !</p>
+			{% endif %}
+			<p class="">
+				{% if episode.Desc %}
+					{{ txt_content(name=episode.Desc) | safe }}
+				{% else %}
+					Pas de description pour le moment :)
+				{% endif %}
+			</p>
+		</article>
+	</article>
+{% endblock content %}
+

@@ -1,0 +1,10 @@
+<div class="flex_container">
+	{% for t in data.series_by_last_episode %}
+		{# TODO paginate #}
+		{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
+			{% break %}
+		{% endif %}
+		{% set serie = data.series[t[0]].fic %}
+		{% include "single_serie.html" %}
+	{% endfor %}
+</div>

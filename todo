@@ -1,0 +1,25 @@
+### Priorité 5/5
+- Supprimer les pages « invalides » ? Le programme quand il y a une erreur de génération
+  - - C’est nul pour les moteurs de recherche
+  - + on sait que les infos sont à jour
+- erreur « fiche non trouvée » avant « pas de champs titre » lors de la génération des pages
+
+### Priorité 3/5
+- pouvoir télécharger le podcast en mp3
+- alt-text des images
+- scroll dans l’historique 
+- bulle avec titre complet
+- mettre une taille max en pixel au texte pour avoir des colonnes plus lisibles.
+
+### Priorité 1/5
+bouton « voir plus d’épisodes » et une page « derniers épisodes ».
+filter: invert(1) -> blanc sur noir
+programme clicable
+
+des coins « musique » ou « émission »
+tout plus grand sur les téléphones
+proposer le « mode éco » à tous les téléphones
+
+quand on va sur l’accueil, avoir / plutôt que /index.html comme url
+
+radiodemo : fond background-color: #E4777E70;
