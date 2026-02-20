@@ -28,11 +28,14 @@ jobs:
 
       - name: Build Rust project
         run: cargo run --release -- --soundbase-path ./data/soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
-          
+    
+      - name: List public directory content
+        run: ls -R public # Ajouté pour le débogage
+    
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public # Doit correspondre à l'argument --output ci-dessus
+          path: publics
 
       - name: Deploy to GitHub Pages
         id: deployment
