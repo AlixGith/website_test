@@ -22,18 +22,20 @@ jobs:
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: stable # ou la version de Rust que vous utilisez
+          toolchain: stable
           override: true
           profile: minimal
 
       - name: Build Rust project
-        run: |      
-          cargo run --release -- build
+        run: |
+          # Remplacez <chemin_vers_soundbase> et <votre_radio_host> par les valeurs réelles de votre projet.
+          # Le répertoire de sortie est défini ici comme 'public'.
+          cargo run --release -- \n            --soundbase-path ./data/soundbase \n            --radio-host https://myradio.example.com \n            --output public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target/site # Le répertoire contenant vos fichiers statiques à déployer
+          path: public # Doit correspondre à l'argument --output ci-dessus
 
       - name: Deploy to GitHub Pages
         id: deployment
