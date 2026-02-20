@@ -27,7 +27,7 @@ jobs:
           profile: minimal
 
       - name: Build Rust project
-        run: cargo run --release -- --soundbase-path ./data/soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test/ --player-url /website_test/player/
+        run: cargo run --release -- --soundbase-path ./data/soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
