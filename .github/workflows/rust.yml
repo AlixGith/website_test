@@ -30,8 +30,8 @@ jobs:
         run: |
           # Remplacez <chemin_vers_soundbase> et <votre_radio_host> par les valeurs réelles de votre projet.
           # Le répertoire de sortie est défini ici comme 'public'.
-          cargo run --release -- \n            --soundbase-path ./data/soundbase \n            --radio-host https://myradio.example.com \n            --output public
-
+          cargo run --release -- --soundbase-path ./data/soundbase --radio-host 'https://myradio.example.com' --output public
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
