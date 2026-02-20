@@ -27,22 +27,8 @@ jobs:
           profile: minimal
 
       - name: Build Rust project
-        run: |
-          # Remplacez cette commande par celle qui construit votre site statique.
-          # Exemples :
-          # - Si c'est un générateur de site statique Rust qui génère dans 'public' :
-          #   cargo run --release -- build
-          # - Si c'est un projet WebAssembly avec wasm-pack :
-          #   cargo install wasm-pack
-          #   wasm-pack build --target web --out-dir public
-          # - Si vous avez une autre méthode pour générer les fichiers statiques :
-          #   <votre commande de build>
-          
-          # Pour cet exemple, nous allons créer un fichier index.html simple.
-          # Vous devrez remplacer ceci par la commande de build réelle de votre projet.
-          mkdir -p target/site
-          echo "<h1>Hello from Rust on GitHub Pages!</h1><p>Build time: $(date)</p>" > target/site/index.html
-          echo "Contenu de votre site Rust" > target/site/index.txt
+        run: |      
+          cargo run --release -- build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
