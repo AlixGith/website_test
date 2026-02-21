@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Debug: List entire workspace content from root
+      - name: Debug List entire workspace content from root
         run: |
           echo "Listing entire workspace content from root:"
           ls -R .
