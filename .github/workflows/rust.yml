@@ -25,6 +25,21 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
           mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
+      - name: Debug: List templates directory content
+        run: |
+          echo "Contents of templates/ directory:"
+          ls -R templates/
+          echo "---"
+
+      - name: Debug: Check for episodes_serie.html content
+        run: |
+          if [ -f templates/episodes_serie.html ]; then
+            echo "templates/episodes_serie.html exists. Its content:"
+            cat templates/episodes_serie.html
+          else
+            echo "ERROR: templates/episodes_serie.html DOES NOT EXIST!"
+          fi
+          echo "---"
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
