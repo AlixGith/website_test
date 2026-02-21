@@ -1,5 +1,3 @@
-name: Deploy Rust Project to GitHub Pages
-
 on:
   push:
     branches:
@@ -19,6 +17,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Nouvelle étape pour télécharger et extraire la soundbase
+      - name: Download and extract soundbase
+        run: |
+          wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
+          # Crée le dossier 'soundbase' et y extrait le contenu
+          unzip soundbase_dev_latest.zip -d soundbase
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -27,7 +32,13 @@ jobs:
           profile: minimal
 
       - name: Build Rust project
-        run: cargo run --release -- --soundbase-path ./data/soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
+        run: |
+          # Utilisation de 'cargo run --release' pour exécuter le programme
+          # --soundbase-path ./soundbase : Assurez-vous que ce chemin correspond à l'endroit où 'unzip' a extrait la base.
+          # --output public : Le répertoire de sortie pour le site statique, qui sera ensuite uploadé.
+          # --website-prefix /website_test : Le préfixe de base pour les URL du site (important pour GitHub Pages si le site est dans un sous-dossier).
+          # --player-url /website_test/player : Le chemin spécifique pour les ressources du player.
+          cargo run --release -- \n            --soundbase-path ./soundbase \n            --radio-host 'https://myradio.example.com' \n            --output public \n            --website-prefix /website_test \n            --player-url /website_test/player
     
       - name: List public directory content
         run: ls -R public # Ajouté pour le débogage
