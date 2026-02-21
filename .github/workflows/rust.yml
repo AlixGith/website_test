@@ -23,7 +23,7 @@ jobs:
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
           # Crée le dossier 'soundbase' et y extrait le contenu
           unzip soundbase_dev_latest.zip -d soundbase
-          # Nouvelle étape : Copier le logo dans le répertoire soundbase
+          mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
 
       - name: Setup Rust
