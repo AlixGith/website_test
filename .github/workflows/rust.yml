@@ -16,11 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Debug List entire workspace content
+      - name: Debug: List entire workspace content from root
         run: |
           echo "Listing entire workspace content from root:"
           ls -R .
           echo "--- End of workspace content ---"
+          
       # Nouvelle étape pour télécharger et extraire la soundbase
       - name: Download and extract soundbase
         run: |
@@ -29,53 +30,4 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
           mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-          profile: minimal
 
-      # Étape de débogage pour lister le contenu du répertoire templates
-      - name: Debug List templates directory content
-        run: |
-          echo "Contents of website_test/src/templates/ directory:"
-          ls -R website_test/src/templates/ # <-- Chemin corrigé ici
-          echo "---"
-
-      # Étape de débogage pour vérifier la présence et le contenu de episodes_serie.html
-      - name: Debug Check for episodes_serie.html content
-        run: |
-          if [ -f website_test/src/templates/episodes_serie.html ]; then # <-- Chemin corrigé ici
-            echo "website_test/src/templates/episodes_serie.html exists. Its content:"
-            cat website_test/src/templates/episodes_serie.html # <-- Chemin corrigé ici
-          else
-            echo "ERROR: website_test/src/templates/episodes_serie.html DOES NOT EXIST!"
-          fi
-          echo "---"
-
-      # Étape pour préparer les templates (renommer episodes_serie.html en serie.html)
-      # C'est l'étape qui résoudra le problème de TemplateNotFound si serie.html est attendu
-      - name: Prepare templates for application
-        run: |
-          # Supprime l'ancien serie.html s'il existe pour éviter les conflits
-          rm -f website_test/src/templates/serie.html # <-- Chemin corrigé ici
-          # Renomme episodes_serie.html en serie.html
-          mv website_test/src/templates/episodes_serie.html website_test/src/templates/serie.html # <-- Chemin corrigé ici
-
-
-      - name: Build Rust project
-        # Commande corrigée sur une seule ligne
-        run: cargo run --release -- --soundbase-path ./soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
-    
-      - name: List public directory content
-        run: ls -R public # Ajouté pour le débogage
-    
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: public
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
