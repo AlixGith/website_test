@@ -16,6 +16,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Download and extract soundbase
+        run: |
+          wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
+          # Crée le dossier 'soundbase' et y extrait le contenu
+          unzip soundbase_dev_latest.zip -d soundbase
+          mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
+
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+          profile: minimal
+
      # Cette étape de débogage a été utile, vous pouvez la garder ou la retirer si vous le souhaitez
       - name: Debug List entire workspace content from root
         run: |
