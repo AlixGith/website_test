@@ -111,7 +111,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		println!("Ajout de l’icone pour navigateur : {}", logo);
 		let path = oma.path_of(logo, "webpL");
 		std::fs::copy(&path, favicon_path).unwrap_or_else(|_|
-			panic!("ERREUR Logo non trouvé {:}", logo)
+			# panic!("ERREUR Logo non trouvé {:}", logo)
 		);
 	} else {
 		println!("Pas de logo renseigné, suppression de l’icone pour navigateur.");
