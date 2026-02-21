@@ -25,28 +25,40 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
           mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
-      - name: Debug List templates directory content
-        run: |
-          echo "Contents of templates/ directory:"
-          ls -R templates/
-          echo "---"
-
-      - name: Debug Check for episodes_serie.html content
-        run: |
-          if [ -f templates/episodes_serie.html ]; then
-            echo "templates/episodes_serie.html exists. Its content:"
-            cat templates/episodes_serie.html
-          else
-            echo "ERROR: templates/episodes_serie.html DOES NOT EXIST!"
-          fi
-          echo "---"
-
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           override: true
           profile: minimal
+
+      # Étape de débogage pour lister le contenu du répertoire templates
+      - name: Debug List templates directory content
+        run: |
+          echo "Contents of website_test/src/templates/ directory:"
+          ls -R website_test/src/templates/ # <-- Chemin corrigé ici
+          echo "---"
+
+      # Étape de débogage pour vérifier la présence et le contenu de episodes_serie.html
+      - name: Debug Check for episodes_serie.html content
+        run: |
+          if [ -f website_test/src/templates/episodes_serie.html ]; then # <-- Chemin corrigé ici
+            echo "website_test/src/templates/episodes_serie.html exists. Its content:"
+            cat website_test/src/templates/episodes_serie.html # <-- Chemin corrigé ici
+          else
+            echo "ERROR: website_test/src/templates/episodes_serie.html DOES NOT EXIST!"
+          fi
+          echo "---"
+
+      # Étape pour préparer les templates (renommer episodes_serie.html en serie.html)
+      # C'est l'étape qui résoudra le problème de TemplateNotFound si serie.html est attendu
+      - name: Prepare templates for application
+        run: |
+          # Supprime l'ancien serie.html s'il existe pour éviter les conflits
+          rm -f website_test/src/templates/serie.html # <-- Chemin corrigé ici
+          # Renomme episodes_serie.html en serie.html
+          mv website_test/src/templates/episodes_serie.html website_test/src/templates/serie.html # <-- Chemin corrigé ici
+
 
       - name: Build Rust project
         # Commande corrigée sur une seule ligne
