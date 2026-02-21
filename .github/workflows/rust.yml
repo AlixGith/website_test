@@ -23,6 +23,9 @@ jobs:
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
           # Crée le dossier 'soundbase' et y extrait le contenu
           unzip soundbase_dev_latest.zip -d soundbase
+          # Nouvelle étape : Copier le logo dans le répertoire soundbase
+          # Assurez-vous que 'RadioDemo-LogoV1.webp' est le nom exact de votre fichier
+          cp website_test/src/templates/img/RadioDemo-LogoV1.webp soundbase/RadioDemo-LogoV1.webp
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
