@@ -31,7 +31,7 @@ jobs:
           ls -R templates/
           echo "---"
 
-      - name: Debug: Check for episodes_serie.html content
+      - name: Debug Check for episodes_serie.html content
         run: |
           if [ -f templates/episodes_serie.html ]; then
             echo "templates/episodes_serie.html exists. Its content:"
