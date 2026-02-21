@@ -16,18 +16,41 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+     # Cette étape de débogage a été utile, vous pouvez la garder ou la retirer si vous le souhaitez
       - name: Debug List entire workspace content from root
         run: |
           echo "Listing entire workspace content from root:"
           ls -R .
           echo "--- End of workspace content ---"
-          
-      # Nouvelle étape pour télécharger et extraire la soundbase
-      - name: Download and extract soundbase
+
+      # Étape de débogage pour lister le contenu du répertoire templates (avec le chemin correct)
+      - name: Debug List templates directory content
         run: |
-          wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
-          # Crée le dossier 'soundbase' et y extrait le contenu
-          unzip soundbase_dev_latest.zip -d soundbase
-          mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
+          echo "Contents of src/templates/ directory:"
+          ls -R src/templates/ # <-- Chemin corrigé ici
+          echo "---"
+
+      # Étape de débogage pour vérifier la présence et le contenu de serie.html (avec le chemin correct)
+      - name: Debug Check for serie.html content
+        run: |
+          if [ -f src/templates/serie.html ]; then # <-- Chemin corrigé ici
+            echo "src/templates/serie.html exists. Its content:"
+            cat src/templates/serie.html # <-- Chemin corrigé ici
+          else
+            echo "ERROR: src/templates/serie.html DOES NOT EXIST!"
+          fi
+          echo "---"
+
+      # L'étape 'Prepare templates for application' est supprimée car :
+      # 1. Le fichier 'episodes_serie.html' n'existe pas dans votre arborescence.
+      # 2. Le fichier 'serie.html' existe déjà à l'emplacement correct.
+      # Par conséquent, aucune manipulation de fichiers n'est nécessaire ici.
+
+      # Votre commande pour construire et exécuter l'application Rust
+      - name: Build and run Rust application
+        # Si votre application Rust est configurée pour chercher les templates
+        # dans un chemin relatif au répertoire de travail de 'cargo run',
+        # alors elle devrait maintenant trouver 'src/templates/'.
+        run: cargo run --release -- --soundbase-path ./soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
 
 
