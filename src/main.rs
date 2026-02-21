@@ -90,7 +90,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("single_episode.html", include_str!("templates/single_episode.html")),
         ("single_serie.html", include_str!("templates/single_serie.html")),
         ("last_series.html", include_str!("templates/last_series.html")),
-
+		("last_episodes.html", include_str!("templates/last_episodes.html")),
         ("style.css", include_str!("templates/style.css")),
 
         ("img/download.svg", include_str!("templates/img/download.svg")),
