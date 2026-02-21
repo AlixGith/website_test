@@ -89,8 +89,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("episode.html", include_str!("templates/episode.html")),
         ("single_episode.html", include_str!("templates/single_episode.html")),
         ("single_serie.html", include_str!("templates/single_serie.html")),
+        ("episodes_serie.html", include_str!("templates/episodes_serie.html")),
         ("last_series.html", include_str!("templates/last_series.html")),
-		("last_episodes.html", include_str!("templates/last_episodes.html")),
+        ("last_episodes.html", include_str!("templates/last_episodes.html")),
+
         ("style.css", include_str!("templates/style.css")),
 
         ("img/download.svg", include_str!("templates/img/download.svg")),
@@ -105,7 +107,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut context = tera::Context::new();
     context.insert("data", &data);
 
-	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("webpL/RadioDemo-LogoV1.webpL");
+	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("website/favicon.webp");
 	let logo_config = data.config.get("Logo");
 	if let Some(logo) = logo_config {
 		println!("Ajout de l’icone pour navigateur : {}", logo);
