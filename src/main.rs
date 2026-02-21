@@ -105,13 +105,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut context = tera::Context::new();
     context.insert("data", &data);
 
-	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("website/RadioDemo-LogoV1.webpL");
+	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("webpL/RadioDemo-LogoV1.webpL");
 	let logo_config = data.config.get("Logo");
 	if let Some(logo) = logo_config {
 		println!("Ajout de l’icone pour navigateur : {}", logo);
 		let path = oma.path_of(logo, "webpL");
 		std::fs::copy(&path, favicon_path).unwrap_or_else(|_|
-			# panic!("ERREUR Logo non trouvé {:}", logo)
+			panic!("ERREUR Logo non trouvé {:}", logo)
 		);
 	} else {
 		println!("Pas de logo renseigné, suppression de l’icone pour navigateur.");
