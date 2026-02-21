@@ -25,7 +25,7 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
           mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
-      - name: Debug: List templates directory content
+      - name: Debug List templates directory content
         run: |
           echo "Contents of templates/ directory:"
           ls -R templates/
