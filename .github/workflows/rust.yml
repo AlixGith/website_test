@@ -41,16 +41,19 @@ jobs:
           fi
           echo "---"
 
-      # L'étape 'Prepare templates for application' est supprimée car :
-      # 1. Le fichier 'episodes_serie.html' n'existe pas dans votre arborescence.
-      # 2. Le fichier 'serie.html' existe déjà à l'emplacement correct.
-      # Par conséquent, aucune manipulation de fichiers n'est nécessaire ici.
-
       # Votre commande pour construire et exécuter l'application Rust
       - name: Build and run Rust application
         # Si votre application Rust est configurée pour chercher les templates
         # dans un chemin relatif au répertoire de travail de 'cargo run',
         # alors elle devrait maintenant trouver 'src/templates/'.
         run: cargo run --release -- --soundbase-path ./soundbase --radio-host 'https://myradio.example.com' --output public --website-prefix /website_test --player-url /website_test/player
+    
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
 
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
