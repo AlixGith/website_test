@@ -36,7 +36,7 @@ jobs:
         # Si votre application Rust est configurée pour chercher les templates
         # dans un chemin relatif au répertoire de travail de 'cargo run',
         # alors elle devrait maintenant trouver 'src/templates/'.
-        run: cargo run --release -- ./target/debug/website2 --soundbase-path "./soundbase" --output "./soundbase/website" --soundbase-prefix '../' --website-prefix './' --radio-host ""
+        run: cargo run --release -- --soundbase-path "./soundbase" --output "./soundbase/website" --soundbase-prefix '../' --website-prefix './' --radio-host ""
     
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
