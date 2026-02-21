@@ -106,7 +106,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut context = tera::Context::new();
     context.insert("data", &data);
 
-	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("website/RadioDemo-LogoV1.webpL");
+	let favicon_path = std::path::Path::new(&oma.args.soundbase_path).join("website/favicon.webp");
 	let logo_config = data.config.get("Logo");
 	if let Some(logo) = logo_config {
 		println!("Ajout de l’icone pour navigateur : {}", logo);
