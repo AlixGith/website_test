@@ -21,8 +21,8 @@ jobs:
         run: |
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
           # Crée le dossier 'soundbase' et y extrait le contenu
+          mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
-          # mkdir -p soundbase/website # Crée le répertoire 'website' à l'intérieur de 'soundbase'
 
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
