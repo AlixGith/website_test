@@ -40,8 +40,7 @@ jobs:
     
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./soundbase/website # Modifiez ceci pour pointer vers le bon répertoire
+
 
       - name: Deploy to GitHub Pages
         id: deployment
