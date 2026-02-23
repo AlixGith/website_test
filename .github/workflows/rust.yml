@@ -23,7 +23,11 @@ jobs:
           # Crée le dossier 'soundbase' et y extrait le contenu
           mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
-
+          
+        # NOUVELLE ÉTAPE : Déplacer l'index.html de la racine vers le dossier soundbase
+      - name: Move root index.html to soundbase
+        run: mv index.html soundbase/index.html
+        
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -38,9 +42,6 @@ jobs:
         # alors elle devrait maintenant trouver 'src/templates/'.
         run: cargo run --release -- --soundbase-path "./soundbase" --output "./soundbase/website" --soundbase-prefix "/soundbase" --website-prefix '.' --radio-host "" --player-url "/soundbase/player"
 
-        # NOUVELLE ÉTAPE : Déplacer l'index.html de la racine vers le dossier soundbase
-      - name: Move root index.html to soundbase
-        run: mv index.html soundbase/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
