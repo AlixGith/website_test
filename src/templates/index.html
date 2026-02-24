@@ -96,12 +96,8 @@
 		</section>
 
 		<section>
-			{% if 'TexteAccueil' in data.config %}
-				{% set v = txt_content(name=data.config.TexteAccueil) %}
-				{% if v %}
-					{{ v | safe }}
-				{% endif %}
-			{% endif %}
+			{% include "Section_accueil.html" %}
+			
 		</section>
 		
 		{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
