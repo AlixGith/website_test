@@ -98,15 +98,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		
 		
 		
-        ("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js")),
-        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
-		("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
-		("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
-		
-		
-		
-        ("img/cropped-favicon-4-t-384x384.png", include_str!("templates/img/cropped-favicon-4-t-384x384.png")),
-        
+
 		
 		("img/download.svg", include_str!("templates/img/download.svg")),
         ("img/earth.svg", include_str!("templates/img/earth.svg")),
@@ -163,23 +155,43 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         oma.args.output.clone() + "/style.css",
         tera.render("style.css", &context).unwrap()
     );
-
-
-	let _ = std::fs::write(
-        oma.args.output.clone() + "/mainca34.js",
-        tera.render("mainca34.js", &context).unwrap()
-    );
-	let _ = std::fs::write(
-        oma.args.output.clone() + "/jquery.modal90f6.css",
-        tera.render("jquery.modal90f6.css", &context).unwrap()
-    );let _ = std::fs::write(
-        oma.args.output.clone() + "/customf9d8.css",
-        tera.render("customf9d8.css", &context).unwrap()
-    );let _ = std::fs::write(
-        oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
-        tera.render("jquery-3.6.0.minf9df.js", &context).unwrap()
-    );
+		
+	let main_js = std::fs::read(
+    "wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"
+	).unwrap();
 	
+	let _ = std::fs::write(
+	    oma.args.output.clone() + "/mainca34.js",
+	    main_js
+	);
+	let main_js = std::fs::read(
+    "wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css"
+	).unwrap();
+	
+	let _ = std::fs::write(
+	    oma.args.output.clone() + "/jquery.modal90f6.css",
+	    main_js
+	);
+
+let main_js = std::fs::read(
+    "wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css"
+	).unwrap();
+	
+	let _ = std::fs::write(
+	    oma.args.output.clone() + "/customf9d8.css",
+	    main_js
+	);
+
+let main_js = std::fs::read(
+    "wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js"
+	).unwrap();
+	
+	let _ = std::fs::write(
+	    oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
+	    main_js
+	);
+
+
     println!("Construction des icones du site…");
     let _ = std::fs::write(
         img_dir.clone() + "download.svg",
@@ -188,8 +200,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
 
 
+	let favicon = std::fs::read(
+    "src/templates/img/cropped-favicon-4-t-384x384.png"
+	).unwrap();
+	
 	let _ = std::fs::write(
-    img_dir.clone() + "cropped-favicon-4-t-384x384.png",
+	    img_dir.clone() + "cropped-favicon-4-t-384x384.png",
+	    favicon
 	);
 	
 	 let _ = std::fs::write(
