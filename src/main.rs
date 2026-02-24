@@ -102,9 +102,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
         ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
         ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
-
-		("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js")),
-
 		
 		
 
