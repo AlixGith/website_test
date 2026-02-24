@@ -1,62 +1,696 @@
-{% extends "base.html" %}
-{% block content %}
-	<header id="top">
-					
+<!DOCTYPE html>
+<html lang="fr">
+	
+<!-- Mirrored from alixgith.github.io/website_test/website/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Feb 2026 13:51:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+		<title>Radio Démo</title>
+		<meta charset="utf8" />
+		<link rel="stylesheet" href="style.css" />
+
+
+		
 <!-- Les styles pour les aspects -->
-			<style id='global-styles-inline-css' type='text/css'>
-			:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left: auto !important;margin-right: auto !important;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-			:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
-			:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
-			:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
-			</style>
-			<link rel='stylesheet' id='jquery-modal-css' href='wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css' type='text/css' media='all' />
-			<link rel='stylesheet' id='maincss-css' href='style.css' type='text/css' media='all' />
-			<link rel='stylesheet' id='custom-css' href='wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css' type='text/css' media='all' />
-			<script type="text/javascript" src="wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js" id="jquery-js"></script>	
-				
-			<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-64x64.png" sizes="32x32" />
-			<link rel="icon" href="img/cropped-favicon-4-t-384x384.png" sizes="192x192" />
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){margin-left: auto !important;margin-right: auto !important;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+		<link rel='stylesheet' id='jquery-modal-css' href='wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css?ver=1725213090' type='text/css' media='all' />
+		<link rel='stylesheet' id='maincss-css' href='style.css' type='text/css' media='all' />
+		<link rel='stylesheet' id='custom-css' href='wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css?ver=1759912223' type='text/css' media='all' />
+		<link rel='stylesheet' id='sib-front-css-css' href='wp-content/plugins/mailin/css/mailin-front3abd.css?ver=1531880566' type='text/css' media='all' />
+		<script type="text/javascript" src="wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js?ver=1700586616" id="jquery-js"></script>
+		<script data-minify="1" type="text/javascript" src="wp-content/cache/min/2/wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal670e.js?ver=1759929262" id="jquery-modal-js" data-rocket-defer defer></script>
+		<script defer type="text/javascript" src="wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-migrate-3.3.2.minf9df.js?ver=1700586616" id="jquery-defer-js"></script>
+		<script type="text/javascript" id="sib-front-js-js-extra">
+		/* <![CDATA[ */
+		var sibErrMsg = {"invalidMail":"Veuillez entrer une adresse e-mail valide.","requiredField":"Veuillez compl\u00e9ter les champs obligatoires.","invalidDateFormat":"Veuillez entrer une date valide.","invalidSMSFormat":"Veuillez entrer une num\u00e9ro de t\u00e9l\u00e9phone valide."};
+		var ajax_sib_front_object = {"ajax_url":"https:\/\/www.nova.fr\/wp-admin\/admin-ajax.php","ajax_nonce":"36ae1f92ca","flag_url":"https:\/\/www.nova.fr\/wp-content\/plugins\/mailin\/img\/flags\/"};
+		/* ]]> */
+		</script>
+			
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-64x64.png" sizes="32x32" />
+<link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-384x384.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-360x360.png" />
 
-			<style type="text/css" id="wp-custom-css">
+				<style type="text/css" id="wp-custom-css">
 			.post-medium__img img {
-				height: auto;
-			}
+	height: auto;
+}
 
-			.lastpsts_section .post-medium__img img {
-				height: auto !important;
-			}
+.lastpsts_section .post-medium__img img {
+	height: auto !important;
+}
 
-			.title-sequence {
-				padding-left: 15px;
-				padding-right: 15px;
-				margin-bottom: 0;
-			}
+.title-sequence {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 0;
+}
 
-			.home .title-sequence.big {
-				padding-bottom: 40px;
-				padding-top: 30px;
-			}
+.home .title-sequence.big {
+	padding-bottom: 40px;
+	padding-top: 30px;
+}
 
-			.container-fullslider {
-				margin-left: 0;
-				max-width: 100%;
-				padding: 0 15px 2em;
-			}
+.container-fullslider {
+	margin-left: 0;
+	max-width: 100%;
+	padding: 0 15px 2em;
+}
 
-			.podcasts-section .bottom_podcastNova {
-				margin-bottom: 0;
-				margin-top: -20px;
-				padding-bottom: 50px;
-			}		</style>
+.podcasts-section .bottom_podcastNova {
+	margin-bottom: 0;
+	margin-top: -20px;
+	padding-bottom: 50px;
+}		</style>
+	</head>
+
+
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+  <body class="home wp-singular page-template page-template-template-home template-home page page-id-237 wp-theme-lnei-wp-themeresources wp-child-theme-lnei-wp-theme-child-novaresources has-infinite-scroll app-data index-data singular-data page-data page-237-data page-accueil-data template-home-data front-page-data" data-barba="wrapper" data-usr=0>
+
+
+
+	<body id="body">
+		<!-- Body how containers -->
+
+	                <div  class="wrap" role="document" data-barba="container">
+            <div id="js-datalayer" data-keys="{&quot;page_title&quot;:&quot;Accueil&quot;,&quot;post_type&quot;:&quot;page&quot;,&quot;user_is_connected&quot;:false,&quot;category&quot;:&quot;Accueil&quot;}"></div>
+            <header class="banner  "
+    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
+    <div  class="container-header">
+
+        <div class="row align-items-center height-100 ">
+            <div class="flex col-md-4 col-4 no-padding nav_container">
+                <nav class="nav-primary">
+                    <div class="menu-wrapper">
+                        <div class="menu-lnei menu-content">
+                            <div class="header">
+                                <div class="menu-toggle" on="tap:AMP.setState( { navMenuExpanded: ! navMenuExpanded} )"
+                                    [class]="'menu-toggle' + ( navMenuExpanded ? ' toggled-on' : '' )">
+                                    <span class="ico"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                            </div>
+            <div class="col-4 padlr-mob0 height-100 logo_container">
+                                    <div class="logo_site">
+                                                                            <h1>
+                                                <a class="brand" href="index.html">
+                            <img class="logo logo-white" src="wp-content/uploads/sites/2/2025/05/logo-t-1700x1030-3.png" alt="Radio Grabuges" />
+                                                            <img class="logo logo-black" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Radio Grabuges" data-lazy-src="https://www.nova.fr/wp-content/uploads/sites/2/2025/05/logo-noir-t-1700x1030-3.png" /><noscript><img class="logo logo-black" src="wp-content/uploads/sites/2/2025/05/logo-noir-t-1700x1030-3.png" alt="Radio Grabuges" /></noscript>
+                                                    </a>
+                                                    </h1>
+                                            </div>
+                            </div>
+            <div class="text-right col-md-4 col-4 right-part usernav_container">
+                <div class="icons-header">
+
+
+
+                    <a href="javascript:void(0)" class="search search_toggle"><span class="icon-Search"></span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div  class="sticky_homebar">
+        <ul id="mainNav" class="select">
+            <li class="init"></li>
+        </ul>
+    </div>
+
+
+
+            <div  class="links_container">
+
+                    <div class="header-links">
+                <div class="menu-header-links-container"><ul id="menu-header-links" class="header-links-left"><li id="menu-item-268540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268540"><a href="c-etait-quoi-ce-titre/index.html">c’était quoi ?</a></li>
+<li id="menu-item-268755" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-268755"><a href="serie/index.html">émissions</a></li>
+<li id="menu-item-268580" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268580"><a target="_blank" href="programme.html">programme</a></li>
+<li id="menu-item-268542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268542"><a href="index.html#qui">La radio</a></li>
+<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="page/RadioDemo-Specification.html">Articles</a></li>
+</ul></div>
+                <div class="menu-header-links-right-container"><ul id="menu-header-links-right" class="header-links-right"><li id="menu-item-268547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268547"><a target="_blank" href="https://b11080f7.sibforms.com/serve/MUIEAPY5R7tO4dG0xxBqvtGfcErCQuaQn3rGCY0zqloreyI853gyAovdSRST7K2Nm3PaEcjK20GkbZog6VvgwMwww772by7A0FzhaJKzfdtDCPZQR9v7fh01M0MD3P5JHnUw0dN8af5V-e33KN6TVoitPf8FL5w_Cp3ffYnaJFnV1LBK-BHY3uav5uY9hsc1UCZksvb_UFCYm7Ev?utm_source=sendinblue&amp;utm_campaign=NOVA%20Classics%20Vinyles&amp;utm_medium=email">newsletter</a></li>
+
+</ul></div>
+            </div>
+            </div>
+    
+    </header>
+
+<div id="popup_search" class="open_search"
+    [class]="'open_search popup_global' + ( popup_search? ' oppenned ampsocials' : '' )">
+    <div  class="popup-overlay"></div>
+    <div  class="popup-content">
+        <a href="javascript:void(0)" class="close-popup close_search"
+            on="tap:AMP.setState( { popup_search: ! popup_search} )"><span class="icon-close-icon"></span></a>
+        <div class="container popup-container">
+            <div class="row">
+                <div class="mx-auto col-lg-10">
+                    <p class="title-popup">Rechercher</p>
+                    <div id="js-popin-search-form" data-url="index.html">
+                        <form role="search" method="get" class="search-form" action="https://www.nova.fr/">
+				<label>
+					<span class="screen-reader-text">Rechercher :</span>
+					<input type="search" class="search-field" placeholder="Rechercher…" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Rechercher" />
+			</form>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div  id="body-classes" class="home wp-singular page-template page-template-template-home template-home page page-id-237 wp-theme-lnei-wp-themeresources wp-child-theme-lnei-wp-theme-child-novaresources has-infinite-scroll app-data index-data singular-data page-data page-237-data page-accueil-data template-home-data front-page-data"></div>
+            <div  class="content">
+                <main class="main"
+                    >
+                                <div class="media-cards">
+    <div class="swiper-container podcasts_header podcasts_header-nova swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+        <!-- Additional required wrapper -->
+		 
+        <div class="swiper-wrapper nova_new_hp_slider" style="transition-duration: 0ms; transform: translate3d(-1829.78px, 0px, 0px);">
+            <div class="js-radio-card swiper-slide cards_header direct audio_player_play swiper-slide-duplicate swiper-slide-duplicate-active"
+                data-radio-slug="radio-nova" data-media-launcher-for="radio-nova">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="radio-nova" data-radioid="radio-nova"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/05/NOVA-nova-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_1.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.627) 0%, rgba(0, 0, 0, 0) 48%), url("https://www.lesinrocks.com/wp-content/uploads/sites/2/2024/04/webservices_ab67616d0000b2738c70143340446d4b85477040.jpeg");'>
+									<p style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.627) 0%, rgba(0, 0, 0, 0) 48%), url("wp-content/uploads/sites/images/Radio_grabuges.png")>
+									</p>
+								
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-classics" data-media-launcher-for="nova-classics">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nova-classics" data-radioid="nova-classics"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-CLASSICS-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_2.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nouvo-nova" data-media-launcher-for="nouvo-nova">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nouvo-nova" data-radioid="nouvo-nova"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-NOUVO-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_3.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-soul" data-media-launcher-for="nova-soul">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nova-soul" data-radioid="nova-soul"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-SOUL-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_4.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-reggae" data-media-launcher-for="nova-reggae">
+                                    <div data-bg="https://www.nova.fr/wp-content/uploads/sites/2/2024/04/nova-reggae-t-850x540-1.png" class="cards_content radio-live-play rocket-lazyload"
+                        data-radio-slug="nova-reggae" data-radioid="nova-reggae"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-reggea-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_7.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-hip-hop" data-media-launcher-for="nova-hip-hop">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nova-hip-hop" data-radioid="nova-hip-hop"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-HIPHOP-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_5.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-la-nuit" data-media-launcher-for="nova-la-nuit">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nova-la-nuit" data-radioid="nova-la-nuit"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-nuit-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_6.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                                                    <div class="js-radio-card swiper-slide cards_header direct audio_player_play"
+                data-radio-slug="nova-danse" data-media-launcher-for="nova-danse">
+                                    <div class="cards_content radio-live-play"
+                        data-radio-slug="nova-danse" data-radioid="nova-danse"
+                        data-cover="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/04/NOVA-danse-400x496-1-t-800x992.png" style="background-image: url(wp-content/uploads/sites/2/2024/04/potcast_7.png)"
+                        data-live_tracklist="">
+                                <div class="cards_content__infos">
+
+                    <div class="js-track_infos"></div>
+
+                    
+                                    </div>
+            </div>
+            </div>
+                <svg width="0" height="0">
+        <defs>
+            <clipPath id="mediaCardClipPath" clipPathUnits="objectBoundingBox">
+                <path id="curve" transform="scale(0.00285, 0.00254)"
+                    d="M -20 442 L 0 50 A 8 2 0 0 1 356 50 L 356 442 Z">
+                </path>
+            </clipPath>
+        </defs>
+    </svg>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+</div>
+    
+                                                
+                
+                
+                
+                
+                
+                
+                
+                                                                                                                                                                                                
+
+                                                 
+                
+                
+                
+                
+                                    <section class="js-section_title header_slider theme-white">
+                        
+                        <div  class="header_slider--header">
+                            <div class="media">
+                                <img fetchpriority="high" width="1488" height="900" src="wp-content/uploads/sites/images/Radio_grabuges.png" class="image_default no-lazy" alt="Ce dimanche 12 octobre, retrouvez « La dernière » à l’Européen" decoding="async" />
+                            </div>
+                            <div class="right">
+                                <div class="title">Radio Grabuges ?</div>
+                                <div class="subtitle"></div>
+                                <div class="description">Nouvelle oeuvre locale de la liaison commune de Lyon de la Fédération Anarchiste à Lyon</div>
+                                                                    <div class="link">
+                                        <a href="news/Radio_Grabuges/index.html"
+                                            class="btn btn_black"
+                                            target="">
+                                            Lire l'article
+                                            <span class="icon-Arrow"></span>
+                                        </a>
+                                    </div>
+                                                            </div>
+                        </div>
+
+                        
+                                                                                                                                         
+
+                                                                                
+                
+                
+                
+                
+                                    <section  class="js-section_title header_slider theme-black">
+                        
+                        <div class="header_slider--header">
+                            
+                            <div class="right">
+                                <div class="title">Emissions, interviews, potcast à Villeurbanne et à Lyon </div>
+                                <div class="subtitle">Liaison commune de Lyon et collectifs anarchistes</div>
+                                <div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+                                                            </div>
+															<div class="media">
+                                <img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" />
+                            </div>
+                        </div>
+
+                        
+                                            </section>
+                
+                
+                
+                                                                                                                                                                                                
+
+                                                                                
+                
+                
+                
+                
+                
+                
+                
+                                                                                                                                                                                                    
+                    <section class="podcasts-section js-section_title">
+                                                <div class="inrocks_blacksection">
+                            <div  class="container">
+                                <div class="title-sequence big marg-auto white">
+        <h3>
+                            Des podcasts
+                    </h3>
+    </div>
+                            </div>
+                                                            <div class="container-fullslider">
+                                    <div class="swiper-container swiper_fiveposts">
+                                        <!-- Additional required wrapper -->
+                                        <div class="swiper-wrapper">
+                                                                                                                                                                                                                                                        <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/08/la-derniere-1-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/08/la-derniere-1-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La dernière" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-derniere/">Dans le Royan</a></h2>
+            <p>Interviews du Magazine l'effeuillé</p>
+        </div>
+    </div>
+</div>
+                                                                                                            <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-guillaume-meurice/">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Guillaume Meurice" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Guillaume-Meurice-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Guillaume-Meurice-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Guillaume Meurice" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-guillaume-meurice/">A Gratte-ciel</a></h2>
+            <p>Mise en lumière du Bieristan</p>
+        </div>
+    </div>
+</div>
+                                                                                                            <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-juliette-arnaud/">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Juliette Arnaud" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Juliette-Arnaud-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Juliette-Arnaud-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Juliette Arnaud" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-juliette-arnaud/">A lyon</a></h2>
+            <p>Sur le collectif soutien migrant croix rousse</p>
+        </div>
+    </div>
+</div>
+                                                                                                            
+
+                                                                                                                                                                                        </div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                                <div class="bottom_podcastNova container">
+                                    <a href="podcasts/index.html" class="btn btn_white">Tous
+                                        nos podcasts<span class="icon-Arrow"></span></a>
+                                </div>
+                                                    </div>
+                    </section>
+                    
+                                
+
+                                                                                
+                
+                
+                
+                
+                
+                
+                
+  
+                                                                
+                
+                
+                
+                
+                                    <section class="js-section_title header_slider theme-white">
+                        
+                        <div class="header_slider--header" style="position: absolute;">
+                            
+                            <div class="right">
+                                <div class="title">Musique sur Radio Grabuges</div>
+                                <div class="subtitle">Underground violent et pacifique, selon l'humeur</div>
+                                <div class="description">Mise en avant de groupes locaux de lyon et ses alentours</div>
+                                                                    <div class="link">
+                                        <a href="https://podcasts.nova.fr/radio-nova-t-vu-lheure"
+                                            class="btn btn_black"
+                                            target="_blank">
+                                            Les styles actuels 
+                                            <span class="icon-Arrow"></span>
+                                        </a>
+                                    </div>
+                                                            </div>
+                        </div>
+						<div class="media" style="text-align: right;display: block !important;">
+                                <img width="1488" height="900" src="wp-content/uploads/sites/images/illustration_radio.png" class="image_default no-lazy" alt="Radio Grabuges" decoding="async" />
+                            </div>
+                        
+                                                    <div class="container-fullslider header_slider--slider">
+                                <div class="slider-title">
+                                    réécoutez les zics
+                                </div>
+                                <div class="swiper-container swiper_fiveposts">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                                                              
+                                                                                    <div class="swiper-slide">
+                                                <div class="post-medium">
+    <div class="row reverse-tagimg">
+        <div class="tags-container col-12">
+                            <span class="tag tag-medium"><a target=&quot;_blank&quot;
+                        href="#"></a></span>
+                                </div>
+        <div class="post-medium__img col-12">
+            <a href="episode/infox-bienvenue-a-la-fasciste-week/index.html" target=&quot;_blank&quot;>
+                
+                                    <img width="480" height="290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20480%20290'%3E%3C/svg%3E" class="medium-slider post-thumbnail-450102 post-450055" alt="" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2025/10/AFP__20251006__77WH48B__v6__MidRes__TopshotFashionFranceWomenChanelPhotocall-t-480x290.jpg" /><noscript><img width="480" height="290" src="wp-content/thumbnails/uploads/sites/2/2025/10/AFP__20251006__77WH48B__v6__MidRes__TopshotFashionFranceWomenChanelPhotocall-t-480x290.jpg" class="medium-slider post-thumbnail-450102 post-450055" alt="" decoding="async" /></noscript>
+                            </a>
+        </div>
+
+    </div>
+    <div class="title_post">
+        <h3 class="t-side-medium"><a href="episode/infox-bienvenue-a-la-fasciste-week/index.html"
+                target=&quot;_blank&quot;>Hardcore crossover</a></h3>
+    </div>
+    <div class="list-posts-medium__tagline">
+        <div class="rubrique">
+            
+        </div>
+        <div class="bookmarks-icon">
+            <span class="icon-On"></span>
+        </div>
+    </div>
+    <a href="#" class="read-on">A écouter sur 
+        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+            alt="img large news" data-lazy-src="/wp-content/themes/lnei-wp-theme-child-nova/resources/assets/images/nova.svg"><noscript><img src="wp-content/themes/lnei-wp-theme-child-nova/resources/assets/images/nova.svg"
+            alt="img large news"></noscript><span class="icon-read"></span></a>
+</div>
+                                            </div>
+                                                                                    <div class="swiper-slide">
+                                                <div class="post-medium">
+    <div class="row reverse-tagimg">
+        <div class="tags-container col-12">
+                            <span class="tag tag-medium"><a target=&quot;_blank&quot;
+                        href="#"></a></span>
+                                </div>
+        <div class="post-medium__img col-12">
+            <a href="episode/culture-pure-cette-chronique-en-podcast-parle-de-podcasts-de-crime/index.html" target=&quot;_blank&quot;>
+                
+                                    <img width="480" height="290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20480%20290'%3E%3C/svg%3E" class="medium-slider post-thumbnail-450195 post-450084" alt="" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2025/10/only-murders-in-the-building-2021-t-480x290.avif" /><noscript><img width="480" height="290" src="wp-content/thumbnails/uploads/sites/2/2025/10/only-murders-in-the-building-2021-t-480x290.avif" class="medium-slider post-thumbnail-450195 post-450084" alt="" decoding="async" /></noscript>
+                            </a>
+        </div>
+
+    </div>
+    <div class="title_post">
+        <h3 class="t-side-medium"><a href="episode/culture-pure-cette-chronique-en-podcast-parle-de-podcasts-de-crime/index.html"
+                target=&quot;_blank&quot;>Rap et autres</a></h3>
+    </div>
+    <div class="list-posts-medium__tagline">
+        <div class="rubrique">
+            
+        </div>
+        <div class="bookmarks-icon">
+            <span class="icon-On"></span>
+        </div>
+    </div>
+    <a href="#" class="read-on">A lire sur
+        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E"
+            alt="img large news" data-lazy-src="/wp-content/themes/lnei-wp-theme-child-nova/resources/assets/images/nova.svg"><noscript><img src="wp-content/themes/lnei-wp-theme-child-nova/resources/assets/images/nova.svg"
+            alt="img large news"></noscript><span class="icon-read"></span></a>
+</div>
+                                            </div>
+                                                                                           
+                                                     
+                                                                            </div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            </div>
+                                            </section>
+                
+                
+   
+                
+                
+                
+                
+                                    <section class="podcasts-section js-section_title theme-black">
+                                                 <div class="inrocks_blacksection">
+                            <div  class="container">
+                                <div class="title-sequence big marg-auto white">
+        <h3>
+                            Des podcasts
+                    </h3>
+    </div>
+                            </div>
+                                                            <div class="container-fullslider">
+                                    <div class="swiper-container swiper_fiveposts">
+                                        <!-- Additional required wrapper -->
+                                        <div class="swiper-wrapper">
+                                                                                                                                                                                                                                                        <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/08/la-derniere-1-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/08/la-derniere-1-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La dernière" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-derniere/">Dans le Royan</a></h2>
+            <p>Interviews du Magazine l'effeuillé</p>
+        </div>
+    </div>
+</div>
+                                                                                                            <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-guillaume-meurice/">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Guillaume Meurice" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Guillaume-Meurice-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Guillaume-Meurice-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Guillaume Meurice" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-guillaume-meurice/">A Gratte-ciel</a></h2>
+            <p>Mise en lumière du Bieristan</p>
+        </div>
+    </div>
+</div>
+                                                                                                            <div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+    <div class="card-podcast">
+        <a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-juliette-arnaud/">
+            <img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Juliette Arnaud" decoding="async" data-lazy-src="https://www.nova.fr/wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Juliette-Arnaud-t-800x800.jpg" /><noscript><img width="800" height="800" src="wp-content/thumbnails/uploads/sites/2/2024/09/La-chronique-de-Juliette-Arnaud-t-800x800.jpg" class="attachment-cube-thumb size-cube-thumb wp-post-image" alt="La chronique de Juliette Arnaud" decoding="async" /></noscript>
+        </a>
+        <div class="card-podcast__content">
+            <h2><a target="" href="https://podcasts.nova.fr/radio-nova-la-chronique-de-juliette-arnaud/">A lyon</a></h2>
+            <p>Sur le collectif soutien migrant croix rousse</p>
+        </div>
+    </div>
+</div>
+                                                                                                            
+
+                                                                                                                                                                                        </div>
+                                        <div class="swiper-button-prev"></div>
+                                        <div class="swiper-button-next"></div>
+                                    </div>
+                                </div>
+                                <div class="bottom_podcastNova container">
+                                    <a href="podcasts/index.html" class="btn btn_white">Tous
+                                        nos podcasts<span class="icon-Arrow"></span></a>
+                                </div>
+                                                    </div>
+                    </section>
+                
+                                                                                                                                                                                                
+
+                                                                                
+                
+   
+                
+                
+                                                                                                                                                                                                
+
+                                                                                
+                
+                
+                
+
+                                                        </main>
+                
+            </div>
+        </div>
+
+		<!-- Body classic -->
+		<nav id="mainmenu">
+			<ul>
+				<li><a onclick="return internalNavigation(event)" href="index.html#top"><img src="img/home.svg" />Radio Démo</a></li>
+				
+					<li><a onclick="return internalNavigation(event)" href="serie/index.html">Émissions</a></li>
+				
+				
+					<li><a onclick="return internalNavigation(event)" href="programme.html">Programme</a></li>
+				
+				<li><a onclick="return internalNavigation(event)" href="index.html#qui">Qui&nbsp;?</a></li>
+				<li><a onclick="return internalNavigation(event)" href="index.html#contact">Contact</a></li>
+				
+					
+						<li><a onclick="return internalNavigation(event)" href="page/RadioDemo-Specification.html">Specification</a></li>
+					
+				
+					
+						<li><a onclick="return internalNavigation(event)" href="page/Texte-francais1.html">Test</a></li>
+					
+				
+			</ul>
+		</nav>
+
+		<main id="maincontent">
 			
-			
+	<header id="top">
 
-		<div class = "Radio_on">
-		<h2>Écouter</h2>
+		
+		<div>
+			<img class="logo" src="https://alixgith.github.io/website_test//webpL/RadioDemo-LogoV1.webpL" />
+		</div>
+		
+
+		<div>
+			<h2>Écouter</h2>
 			<div class="tohide">
 				<p>En direct</p>
 				<audio controls="controls" preload="none" class="tohide" id="direct">
-					<source src="/direct.ogg" />
+					<source src="https://alixgith.github.io/direct.ogg" />
 				</audio>
 			</div>
 			<div class="toshow playbuttons">
@@ -71,87 +705,360 @@
 				</p>
 			</div>
 		</div>
-		
-		
 	</header>
-	
-			{% if data.config.Logo %}
-		<div>
-			<img class="logo" src="{{data.oma.args.soundbase_prefix}}/webpL/{{data.config.Logo}}.webpL" />
-		</div>
-		{% endif %}
-		
 		<section>
 			
-			<!-- Le carroussel de carte -->
-			{% include "Cards_brochure.html" %}
-			
-		</section>
-		<section>
-			{% if 'TexteAccueil' in data.config %}
-				{% set v = txt_content(name=data.config.TexteAccueil) %}
-				{% if v %}
-					{{ v | safe }}
-				{% endif %}
-			{% endif %}
-		</section>
-		
-		{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
-		{% if serie %}
-			<section>
-				<h2>{{ serie | get(key="Titre", default="Notre sélection") }}</h2>
-				{% include "episodes_serie.html" %}
-			</section>
-		{% endif %}
+				
+				
+					<p>Cette radio a pour objectif de tester la solution technique <strong>oma-radio </strong>developpée par l'<strong>association APEOR</strong>.</p>
+<p>Elle est composée d'extraits de musiques et de courts contenus libres de droits utilisés pour démontrer les fonctionnalitées de la solution dans la derniere version de développement.</p>
+<p>Il est possible (en utilisant l'onglet nous contacter) de demander un accès au site de gestion de cette radio de démonstration et ainsi de tester en grandeur nature l'adéquation de notre projet avec votre (future) radio.</p>
+<p> Elle a 2 modes de fonctionnements :</p>
+<li> un mode "normal" avec une programmation sur une semaine</li> 
+<li> un mode "accéleré" on chaque jour est replié sur une heure</li>
+<p> Le mode "accéléré" est très utile pour tester rapidement l'ensemble des fonctionnalités.</p>
 
-		{% if data.episodes_by_date %}
+<p> En théorie la programmation est la suivante :</p>
+<p> A pile : un top horaire</p>
+<p> A +10 minutes [10H]  : la diffusion d'une émission multimédia.</p>
+<p> A +20 minutes [11H]  : la rediffusion de l'épisode le plus récent de la serie de podcasts chroniques.</p>
+<p> A +30 minutes [12H]  : une émission en voice track </p>
+<p> A +40 minutes [13H]  : la rediffusion d'un épisode de la série de podcasts chroniques. </p>
+<p> A +50 minutes [20H]  : l'horoscope ( en voice track). </p>
+<p> A +55 minutes [23h55]: une annonce d'explication.</p>
+<p>Vous pouvez aussi visiter la rubrique <strong>Quelques émissions</strong> et découvrir l'émission <strong>chroniques sur nos radios</strong>.</p>
+
+				
+			
+		</section>
+		
+		
+
+		
 			<section>
 				<h2>Les derniers épisodes</h2>
-				{#{% include "last_podcasts.html" %}#}
-				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
-				{% include "last_episodes.html" %}
-				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
+				
+				<p><a onclick="return internalNavigation(event)" href="episode/index.html">Voir tous les épisodes</a></p>
+				<div class="flex_container">
+	
+		
+		
+		
+		
+		<div class="single_serie">
+	<header>
+		<h4>Chronique multimedia</h4>
+		<p>
+			
+			<span class="ellipsis">Dans <a onclick="return internalNavigation(event)" href="serie/Pac-Multi.html">Chroniques multimedia</a></span>
+		</p>
+	</header>
+	<a onclick="window.OMA_DATA.player.playPodcast('Pac-ChatChien_audio')">
+		
+			<img src="https://alixgith.github.io/website_test//webpL/Pac-Chat.webpL"/>
+		
+	</a>
+	<div class="actions">
+		<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('Pac-ChatChien_audio')">
+			<img src="img/play.svg" alt="Écouter"/>
+		</a>
+		
+		<a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/episode/Pac-ChroniqueChatChien.html')">
+			<img src="img/share.svg" alt="Partager"/>
+		</a>
+		
+			<a href="https://alixgith.github.io/website_test//ogg/Pac-ChatChien_audio.ogg" download="">
+				<img src="img/download.svg" alt="Télécharger"/>
+			</a>
+		
+		<a onclick="return internalNavigation(event)" href="episode/Pac-ChroniqueChatChien.html">
+			<img src="img/plus.svg" />
+		</a>
+	</div>
+	
+		<audio controls="controls" class="tohide" preload="none">
+			<source src="https://alixgith.github.io/website_test//ogg/Pac-ChatChien_audio.ogg" />
+		</audio>
+	
+</div>
+
+
+	
+		
+		
+		
+		
+		<div class="single_serie">
+	<header>
+		<h4>RadioDemo ?</h4>
+		<p>
+			
+			<span class="ellipsis">Dans <a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">Chroniques sur nos radios</a></span>
+		</p>
+	</header>
+	<a onclick="window.OMA_DATA.player.playPodcast('Pac-ChroniqueRadioDemo_V1_audio')">
+		
+			<img src="https://alixgith.github.io/website_test//webpL/Oma-Logo.webpL"/>
+		
+	</a>
+	<div class="actions">
+		<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('Pac-ChroniqueRadioDemo_V1_audio')">
+			<img src="img/play.svg" alt="Écouter"/>
+		</a>
+		
+		<a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/episode/Pac-ChroniqueRadioDemo_V1.html')">
+			<img src="img/share.svg" alt="Partager"/>
+		</a>
+		
+			<a href="https://alixgith.github.io/website_test//ogg/Pac-ChroniqueRadioDemo_V1_audio.ogg" download="">
+				<img src="img/download.svg" alt="Télécharger"/>
+			</a>
+		
+		<a onclick="return internalNavigation(event)" href="episode/Pac-ChroniqueRadioDemo_V1.html">
+			<img src="img/plus.svg" />
+		</a>
+	</div>
+	
+		<audio controls="controls" class="tohide" preload="none">
+			<source src="https://alixgith.github.io/website_test//ogg/Pac-ChroniqueRadioDemo_V1_audio.ogg" />
+		</audio>
+	
+</div>
+
+
+	
+		
+		
+		
+		
+		<div class="single_serie">
+	<header>
+		<h4>Chronique sur le montage du studio</h4>
+		<p>
+			
+			<span class="ellipsis">Dans <a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">Chroniques sur nos radios</a></span>
+		</p>
+	</header>
+	<a onclick="window.OMA_DATA.player.playPodcast('Pac-Studio_audio')">
+		
+			<img src="https://alixgith.github.io/website_test//webpL/Pac-Studio0.webpL"/>
+		
+	</a>
+	<div class="actions">
+		<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('Pac-Studio_audio')">
+			<img src="img/play.svg" alt="Écouter"/>
+		</a>
+		
+		<a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/episode/Pac-Studio.html')">
+			<img src="img/share.svg" alt="Partager"/>
+		</a>
+		
+			<a href="https://alixgith.github.io/website_test//ogg/Pac-Studio_audio.ogg" download="">
+				<img src="img/download.svg" alt="Télécharger"/>
+			</a>
+		
+		<a onclick="return internalNavigation(event)" href="episode/Pac-Studio.html">
+			<img src="img/plus.svg" />
+		</a>
+	</div>
+	
+		<audio controls="controls" class="tohide" preload="none">
+			<source src="https://alixgith.github.io/website_test//ogg/Pac-Studio_audio.ogg" />
+		</audio>
+	
+</div>
+
+
+	
+		
+		
+		
+		
+		<div class="single_serie">
+	<header>
+		<h4>Le projet Oma Radio</h4>
+		<p>
+			
+			<span class="ellipsis">Dans <a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">Chroniques sur nos radios</a></span>
+		</p>
+	</header>
+	<a onclick="window.OMA_DATA.player.playPodcast('Pac-ChroniqueOmaRadio_V1_audio')">
+		
+			<img src="https://alixgith.github.io/website_test//webpL/Oma-Logo.webpL"/>
+		
+	</a>
+	<div class="actions">
+		<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('Pac-ChroniqueOmaRadio_V1_audio')">
+			<img src="img/play.svg" alt="Écouter"/>
+		</a>
+		
+		<a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/episode/Pac-ChroniqueOmaRadio_V1.html')">
+			<img src="img/share.svg" alt="Partager"/>
+		</a>
+		
+			<a href="https://alixgith.github.io/website_test//ogg/Pac-ChroniqueOmaRadio_V1_audio.ogg" download="">
+				<img src="img/download.svg" alt="Télécharger"/>
+			</a>
+		
+		<a onclick="return internalNavigation(event)" href="episode/Pac-ChroniqueOmaRadio_V1.html">
+			<img src="img/plus.svg" />
+		</a>
+	</div>
+	
+		<audio controls="controls" class="tohide" preload="none">
+			<source src="https://alixgith.github.io/website_test//ogg/Pac-ChroniqueOmaRadio_V1_audio.ogg" />
+		</audio>
+	
+</div>
+
+
+	
+</div>
+
+				<p><a onclick="return internalNavigation(event)" href="episode/index.html">Voir tous les épisodes</a></p>
 			</section>
 
 			<section>
 				<h2>Quelques émissions</h2>
-				{% include "last_series.html" %}
+				<div class="flex_container">
+	
+		
+		
+		
+		<div class="single_serie">
+    <header>
+        <h4>Chroniques multimedia</h4>
+		<p>
+			
+
+        <span><a onclick="return internalNavigation(event)" href="serie/Pac-Multi.html">1 épisode</a></span>
+		</p>
+    </header>
+    <a onclick="return internalNavigation(event)" href="serie/Pac-Multi.html">
+    	
+    	    <img src="https://alixgith.github.io/website_test//webpL/RadioDemo-LogoV1.webpL" alt="Logo de la radio" />
+    	
+	</a>
+    <div class="actions">
+        
+        <a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/serie/Pac-Multi.html')">
+            <img src="img/share.svg" alt="Partager"/>
+        </a>
+        <a onclick="return internalNavigation(event)" href="serie/Pac-Multi.html">
+            <img src="img/plus.svg" />
+        </a>
+    </div>
+</div>
+
+
+	
+		
+		
+		
+		<div class="single_serie">
+    <header>
+        <h4>Chroniques sur nos radios</h4>
+		<p>
+			
+
+        <span><a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">3 épisodes</a></span>
+		</p>
+    </header>
+    <a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">
+    	
+    	    <img src="https://alixgith.github.io/website_test//webpL/RadioDemo-LogoV1.webpL" alt="Logo de la radio" />
+    	
+	</a>
+    <div class="actions">
+        
+        <a onclick="openShare(window.location.origin + '&#x2F;website_test&#x2F;website/serie/Pac-Chroniques.html')">
+            <img src="img/share.svg" alt="Partager"/>
+        </a>
+        <a onclick="return internalNavigation(event)" href="serie/Pac-Chroniques.html">
+            <img src="img/plus.svg" />
+        </a>
+    </div>
+</div>
+
+
+	
+</div>
+
 			</section>
-		{% endif %}
+		
 
 		<section id="qui" class="anchor">
 			<h2>Qui sommes nous</h2>
-			{% set v = '' %}
-			{% if 'TextePresentation' in data.config %}
-				{% set v = txt_content(name=data.config.TextePresentation) %}
-			{% endif %}
+			
+			
+				
+			
 
-			{% if v %}
-				{{ v | safe }}
-			{% else %}
-				<p>Un super collectif évidement !</p>
-			{% endif %}
+			
+				<p>Nous somme une bande de copains regroupés au sein de l'association APEOR.</p>
+<p>Association Pour l'Expression Orale et Radiophonique.</p>
+<p>Nous développons la solution <strong>Oma-Radio</strong> qui permet de <strong>"Faire de la radio partout, simplement" </strong></p>
+<p>Nous proposons régulièrement à des écoles, collèges, MJC etc... d'utiliser notre solution pour piloter <strong>eux-mêmes leur radio. </strong> </p>
+<p>Comme toute association loi de 1901, nous serons heureux de vous compter parmis nos membres. Nous veillons à ce que chacun puisse apporter sa pierre à l'édifice en partageant ses compétences et ses envies. ( impression 3D , mécanique, éléctronique, systèmes embarqués, réseau, serveurs, sites internets ...)</p>
+
+			
 		</section>
 		<section id="contact" class="anchor">
 			<h2>Nous contacter</h2>
-			{% set v = '' %}
-			{% if 'TexteContact' in data.config %}
-				{% set v = txt_content(name=data.config.TexteContact) %}
-			{% endif %}
+			
+			
+				
+			
 
-			{% if v %}
-				{{ v | safe }}
-			{% else %}
-				<p>Les informations de contact arrivent bientôt ;)</p>
-			{% endif %}
+			
+				<p>Une remarque ? Envie d'en savoir plus ? Un projet de radio ? D'émission ?</p>
+<p>Pour ces questions et toutes les autres, notre adresse mail et notre formulaire de contact sont à votre disposition :</p>
+<p>ce lien vous redirige vers le site de présentation <strong><a href="https://oma-radio.fr/">oma-radio.fr</a>. Vous Pouvez aussi remplir le formulaire de contact <a href="mailto:contact@oma-radio.fr">contact@oma-radio.fr</a></strong></p>
+<p>A tout de suite :)</p>
+
+			
 		</section>
+
+		</main>
 		
-		<section>
-			<script src="script/main.js"></script>
-			<script src="../player/chunk-vendors.html"></script><script src="../player/app.html"></script><link href="../player/app-2.html" rel="stylesheet">
-			
-			<script type="text/javascript" src="wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js" id="mainjs-js" data-rocket-defer defer></script>
-			
-		</section>
-{% endblock content %}
+		<div id="app"></div>
 
+		<footer>
+		    <ul>
+			  <li>Site généré par <a href="https://oma-radio.fr/">Oma-Radio</a> pour Radio Démo avec des outils libres</li>
+			  <li>Chaque son, texte, image ou autre contenu a sa propre licence</li>
+			  
+			  	<li><a target="blank" href="https://alixgith.github.io/manager">Gestion de la radio</a></li>
+			  
+		    </ul>
+		</footer>
+		<script>
+		  window.OMA_DATA = null;
+		  window.OMA_CONFIG = {
+			radioHost: '',
+			cleanName: "Radio Démo",
+		    ssl: window.location.protocol == 'index.html',
+		    wsPort: '2000',
+		  }
+			OMA_PROGRAM_DEFAULT_TAB = [
+				
+					
+						
+							"Lundi",
+						
+					
+						
+					
+				
+			];
+		</script>
+
+		<script src="script/main.js"></script>
+		<script src="../player/chunk-vendors.html"></script><script src="../player/app.html"></script><link href="../player/app-2.html" rel="stylesheet">
+		
+		<script type="text/javascript" src="wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js?ver=1756126085" id="mainjs-js" data-rocket-defer defer></script>
+		
+	</body>
+
+<!-- Mirrored from alixgith.github.io/website_test/website/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 23 Feb 2026 13:51:44 GMT -->
+</html>
