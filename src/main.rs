@@ -76,7 +76,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let page_dir = oma.args.output.clone() + "/page/";
     std::fs::create_dir_all(page_dir.clone())?;
 
-
+	
     println!("Construction de Tera et chargement des modèles de page…");
     let mut tera = Tera::default();
     tera.register_function("helper_test", helper_test);
@@ -104,9 +104,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
         ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
         ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
-		
-		
-
+		("wp-content", include_dir!("src/wp-content")),
+		("wp-includes", include_dir!("src/wp-includes")),
+		("wp-json", include_dir!("src/wp-json")),
 		
 		("img/download.svg", include_str!("templates/img/download.svg")),
         ("img/earth.svg", include_str!("templates/img/earth.svg")),
@@ -182,23 +182,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
 	).unwrap();
 
-	let _ = std::fs::write(
-		oma.args.output.clone() + "/wp-json",
-		include_dir!("src/wp-json"),
 
-	).unwrap();
-	
-	let _ = std::fs::write(
-		oma.args.output.clone() + "/wp-includes",
-		include_dir!("src/wp-includes"),
-
-	).unwrap();
-	
-	let _ = std::fs::write(
-		oma.args.output.clone() + "/wp-content",
-		include_dir!("src/wp-content"),
-
-	).unwrap();
 
 	
 	let favicon = std::fs::read(
