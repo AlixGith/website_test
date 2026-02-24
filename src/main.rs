@@ -104,9 +104,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
         ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
         ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
-		("wp-content", include_dir!("src/wp-content")),
-		("wp-includes", include_dir!("src/wp-includes")),
-		("wp-json", include_dir!("src/wp-json")),
+
 		
 		("img/download.svg", include_str!("templates/img/download.svg")),
         ("img/earth.svg", include_str!("templates/img/earth.svg")),
@@ -116,6 +114,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("img/rss.svg", include_str!("templates/img/rss.svg")),
         ("img/share.svg", include_str!("templates/img/share.svg")),
     ])?;
+
+	let dirs: Vec<(&str, Dir<'static>)> = vec![
+    ("wp-content", include_dir!("src/wp-content")),
+    ("wp-includes", include_dir!("src/wp-includes")),
+    ("wp-json", include_dir!("src/wp-json")),
+	];
 
     let mut context = tera::Context::new();
     context.insert("data", &data);
