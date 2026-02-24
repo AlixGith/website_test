@@ -92,10 +92,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("last_series.html", include_str!("templates/last_series.html")),
 		("episodes_serie.html", include_str!("templates/episodes_serie.html")),
         ("last_episodes.html", include_str!("templates/last_episodes.html")),
+        ("Cards_brochure.html", include_str!("templates/Cards_brochure.html")),
 
         ("style.css", include_str!("templates/style.css")),
-
-        ("img/download.svg", include_str!("templates/img/download.svg")),
+		
+		
+		
+        ("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js?ver=1756126085")),
+        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css?ver=1725213090")),
+		("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css?ver=1759912223")),
+		("mailin-front3abd.css", include_str!("wp-content/plugins/mailin/css/mailin-front3abd.css?ver=1531880566")),
+		("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js?ver=1700586616")),
+		
+		
+		
+        ("img/cropped-favicon-4-t-384x384.png", include_str!("templates/img/cropped-favicon-4-t-384x384.png")),
+        
+		
+		("img/download.svg", include_str!("templates/img/download.svg")),
         ("img/earth.svg", include_str!("templates/img/earth.svg")),
         ("img/home.svg", include_str!("templates/img/home.svg")),
         ("img/play.svg", include_str!("templates/img/play.svg")),
@@ -151,6 +165,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         tera.render("style.css", &context).unwrap()
     );
 
+
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/mainca34.js",
+        tera.render("mainca34.js", &context).unwrap()
+    );
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/jquery.modal90f6.css",
+        tera.render("jquery.modal90f6.css", &context).unwrap()
+    );let _ = std::fs::write(
+        oma.args.output.clone() + "/customf9d8.css",
+        tera.render("customf9d8.css", &context).unwrap()
+    );let _ = std::fs::write(
+        oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
+        tera.render("jquery-3.6.0.minf9df.js", &context).unwrap()
+    );
+	
     println!("Construction des icones du site…");
     let _ = std::fs::write(
         img_dir.clone() + "download.svg",
@@ -159,6 +189,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
 
     let _ = std::fs::write(
+        img_dir.clone() + "cropped-favicon-4-t-384x384.png",
+        tera.render("img/cropped-favicon-4-t-384x384.png", &context).unwrap()
+    );
+	
+	 let _ = std::fs::write(
         img_dir.clone() + "earth.svg",
         tera.render("img/earth.svg", &context).unwrap()
     );
