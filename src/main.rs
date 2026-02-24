@@ -7,6 +7,10 @@ use oma_helpers::{Data, Oma, FicContent};
 use tera::{Tera, Value, Error, to_value};
 
 
+/*For the news documents */
+use std::fs;
+use std::path::Path;
+
 /* Helper functions for templates */
 use std::collections::HashMap;
 fn helper_test(arg: &HashMap<String, Value>) -> Result<Value, Error> {
@@ -155,7 +159,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         oma.args.output.clone() + "/style.css",
         tera.render("style.css", &context).unwrap()
     );
-		
+
+	
 fn copy_assets(output: &str) -> std::io::Result<()> {
     let output_dir = Path::new(output);
     fs::create_dir_all(output_dir)?;
