@@ -98,15 +98,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		
 		
 		
-        ("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js?ver=1756126085")),
-        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css?ver=1725213090")),
-		("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css?ver=1759912223")),
-		("mailin-front3abd.css", include_str!("wp-content/plugins/mailin/css/mailin-front3abd.css?ver=1531880566")),
-		("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js?ver=1700586616")),
+        ("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js")),
+        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
+		("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
+		("mailin-front3abd.css", include_str!("wp-content/plugins/mailin/css/mailin-front3abd.css")),
+		("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
 		
 		
 		
-        ("img/cropped-favicon-4-t-384x384.png", include_str!("templates/img/cropped-favicon-4-t-384x384.png")),
+        ("img/cropped-favicon-4-t-384x384.png", include_bytes!("templates/img/cropped-favicon-4-t-384x384.png")),
         
 		
 		("img/download.svg", include_str!("templates/img/download.svg")),
@@ -188,11 +188,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     );
 
-    let _ = std::fs::write(
-        img_dir.clone() + "cropped-favicon-4-t-384x384.png",
-        tera.render("img/cropped-favicon-4-t-384x384.png", &context).unwrap()
-    );
-	
+
+	let _ = std::fs::write(
+    img_dir.clone() + "cropped-favicon-4-t-384x384.png",
+    FAVICON
+	);
 	 let _ = std::fs::write(
         img_dir.clone() + "earth.svg",
         tera.render("img/earth.svg", &context).unwrap()
