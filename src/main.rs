@@ -11,8 +11,7 @@ use tera::{Tera, Value, Error, to_value};
 use std::fs;
 use std::path::Path;
 
-	use include_dir::{include_dir, Dir};
-	use std::path::Path;
+use include_dir::{include_dir, Dir};
 	
 /* Helper functions for templates */
 use std::collections::HashMap;
