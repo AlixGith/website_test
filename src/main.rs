@@ -182,10 +182,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
 	)?;
 
-	const PROJECT_DIR: Dir = include_dir!("src/wp-json");
-	const PROJECT_DIR2: Dir = include_dir!("src/wp-includes");
-	const PROJECT_DIR3: Dir = include_dir!("src/wp-content");
+	static PROJECT_DIR: Dir = include_dir!("src/wp-json");
+	static PROJECT_DIR2: Dir = include_dir!("src/wp-includes");
+	static PROJECT_DIR3: Dir = include_dir!("src/wp-content");
 
+	let body = PROJECT_DIR.contents_utf8().unwrap();
+	let body = PROJECT_DIR2.contents_utf8().unwrap();
+	let body = PROJECT_DIR3.contents_utf8().unwrap();
+	
 	let favicon = std::fs::read(
     "src/templates/img/cropped-favicon-4-t-384x384.png"
 	).unwrap();
