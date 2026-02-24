@@ -180,25 +180,25 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	let _ = std::fs::write(
 	    oma.args.output.clone() + "/mainca34.js",
 	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
-	)?;
+	).unwrap();
 
 	let _ = std::fs::write(
 		oma.args.output.clone() + "/wp-json",
 		include_dir!("src/wp-json"),
 
-	}.unwrap();
+	).unwrap();
 	
 	let _ = std::fs::write(
 		oma.args.output.clone() + "/wp-includes",
 		include_dir!("src/wp-includes"),
 
-	}.unwrap();
+	).unwrap();
 	
 	let _ = std::fs::write(
 		oma.args.output.clone() + "/wp-content",
 		include_dir!("src/wp-content"),
 
-	}.unwrap();
+	).unwrap();
 
 	
 	let favicon = std::fs::read(
