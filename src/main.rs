@@ -176,9 +176,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
 	
 	let _ = std::fs::write(
-        oma.args.output.clone() + "/mainca34.js",
-        tera.render("mainca34.js", &context).unwrap()
-    );
+	    oma.args.output.clone() + "/mainca34.js",
+	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
+	)?;
 
     println!("Construction des icones du site…");
     let _ = std::fs::write(
