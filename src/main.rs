@@ -103,7 +103,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
         ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
 
-		
+		("mainca34.js", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js")),
+
 		
 		
 
@@ -175,6 +176,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	let _ = std::fs::write(
         oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
         tera.render("jquery-3.6.0.minf9df.js", &context).unwrap()
+    );
+	
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/mainca34.js",
+        tera.render("mainca34.js", &context).unwrap()
     );
 
     println!("Construction des icones du site…");
