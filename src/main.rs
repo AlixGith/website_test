@@ -99,6 +99,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Cards_brochure.html", include_str!("templates/Cards_brochure.html")),
 
         ("style.css", include_str!("templates/style.css")),
+        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
+        ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
+        ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
+
 		
 		
 		
@@ -160,25 +164,18 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         tera.render("style.css", &context).unwrap()
     );
 
-	
-fn copy_assets(output: &str) -> std::io::Result<()> {
-    let output_dir = Path::new(output);
-    fs::create_dir_all(output_dir)?;
-
-    let files = [
-        ("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js", "mainca34.js"),
-        ("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css", "jquery.modal90f6.css"),
-        ("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css", "customf9d8.css"),
-        ("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js", "jquery-3.6.0.minf9df.js"),
-    ];
-
-    for (src, filename) in files {
-        let content = fs::read(src)?;
-        fs::write(output_dir.join(filename), content)?;
-    }
-
-    Ok(())
-}
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/jquery.modal90f6.css",
+        tera.render("jquery.modal90f6.css", &context).unwrap()
+    );
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/customf9d8.css",
+        tera.render("customf9d8.css", &context).unwrap()
+    );
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
+        tera.render("jquery-3.6.0.minf9df.js", &context).unwrap()
+    );
 
     println!("Construction des icones du site…");
     let _ = std::fs::write(
