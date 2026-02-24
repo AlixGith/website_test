@@ -11,7 +11,9 @@
 		<link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-384x384.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-360x360.png" />
 	</head>
-	    <div  class="container-header">
+            <header class="banner  "
+    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
+    <div  class="container-header">
 
         <div class="row align-items-center height-100 ">
             <div class="flex col-md-4 col-4 no-padding nav_container">
@@ -48,6 +50,33 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div  class="sticky_homebar">
+        <ul id="mainNav" class="select">
+            <li class="init"></li>
+        </ul>
+    </div>
+
+
+
+            <div  class="links_container">
+
+                    <div class="header-links">
+                <div class="menu-header-links-container"><ul id="menu-header-links" class="header-links-left"><li id="menu-item-268540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268540"><a href="c-etait-quoi-ce-titre/index.html">c’était quoi ?</a></li>
+<li id="menu-item-268755" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-268755"><a href="serie/index.html">émissions</a></li>
+<li id="menu-item-268580" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268580"><a target="_blank" href="programme.html">programme</a></li>
+<li id="menu-item-268542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-268542"><a href="index.html#qui">La radio</a></li>
+<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="page/RadioDemo-Specification.html">Articles</a></li>
+</ul></div>
+                <div class="menu-header-links-right-container"><ul id="menu-header-links-right" class="header-links-right"><li id="menu-item-268547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268547"><a target="_blank" href="https://b11080f7.sibforms.com/serve/MUIEAPY5R7tO4dG0xxBqvtGfcErCQuaQn3rGCY0zqloreyI853gyAovdSRST7K2Nm3PaEcjK20GkbZog6VvgwMwww772by7A0FzhaJKzfdtDCPZQR9v7fh01M0MD3P5JHnUw0dN8af5V-e33KN6TVoitPf8FL5w_Cp3ffYnaJFnV1LBK-BHY3uav5uY9hsc1UCZksvb_UFCYm7Ev?utm_source=sendinblue&amp;utm_campaign=NOVA%20Classics%20Vinyles&amp;utm_medium=email">newsletter</a></li>
+
+</ul></div>
+            </div>
+            </div>
+    
+    </header>
+
     </div>
 	<body id="mainbody">
 		<nav id="mainmenu">
