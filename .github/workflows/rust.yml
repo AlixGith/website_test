@@ -25,8 +25,7 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
       - name: Extract content
         run: |
-          get src/wp-content.zip
-          unzip wp-content.zip
+          unzip src/wp-content.zip -d src/
           
         # NOUVELLE ÉTAPE : Déplacer l'index.html de la racine vers le dossier soundbase
       - name: Move root index.html to soundbase
