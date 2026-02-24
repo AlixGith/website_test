@@ -26,7 +26,9 @@ jobs:
       - name: Extract content
         run: |
           unzip src/wp-content.zip -d src/
-          
+
+      - name : Include
+        run : cargo add include_dir
         # NOUVELLE ÉTAPE : Déplacer l'index.html de la racine vers le dossier soundbase
       - name: Move root index.html to soundbase
         run: mv index.html soundbase/index.html
