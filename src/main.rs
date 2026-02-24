@@ -50,7 +50,29 @@ fn txt_content(oma: Oma) -> impl tera::Function {
         }
     })
 }
+fn write_embedded_dir(
+    dir: &Dir,
+    output_root: &Path,
+) -> std::io::Result<()> {
+    // Écrit les fichiers du dossier courant
+    for file in dir.files() {
+        let relative_path = file.path();
+        let output_path = output_root.join(relative_path);
 
+        if let Some(parent) = output_path.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+
+        std::fs::write(&output_path, file.contents())?;
+    }
+
+    // Parcours récursif des sous-dossiers
+    for subdir in dir.dirs() {
+        write_embedded_dir(subdir, output_root)?;
+    }
+
+    Ok(())
+}
 
 /* Main */
 
@@ -101,9 +123,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Cards_brochure.html", include_str!("templates/Cards_brochure.html")),
 
         ("style.css", include_str!("templates/style.css")),
-        ("jquery.modal90f6.css", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery.modal90f6.css")),
-        ("customf9d8.css", include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/customf9d8.css")),
-        ("jquery-3.6.0.minf9df.js", include_str!("wp-content/themes/lnei-wp-theme/resources/assets/vendor/jquery-3.6.0.minf9df.js")),
 
 		
 		("img/download.svg", include_str!("templates/img/download.svg")),
@@ -168,23 +187,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         tera.render("style.css", &context).unwrap()
     );
 
-	let _ = std::fs::write(
-        oma.args.output.clone() + "/jquery.modal90f6.css",
-        tera.render("jquery.modal90f6.css", &context).unwrap()
-    );
-	let _ = std::fs::write(
-        oma.args.output.clone() + "/customf9d8.css",
-        tera.render("customf9d8.css", &context).unwrap()
-    );
-	let _ = std::fs::write(
-        oma.args.output.clone() + "/jquery-3.6.0.minf9df.js",
-        tera.render("jquery-3.6.0.minf9df.js", &context).unwrap()
-    );
-	
-	let _ = std::fs::write(
-	    oma.args.output.clone() + "/mainca34.js",
-	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
-	).unwrap();
 
 
 
@@ -268,7 +270,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             );
         }
     }
+	
+	println!("Copie des ressources WordPress embarquées…");
 
+	let output_root = Path::new(&oma.args.output);
+	
+	for (name, dir) in &dirs {
+	    let target_dir = output_root.join(name);
+	    std::fs::create_dir_all(&target_dir)?;
+	    write_embedded_dir(dir, &target_dir)?;
+	}
 
 	if detected_error {
 		println!("Génération terminée, une ou plusieurs erreur(s) détectée(s).");
