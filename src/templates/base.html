@@ -6,7 +6,49 @@
 		<title>{% block title %}{% endblock title %}{{ data.config.PrettyName }}</title>
 		<meta charset="utf8" />
 		<link rel="stylesheet" href="{{data.oma.args.website_prefix}}/style.css" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-64x64.png" sizes="32x32" />
+		<link rel="icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-384x384.png" sizes="192x192" />
+		<link rel="apple-touch-icon" href="wp-content/thumbnails/uploads/sites/2/2024/08/cropped-favicon-4-t-360x360.png" />
 	</head>
+	    <div  class="container-header">
+
+        <div class="row align-items-center height-100 ">
+            <div class="flex col-md-4 col-4 no-padding nav_container">
+                <nav class="nav-primary">
+                    <div class="menu-wrapper">
+                        <div class="menu-lnei menu-content">
+                            <div class="header">
+                                <div class="menu-toggle" on="tap:AMP.setState( { navMenuExpanded: ! navMenuExpanded} )"
+                                    [class]="'menu-toggle' + ( navMenuExpanded ? ' toggled-on' : '' )">
+                                    <span class="ico"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                            </div>
+            <div class="col-4 padlr-mob0 height-100 logo_container">
+                                    <div class="logo_site">
+                                                                            <h1>
+                                                <a class="brand" href="index.html">
+                            <img class="logo logo-white" src="wp-content/uploads/sites/2/2025/05/logo-t-1700x1030-3.png" alt="Radio Grabuges" />
+                                                            <img class="logo logo-black" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Radio Grabuges" data-lazy-src="https://www.nova.fr/wp-content/uploads/sites/2/2025/05/logo-noir-t-1700x1030-3.png" /><noscript><img class="logo logo-black" src="wp-content/uploads/sites/2/2025/05/logo-noir-t-1700x1030-3.png" alt="Radio Grabuges" /></noscript>
+                                                    </a>
+                                                    </h1>
+                                            </div>
+                            </div>
+            <div class="text-right col-md-4 col-4 right-part usernav_container">
+                <div class="icons-header">
+
+
+
+                    <a href="javascript:void(0)" class="search search_toggle"><span class="icon-Search"></span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
 	<body id="mainbody">
 		<nav id="mainmenu">
 			<ul>
