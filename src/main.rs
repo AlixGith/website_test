@@ -11,6 +11,9 @@ use tera::{Tera, Value, Error, to_value};
 use std::fs;
 use std::path::Path;
 
+	use include_dir::{include_dir, Dir};
+	use std::path::Path;
+	
 /* Helper functions for templates */
 use std::collections::HashMap;
 fn helper_test(arg: &HashMap<String, Value>) -> Result<Value, Error> {
@@ -180,13 +183,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	    include_str!("wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js"),
 	)?;
 
-    println!("Construction des icones du site…");
-    let _ = std::fs::write(
-        img_dir.clone() + "download.svg",
-        tera.render("img/download.svg", &context).unwrap()
-
-    );
-
+	const PROJECT_DIR: Dir = include_dir!("/wp-json");
+	const PROJECT_DIR2: Dir = include_dir!("/wp-includes");
+	const PROJECT_DIR3: Dir = include_dir!("/wp-content");
 
 	let favicon = std::fs::read(
     "src/templates/img/cropped-favicon-4-t-384x384.png"
