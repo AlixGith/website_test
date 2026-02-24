@@ -82,12 +82,18 @@
 		
 	</header>
 	
-			{% if data.config.Logo %}
-		<div>
-			<img class="logo" src="{{data.oma.args.soundbase_prefix}}/webpL/{{data.config.Logo}}.webpL" />
-		</div>
+		{% if data.config.Logo %}
+			<div>
+				<img class="logo" src="wp-content/uploads/sites/2/2025/05/logo-t-1700x1030-3.png" />
+			</div>
 		{% endif %}
 		
+		<section>
+	
+	<!-- Le carroussel de carte -->
+			{% include "Cards_brochure.html" %}
+			
+		</section>
 
 		<section>
 			{% if 'TexteAccueil' in data.config %}
