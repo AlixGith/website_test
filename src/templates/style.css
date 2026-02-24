@@ -140,6 +140,14 @@ nav#mainmenu img {
 	font-weight: bold;
 }
 
+.Radio_on
+{
+	position: fixed;
+  	text-align: right;
+ 	box-sizing: unset;
+    background-color: black;
+}
+
 /******************************************************************************
  * 							Footer
  *****************************************************************************/
