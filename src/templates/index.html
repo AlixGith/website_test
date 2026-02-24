@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+
+<section>
+	
+	<!-- Le carroussel de carte -->
+	{% include "Cards_brochure.html" %}
+	
+</section>
 	<header id="top">
 					
 <!-- Les styles pour les aspects -->
@@ -81,12 +88,7 @@
 		</div>
 		{% endif %}
 		
-		<section>
-			
-			<!-- Le carroussel de carte -->
-			{% include "Cards_brochure.html" %}
-			
-		</section>
+
 		<section>
 			{% if 'TexteAccueil' in data.config %}
 				{% set v = txt_content(name=data.config.TexteAccueil) %}
