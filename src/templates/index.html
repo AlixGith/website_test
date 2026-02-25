@@ -82,15 +82,29 @@
 		</section>
 		{% if data.episodes_by_date %}
 			<section>
-				<h2>Les derniers épisodes</h2>
+				<div class="header_slider--header">
+													
+					<div class="right">
+						<div class="title">Emission</div>
+						<div class="subtitle">Voir tous les épisodes</div>
+						<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+				  </div>
+							
+				</div>
 				{#{% include "last_podcasts.html" %}#}
-				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
+				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/"></a></p>
 				{% include "last_episodes.html" %}
 				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
 			</section>
 
 			<section>
-				<h2>Quelques émissions</h2>
+				<div class="header_slider--header">
+													
+					<div class="right">
+						<div class="title">Quelques séries </div>
+				  </div>
+							
+				</div>
 				{% include "last_series.html" %}
 			</section>
 		{% endif %}
