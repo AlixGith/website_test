@@ -141,6 +141,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ("wp-content", include_dir!("src/wp-content")),
     ("wp-includes", include_dir!("src/wp-includes")),
     ("wp-json", include_dir!("src/wp-json")),
+    ("img", include_dir!("src/templates/img")),
 	];
 
     let mut context = tera::Context::new();
@@ -197,71 +198,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 
 	
-	let favicon = std::fs::read(
-    "src/templates/img/cropped-favicon-4-t-384x384.png"
-	).unwrap();
-	
-	let _ = std::fs::read(
-    "src/templates/img/Brochure_1.png"
-	).unwrap();
-	
-	let _ = std::fs::read(
-    "src/templates/img/Brochure_2.png"
-	).unwrap();
-	
-	let _ = std::fs::read(
-    "src/templates/img/Brochure_3.jpg"
-	).unwrap();
-	
-	let _ = std::fs::write(
-	    img_dir.clone() + "cropped-favicon-4-t-384x384.png",
-	    favicon
-	);
-	let _ = std::fs::write(
-	img_dir.clone() + "Brochure_1.png",
-	tera.render("img/Brochure_1.png", &context).unwrap()
-	);
-    let _ = std::fs::write(
-	img_dir.clone() + "Brochure_2.png",
-	
-	tera.render("img/Brochure_2.png", &context).unwrap()
-	);
-	
-	let _ = std::fs::write(
-	img_dir.clone() + "Brochure_3.jpg",
-	tera.render("img/Brochure_3.jpg", &context).unwrap()
-	);
-	
-	 let _ = std::fs::write(
-        img_dir.clone() + "earth.svg",
-        tera.render("img/earth.svg", &context).unwrap()
-    );
-
-    let _ = std::fs::write(
-        img_dir.clone() + "home.svg",
-        tera.render("img/home.svg", &context).unwrap()
-    );
-
-    let _ = std::fs::write(
-        img_dir.clone() + "play.svg",
-        tera.render("img/play.svg", &context).unwrap()
-    );
-
-    let _ = std::fs::write(
-        img_dir.clone() + "plus.svg",
-        tera.render("img/plus.svg", &context).unwrap()
-    );
-
-    let _ = std::fs::write(
-        img_dir.clone() + "rss.svg",
-        tera.render("img/rss.svg", &context).unwrap()
-    );
-
-    let _ = std::fs::write(
-        img_dir.clone() + "share.svg",
-        tera.render("img/share.svg", &context).unwrap()
-    );
-
     let _ = std::fs::write(
         oma.args.output.clone() + "/script/main.js",
         include_str!("script/main.js")
