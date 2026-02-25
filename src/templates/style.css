@@ -174,7 +174,6 @@ footer ul {
  *****************************************************************************/
 .flex_container {
 	display: flex;
-	flex-wrap: wrap;
 	margin: 10px auto 10px auto;
 	justify-content: flex-start;
 	gap: 10px;
@@ -186,12 +185,12 @@ footer ul {
 }
 
 .single_serie {
-	border: 3px #DDD solid;
-	border-radius: 20px;
+	border: 3px #000000 solid;
+	border-radius: 10px;
 	width: 350px;
 	padding: 0;
 	margin: 5px;
-	background-color: #f9d3d3;
+	background-color: #ffffff;
 	/*float: left; /* For episode.html page */
 }
 
