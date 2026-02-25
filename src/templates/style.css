@@ -184,13 +184,13 @@ footer ul {
 }
 
 .single_serie {
-	border: 3px #000000 solid;
+	border: 3px #0000 solid;
 	border-radius: 20px;
 	width: 350px;
 	padding: 0;
 	margin: 5px;
-	background-color: #000;
-	color: white;
+	background-color: #0000;
+	color: black;
 	/*float: left; /* For episode.html page */
 }
 
@@ -214,6 +214,10 @@ footer ul {
 	font-size: 30px;
 	padding-top: 10px;
 	font-weight: normal;
+	
+	background-color: black;
+	border-radius: 20px;
+  	color: white;
 }
 
 .single_serie > header span {
@@ -221,10 +225,12 @@ footer ul {
 	text-align: right;
 	height: 1.1em;
 	padding: 3px;
+	color : white;
 }
 
 .single_serie > header p {
 	text-align: right;
+	
 }
 
 .single_serie > a > img, .single_serie > a {
@@ -234,6 +240,7 @@ footer ul {
 	display: block;
 	margin: 5px auto;
 	border-radius: 5%;
+	color : white;
 }
 
 .single_serie .actions {
