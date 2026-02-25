@@ -166,7 +166,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         oma.args.output.clone() + "/index.html",
         tera.render("index.html", &context).unwrap()
     );
-
+	let _ = std::fs::write(
+        oma.args.output.clone() + "/Communiqués.html",
+        tera.render("Communiqués.html", &context).unwrap()
+    );
 
 	if ! data.prog.is_empty {
     	let _ = std::fs::write(
