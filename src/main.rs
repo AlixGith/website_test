@@ -200,10 +200,29 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	let favicon = std::fs::read(
     "src/templates/img/cropped-favicon-4-t-384x384.png"
 	).unwrap();
+	let favicon = std::fs::read(
+    "src/templates/img/Brochure_1.png"
+	).unwrap();let favicon = std::fs::read(
+    "src/templates/img/Brochure_2.png"
+	).unwrap();let favicon = std::fs::read(
+    "src/templates/img/Brochure_3.jpg"
+	).unwrap();
 	
 	let _ = std::fs::write(
 	    img_dir.clone() + "cropped-favicon-4-t-384x384.png",
 	    favicon
+	)
+	;let _ = std::fs::write(
+	img_dir.clone() + "Brochure_1.png",
+	favicon
+	)
+	;let _ = std::fs::write(
+	img_dir.clone() + "Brochure_2.png",
+	favicon
+	)
+	;let _ = std::fs::write(
+	img_dir.clone() + "Brochure_3.jpg",
+	favicon
 	);
 	
 	 let _ = std::fs::write(
