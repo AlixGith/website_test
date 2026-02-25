@@ -214,15 +214,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	)
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_1.png",
-	favicon
+	
 	)
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_2.png",
-	favicon
+	
 	)
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_3.jpg",
-	favicon
+	
 	);
 	
 	 let _ = std::fs::write(
