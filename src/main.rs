@@ -122,6 +122,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("last_episodes.html", include_str!("templates/last_episodes.html")),
         ("Cards_brochure.html", include_str!("templates/Cards_brochure.html")),
         ("Section_accueil.html", include_str!("templates/Section_accueil.html")),
+		
+        ("Section_accueil.html", include_str!("templates/Communiqués.html")),
 
         ("style.css", include_str!("templates/style.css")),
 
@@ -247,6 +249,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         	let _ = std::fs::write(
         	    page_dir.clone() + &page_name + ".html",
         	    tera.render("page.html", &context).unwrap()
+				
         	);
 		}
     }
