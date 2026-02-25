@@ -84,7 +84,7 @@
 				{% include "last_episodes.html" %}
 				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
 			</section>
-		<section>
+		<section id="qui">
 			
 			{% include "Description_liaison_radio.html" %}
 			
@@ -95,32 +95,11 @@
 			</section>
 		{% endif %}
 
-		<section id="qui" class="anchor">
-			<h2>Qui sommes nous</h2>
-			{% set v = '' %}
-			{% if 'TextePresentation' in data.config %}
-				{% set v = txt_content(name=data.config.TextePresentation) %}
-			{% endif %}
+<section>
 
-			{% if v %}
-				{{ v | safe }}
-			{% else %}
-				<p>Un super collectif évidement !</p>
-			{% endif %}
-		</section>
-		<section id="contact" class="anchor">
-			<h2>Nous contacter</h2>
-			{% set v = '' %}
-			{% if 'TexteContact' in data.config %}
-				{% set v = txt_content(name=data.config.TexteContact) %}
-			{% endif %}
-
-			{% if v %}
-				{{ v | safe }}
-			{% else %}
-				<p>Les informations de contact arrivent bientôt ;)</p>
-			{% endif %}
-		</section>
+			{% include "Musiques_radio.html" %}
+	
+</section>
 		
 		<section>
 			<script src="script/main.js"></script>
