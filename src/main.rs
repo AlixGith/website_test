@@ -200,11 +200,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	let favicon = std::fs::read(
     "src/templates/img/cropped-favicon-4-t-384x384.png"
 	).unwrap();
+	
 	let favicon = std::fs::read(
     "src/templates/img/Brochure_1.png"
-	).unwrap();let favicon = std::fs::read(
+	).unwrap();
+	
+	let favicon = std::fs::read(
     "src/templates/img/Brochure_2.png"
-	).unwrap();let favicon = std::fs::read(
+	).unwrap();
+	
+	let favicon = std::fs::read(
     "src/templates/img/Brochure_3.jpg"
 	).unwrap();
 	
@@ -215,14 +220,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_1.png",
 	
+	tera.render("img/Brochure_1.png", &context).unwrap()
 	)
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_2.png",
 	
+	tera.render("img/Brochure_2.png", &context).unwrap()
 	)
 	;let _ = std::fs::write(
 	img_dir.clone() + "Brochure_3.jpg",
-	
+	tera.render("img/Brochure_3.jpg", &context).unwrap()
 	);
 	
 	 let _ = std::fs::write(
