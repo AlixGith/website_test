@@ -29,10 +29,6 @@ i {
 
 main {
 	margin: auto;
-	min-height:82%;
-	min-height:82vh;
-	padding: 10px;
-	padding: 1vw;
 }
 
 body {
@@ -115,7 +111,6 @@ nav#mainmenu img {
 
 #top {
 	text-align: center;
-    margin-bottom: 20%;;
 	display:flex;
 	justify-content: space-evenly;
 }
