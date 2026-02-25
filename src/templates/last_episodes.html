@@ -1,17 +1,22 @@
-<div  class="wrap" role="document" data-barba="container">
-	<div class="swiper-container podcasts_header swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
-		<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1829.78px, 0px, 0px);">
-		{% for t in data.episodes_by_date %}
-			{# TODO paginate #}
-			{% if loop.index > data.config.LastEpisodesInHome | int and not show_all_items %}
-				{% break %}
-			{% endif %}
-			{% set item = data.series[t[0]].episodes[t[1]] %}
-			{% set serie_fic = data.series[t[0]].fic %}
-			{% include "single_episode.html" %}
-		{% endfor %}
+<div class="flex_container">
+	<div class="container-fullslider">
+		<div class="swiper-container swiper_fiveposts">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">																																																										<div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+					<div class="card-podcast">
+						{% for t in data.episodes_by_date %}
+							{# TODO paginate #}
+							{% if loop.index > data.config.LastEpisodesInHome | int and not show_all_items %}
+								{% break %}
+							{% endif %}
+							{% set item = data.series[t[0]].episodes[t[1]] %}
+							{% set serie_fic = data.series[t[0]].fic %}
+							{% include "single_episode.html" %}
+						{% endfor %}
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
 		</div>
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
 	</div>
-	</div>
+</div>
