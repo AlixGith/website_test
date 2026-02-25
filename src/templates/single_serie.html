@@ -1,36 +1,40 @@
-<div class="single_serie">
-    <header>
-        <h4>{{ serie | get(key="Titre", default="") }}</h4>
-		<p>
-			{% if item.Date %}
-				<i>Le {{ item.Date | date_to_ts }}</i><br />
+<div class="js-radio-card swiper-slide cards_header " style="aspect-ratio: 0 !important; width: auto !important; margin-right = 0 !important;">
+
+	<div class="single_serie">
+		<header>
+			<h4>{{ serie | get(key="Titre", default="") }}</h4>
+			<p>
+				{% if item.Date %}
+					<i>Le {{ item.Date | date_to_ts }}</i><br />
+				{% endif %}
+
+			{% set nb = serie | get(key="EpisodeNumber", default=0) -%}
+			<span><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">{{ nb }} épisode{% if nb != "1" %}s{% endif %}</a></span>
+			</p>
+		</header>
+		<a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">
+			{% if serie.Photo %}
+				<img src="{{data.oma.args.soundbase_prefix}}/webpL/{{serie.Photo}}.webpL" />
+			{% elif data.config.Logo %}
+				<img src="{{data.oma.args.soundbase_prefix}}/webpL/{{data.config.Logo}}.webpL" alt="Logo de la radio" />
+			{% else %}
+				<img src="{{data.oma.args.website_prefix}}/img/earth.svg" alt="image par défaut" />
 			{% endif %}
+		</a>
+		<div class="actions">
+			{#
+			<a href="">
+				<img src="{{data.oma.args.website_prefix}}/img/rss.svg" alt="Flux RSS"/>
+			</a>
+			#}
+			<a onclick="openShare(window.location.origin + '{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html')">
+				<img src="{{data.oma.args.website_prefix}}/img/share.svg" alt="Partager"/>
+			</a>
+			<a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">
+				<img src="{{data.oma.args.website_prefix}}/img/plus.svg" />
+			</a>
+		</div>
+	</div>
 
-        {% set nb = serie | get(key="EpisodeNumber", default=0) -%}
-        <span><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">{{ nb }} épisode{% if nb != "1" %}s{% endif %}</a></span>
-		</p>
-    </header>
-    <a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">
-    	{% if serie.Photo %}
-    	    <img src="{{data.oma.args.soundbase_prefix}}/webpL/{{serie.Photo}}.webpL" />
-		{% elif data.config.Logo %}
-    	    <img src="{{data.oma.args.soundbase_prefix}}/webpL/{{data.config.Logo}}.webpL" alt="Logo de la radio" />
-    	{% else %}
-    	    <img src="{{data.oma.args.website_prefix}}/img/earth.svg" alt="image par défaut" />
-    	{% endif %}
-	</a>
-    <div class="actions">
-        {#
-        <a href="">
-            <img src="{{data.oma.args.website_prefix}}/img/rss.svg" alt="Flux RSS"/>
-        </a>
-        #}
-        <a onclick="openShare(window.location.origin + '{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html')">
-            <img src="{{data.oma.args.website_prefix}}/img/share.svg" alt="Partager"/>
-        </a>
-        <a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">
-            <img src="{{data.oma.args.website_prefix}}/img/plus.svg" />
-        </a>
-    </div>
+
 </div>
-
