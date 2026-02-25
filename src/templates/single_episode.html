@@ -1,46 +1,54 @@
 <div class="js-radio-card swiper-slide cards_header ">
-    <div class="cards_content" style="    text-align: center;    color: white;    font: message-box;">
-			{{item | get(key="Titre", default="") }}
-
-				{% if item.Date %}
-					Le {{ item.Date | date_to_ts }}
-				{% endif %}
-				Dans <a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie_fic._filename}}.html">{{serie_fic.Titre}}</a>
-
-        <div class="cards_content__infos" style="background-image: url(img{{data.oma.args.soundbase_prefix}}/webpL/{{item.Photo}}.webpL)">
-
-			
-			<a onclick="window.OMA_DATA.player.playPodcast('{{item.Audio|default(value="")}}')">
-				
-			</a>
-			<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('{{item.Audio|default(value="")}}')">
-					<img src="{{data.oma.args.website_prefix}}/img/play.svg" alt="Écouter"/>
-			</a>
-			
-			{#
-			<a href="">
-				<img src="{{data.oma.args.website_prefix}}/img/rss.svg" alt="Flux RSS"/>
-			</a>
-			#}
-			
-			<a onclick="openShare(window.location.origin + '{{data.oma.args.website_prefix}}/episode/{{item._filename}}.html')">
-					<img src="{{data.oma.args.website_prefix}}/img/share.svg" alt="Partager"/>
-			</a>
-			{% if item.Audio %}
-				<a href="{{data.oma.args.soundbase_prefix}}/ogg/{{item.Audio}}.ogg" download="">
-					<img src="{{data.oma.args.website_prefix}}/img/download.svg" alt="Télécharger"/>
-				</a>
+    <div class="single_serie">
+	<header>
+		<h4 title="{{item | get(key="Titre", default="") }}">{{item | get(key="Titre", default="") }}</h4>
+		<p>
+			{% if item.Date %}
+				<i>Le {{ item.Date | date_to_ts }}</i><br />
 			{% endif %}
-			<a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/{{item._filename}}.html">
-				<img src="{{data.oma.args.website_prefix}}/img/plus.svg" />
+			<span class="ellipsis">Dans <a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie_fic._filename}}.html">{{serie_fic.Titre}}</a></span>
+		</p>
+	</header>
+	<a onclick="window.OMA_DATA.player.playPodcast('{{item.Audio|default(value="")}}')">
+		{% if item.Photo %}
+			<img src="{{data.oma.args.soundbase_prefix}}/webpL/{{item.Photo}}.webpL"/>
+		{% elif data.config.Logo %}
+    	    <img src="{{data.oma.args.soundbase_prefix}}/webpL/{{data.config.Logo}}.webpL" alt="Logo de la radio" />
+		{% else %}
+			<img src="{{data.oma.args.website_prefix}}/img/earth.svg" alt="image par défaut"/>
+		{% endif %}
+	</a>
+	<div class="actions">
+		<a class="toshow" onclick="window.OMA_DATA.player.playPodcast('{{item.Audio|default(value="")}}')">
+			<img src="{{data.oma.args.website_prefix}}/img/play.svg" alt="Écouter"/>
+		</a>
+		{#
+		<a href="">
+			<img src="{{data.oma.args.website_prefix}}/img/rss.svg" alt="Flux RSS"/>
+		</a>
+		#}
+		<a onclick="openShare(window.location.origin + '{{data.oma.args.website_prefix}}/episode/{{item._filename}}.html')">
+			<img src="{{data.oma.args.website_prefix}}/img/share.svg" alt="Partager"/>
+		</a>
+		{% if item.Audio %}
+			<a href="{{data.oma.args.soundbase_prefix}}/ogg/{{item.Audio}}.ogg" download="">
+				<img src="{{data.oma.args.website_prefix}}/img/download.svg" alt="Télécharger"/>
 			</a>
-			
-			{% if item.Audio %}
-				<audio controls="controls" class="tohide" preload="none">
-					<source src="{{data.oma.args.soundbase_prefix}}/ogg/{{item.Audio}}.ogg" />
-				</audio>
-			{% endif %}
-                    
-        </div>
-    </div>
+		{% endif %}
+		<a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/{{item._filename}}.html">
+			<img src="{{data.oma.args.website_prefix}}/img/plus.svg" />
+		</a>
+	</div>
+	{% if item.Audio %}
+		<audio controls="controls" class="tohide" preload="none">
+			<source src="{{data.oma.args.soundbase_prefix}}/ogg/{{item.Audio}}.ogg" />
+		</audio>
+	{% endif %}
 </div>
+
+</div>
+
+
+
+
+
