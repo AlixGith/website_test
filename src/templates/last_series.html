@@ -2,14 +2,14 @@
 <div  class="wrap" role="document" data-barba="container">
 	<div class="swiper-container podcasts_header swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
 		<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1829.78px, 0px, 0px);">
-	{% for t in data.series_by_last_episode %}
-		{# TODO paginate #}
-		{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
-			{% break %}
-		{% endif %}
-		{% set serie = data.series[t[0]].fic %}
-		{% include "single_serie.html" %}
-	{% endfor %}
+			{% for t in data.series_by_last_episode %}
+				{# TODO paginate #}
+				{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
+					{% break %}
+				{% endif %}
+				{% set serie = data.series[t[0]].fic %}
+				{% include "single_serie.html" %}
+			{% endfor %}
 		</div>
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
