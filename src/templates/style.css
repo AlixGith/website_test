@@ -6,7 +6,6 @@
 html, body {
 	margin:0;
 	padding:0;
-	font-family: luciole, tahoma;
 	font-size: 15px;
 }
 
@@ -55,7 +54,7 @@ h2 {
 	color: #c6242f;
 }
 
-h2::before {
+h4::before {
 	content: "📻 ";
 }
 
@@ -186,11 +185,12 @@ footer ul {
 
 .single_serie {
 	border: 3px #000000 solid;
-	border-radius: 10px;
+	border-radius: 20px;
 	width: 350px;
 	padding: 0;
 	margin: 5px;
-	background-color: #ffffff;
+	background-color: #000;
+	color: white;
 	/*float: left; /* For episode.html page */
 }
 
