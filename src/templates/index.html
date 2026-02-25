@@ -55,33 +55,6 @@
 
 		
 	</header>
-			<div>
-		<h2>Écouter</h2>
-			<div class="tohide">
-				<p>En direct</p>
-				<audio controls="controls" preload="none" class="tohide" id="direct">
-					<source src="/direct.ogg" />
-				</audio>
-			</div>
-			<div class="toshow playbuttons">
-				<p><button onclick="window.OMA_DATA.player.playDirect()">En direct</button></p>
-				<p>
-					Ou <button class="toshow" onclick="window.OMA_DATA.player.setDateHuman(
-						document.getElementById('replaydate').value,
-						document.getElementById('replaytime').value
-					)">À une date passée</button> :
-					<input type="date" name="replaydate" id="replaydate" />
-					<input type="time" name="replaytime", id="replaytime" value="10:00" />
-				</p>
-			</div>
-		</div>
-		
-		{% if data.config.Logo %}
-			<div>
-				<img class="logo" src="wp-content/uploads/sites/2/2025/05/logo-t-1700x1030-3.png" />
-			</div>
-		{% endif %}
-		
 		<section>
 	
 	<!-- Le carroussel de carte -->
@@ -90,6 +63,7 @@
 		</section>
 
 		<section>
+			
 			{% include "Section_accueil.html" %}
 			
 		</section>
