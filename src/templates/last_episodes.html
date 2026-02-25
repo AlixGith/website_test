@@ -1,22 +1,21 @@
-<div class="flex_container">
-	<div class="container-fullslider">
-		<div class="swiper-container swiper_fiveposts">
-				<!-- Additional required wrapper -->
-				<div class="swiper-wrapper">																																																										<div class="audio-podcastsCards swiper-slide equal_heightSwiper">
-					<div class="card-podcast">
-						{% for t in data.episodes_by_date %}
-							{# TODO paginate #}
-							{% if loop.index > data.config.LastEpisodesInHome | int and not show_all_items %}
-								{% break %}
-							{% endif %}
-							{% set item = data.series[t[0]].episodes[t[1]] %}
-							{% set serie_fic = data.series[t[0]].fic %}
-							{% include "single_episode.html" %}
-						{% endfor %}
-					</div>
-				</div>
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
+<div class="container-fullslider">
+	<div class="swiper-container swiper_fiveposts">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">																																																										<div class="audio-podcastsCards swiper-slide equal_heightSwiper">
+
+				{% for t in data.episodes_by_date %}
+					{# TODO paginate #}
+					{% if loop.index > data.config.LastEpisodesInHome | int and not show_all_items %}
+						{% break %}
+					{% endif %}
+					{% set item = data.series[t[0]].episodes[t[1]] %}
+					{% set serie_fic = data.series[t[0]].fic %}
+					{% include "single_episode.html" %}
+				{% endfor %}
+
 		</div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+
 	</div>
 </div>
