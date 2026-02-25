@@ -115,7 +115,7 @@ nav#mainmenu img {
 
 #top {
 	text-align: center;
-	margin-bottom: 10vh;
+    margin-bottom: 20%;;
 	display:flex;
 	justify-content: space-evenly;
 }
@@ -24261,7 +24261,7 @@ div[data-radio-slug=nova-bordeaux].cards_header .cards_content::after {
     height: 46px;
   }
   .home .content {
-    padding-top: 176px;
+    
   }
   /* RAJOUTER */
   .filter_bar {
