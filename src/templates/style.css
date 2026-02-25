@@ -117,7 +117,6 @@ nav#mainmenu img {
 	text-align: center;
 	margin-bottom: 10vh;
 	display:flex;
-	flex-wrap: wrap;
 	justify-content: space-evenly;
 }
 
