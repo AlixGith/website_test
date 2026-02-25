@@ -75,7 +75,11 @@
 				{% include "episodes_serie.html" %}
 			</section>
 		{% endif %}
-
+		<section id="qui">
+			
+			{% include "Description_liaison_radio.html" %}
+			
+		</section>
 		{% if data.episodes_by_date %}
 			<section>
 				<h2>Les derniers épisodes</h2>
@@ -84,11 +88,7 @@
 				{% include "last_episodes.html" %}
 				<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
 			</section>
-		<section id="qui">
-			
-			{% include "Description_liaison_radio.html" %}
-			
-		</section>
+
 			<section>
 				<h2>Quelques émissions</h2>
 				{% include "last_series.html" %}
