@@ -2,8 +2,8 @@
 	<div class="container-fullslider">
 		<div class="swiper-container swiper_fiveposts">
 			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper">																																																										<div class="audio-podcastsCards swiper-slide equal_heightSwiper">
-
+			<div class="swiper-wrapper">
+				
 					{% for t in data.episodes_by_date %}
 						{# TODO paginate #}
 						{% if loop.index > data.config.LastEpisodesInHome | int and not show_all_items %}
