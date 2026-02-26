@@ -213,15 +213,15 @@ footer ul {
 }
 
 .single_serie > header h4 {
-	font-size: 2vw;
+	font-size: 1vw;
 	font-weight: normal;
   	color: white;
 }
 
 .single_serie > header span {
-	font-size: 1.5vw;
+	font-size: 1vw;
 }
-.single_serie > header > span a
+.ellipsis .a
 {
 	  color: white !important;
 }
