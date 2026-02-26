@@ -64,9 +64,15 @@
 
 		<section>
 			
+			{% include "carte.html" %}
+			
+		</section>
+		<section>
+			
 			{% include "Section_accueil.html" %}
 			
 		</section>
+
 		
 		{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
 		{% if serie %}
