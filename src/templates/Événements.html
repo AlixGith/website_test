@@ -1,4 +1,14 @@
-<section class="js-section_title header_slider theme-white">
+{% extends "base.html" %}
+
+<html lang="fr">
+	<head>
+		<title>
+	Evenements</title>
+		<meta charset="utf8" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	{% block content %}
+    <section class="js-section_title header_slider theme-white">
                         
                         <div  class="header_slider--header" style="width: 75% !important;">
                             <div class="media" >
@@ -61,3 +71,5 @@
 </div>
 </div>
 </div>
+	{% endblock content %}
+</html>

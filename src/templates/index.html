@@ -15,6 +15,7 @@
 				
 			</section>
 		</section>
+
 		<section id="qui">
 			
 			{% include "Section_accueil.html" %}
@@ -22,20 +23,10 @@
 		</section>
 
 		
-		{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
-		{% if serie %}
-			<section>
-				<h2>{{ serie | get(key="Titre", default="Notre sélection") }}</h2>
-				{% include "episodes_serie.html" %}
-			</section>
-		{% endif %}
+
 		
 
-<section>
 
-			{% include "Musiques_radio.html" %}
-	
-</section>
 		
 		<section>
 			<script src="script/main.js"></script>

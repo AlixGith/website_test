@@ -1,3 +1,12 @@
+{% extends "base.html" %}
+<html lang="fr">
+	<head>
+		<title>
+	Radio</title>
+		<meta charset="utf8" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	{% block content %}
 <section class="js-section_title header_slider theme-white">
                         
                         <div  class="header_slider--header" style="width: 75% !important;">
@@ -62,11 +71,22 @@
 </div>
 </div>
 </div>
+
+</section>
+{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
+{% if serie %}
+    <section>
+        <h2>{{ serie | get(key="Titre", default="Notre sélection") }}</h2>
+        {% include "episodes_serie.html" %}
+    </section>
+{% endif %}
+
 <section id="radio">
 			
 			{% include "Description_liaison_radio.html" %}
 			
-		</section>
+</section>
+
 		{% if data.episodes_by_date %}
 			<section>
 				<div class="header_slider--header">
@@ -95,3 +115,13 @@
 				{% include "last_series.html" %}
 			</section>
 		{% endif %}
+
+<section>
+
+			{% include "Musiques_radio.html" %}
+	
+</section>
+
+{% endblock content %}
+
+</html>

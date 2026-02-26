@@ -11,8 +11,36 @@
 													
 													<div class="right">
 														<div class="title">Emissions, interviews, potcast à Villeurbanne et à Lyon </div>
-														<div class="subtitle">Liaison commune de Lyon et collectifs anarchistes</div>
+														<div class="subtitle">Nouvelle oeuvre locale de la liaison commune de Lyon de la Fédération Anarchiste à Lyon</div>
 														<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+														<div>
+														<h2>Écouter</h2>
+															<div class="tohide">
+																<p>En direct</p>
+																<audio controls="controls" preload="none" class="tohide" id="direct">
+																	<source src="/direct.ogg" />
+																</audio>
+															</div>
+															<div class="toshow playbuttons">
+																<p><button onclick="window.OMA_DATA.player.playDirect()">En direct</button></p>
+																<p>
+																	Ou <button class="toshow" onclick="window.OMA_DATA.player.setDateHuman(
+																		document.getElementById('replaydate').value,
+																		document.getElementById('replaytime').value
+																	)">À une date passée</button> :
+																	<input type="date" name="replaydate" id="replaydate" />
+																	<input type="time" name="replaytime", id="replaytime" value="10:00" />
+																</p>
+															</div>
+														</div>
+														<div class="link">
+															<a href="news/Radio_Grabuges/index.html"
+																class="btn btn_black"
+																target="">
+																Lire l'article
+																<span class="icon-Arrow"></span>
+															</a>
+														</div>
 																					</div>
 																					<div class="media">
 														<img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" />
