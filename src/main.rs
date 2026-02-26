@@ -127,7 +127,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Communiqués.html", include_str!("templates/Communiqués.html")),
         ("Musiques_radio.html", include_str!("templates/Musiques_radio.html")),
 
-        ("Musiques_radio.html", include_str!("templates/carte.html")),
+        ("carte.html", include_str!("templates/carte.html")),
         ("style.css", include_str!("templates/style.css")),
 
 		
