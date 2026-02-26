@@ -221,7 +221,10 @@ footer ul {
 .single_serie > header span {
 	font-size: 1.5vw;
 }
-
+.single_serie > header > span a
+{
+	  color: white !important;
+}
 .single_serie > header p {
 	text-align: right;
 	
