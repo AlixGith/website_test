@@ -41,34 +41,32 @@
 																<span class="icon-Arrow"></span>
 															</a>
 														</div>
-														{% if data.episodes_by_date %}
-														<section>
-															<div class="header_slider--header">
-																								
-																<div class="right">
-																	<div class="title">Emission</div>
-																	<div class="subtitle">Voir tous les épisodes</div>
-																	<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
-															</div>
-																		
-															</div>
-															{#{% include "last_podcasts.html" %}#}
-															<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/"></a></p>
-															{% include "last_episodes.html" %}
-															<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
-														</section>
-
 														
-													{% endif %}
 																					</div>
 																					<div class="media">
-														<img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" />
+														<img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" style="width: 53%; height: auto;"/>
 													</div>
 												</div>
 
-                        
+												
+							</section>
+							{% if data.episodes_by_date %}
+							<section>
+								<div class="header_slider--header">
+																	
+									<div class="right">
+										<div class="title">Emission</div>
+										<div class="subtitle">Voir tous les épisodes</div>
+										<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+								</div>
+											
+								</div>
+								{% include "last_episodes.html" %}
+								<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
 							</section>
 
+							
+						{% endif %}
 
 						
 					</main>
