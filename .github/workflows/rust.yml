@@ -22,7 +22,7 @@ jobs:
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
           # Crée le dossier 'soundbase' et y extrait le contenu
           mkdir -p soundbase
-          unzip soundbase_dev_latest.zip -d soundbase
+          unzip soundbase_dev_latest.zip -d soundbase/player
 
       - name: Download and extract player
         run: |
