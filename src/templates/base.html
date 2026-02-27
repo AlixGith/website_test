@@ -224,38 +224,38 @@
 	</main>
 	<div id="app"></div>
 
-	<footer>
-		<ul>
-			<li>
-				Site généré par <a href="https://oma-radio.fr">Oma-Radio</a>
-				pour {{data.config.PrettyName}} avec des outils libres
-			</li>
-			<li>Chaque son, texte, image ou autre contenu a sa propre licence</li>
-			{% if data.oma.args.manager_url %}
-				<li>
-					<a target="blank" href="{{data.oma.args.manager_url}}">
-						Gestion de la radio
-					</a>
-				</li>
-			{% endif %}
-		</ul>
-	</footer>
+		<footer>
+		    <ul>
+			  <li>Site généré par <a href="https://oma-radio.fr">Oma-Radio</a> pour {{data.config.PrettyName}} avec des outils libres</li>
+			  <li>Chaque son, texte, image ou autre contenu a sa propre licence</li>
+			  {% if data.oma.args.manager_url %}
+			  	<li><a target="blank" href="{{data.oma.args.manager_url}}">Gestion de la radio</a></li>
+			  {% endif %}
+		    </ul>
+		</footer>
+		<script>
+		  window.OMA_DATA = null;
+		  window.OMA_CONFIG = {
+			radioHost: '{{data.oma.args.radio_host}}',
+			cleanName: "{{data.config.PrettyName}}",
+		    ssl: window.location.protocol == 'https:',
+		    wsPort: '{{data.oma.args.websocket_port}}',
+		  }
+			OMA_PROGRAM_DEFAULT_TAB = [
+				{% if not data.prog.is_empty %}
+					{% for var in data.prog.patterns.0.vars %}
+						{% if loop.last == false %}
+							"{{data.prog.variables[var][0]}}",
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			];
+		</script>
 
-	<script>
-	window.OMA_DATA = null;
-	window.OMA_CONFIG = {
-		radioHost: '{{data.oma.args.radio_host}}',
-		cleanName: "{{data.config.PrettyName}}",
-		ssl: window.location.protocol == 'https:',
-		wsPort: '{{data.oma.args.websocket_port}}',
-	};
-	</script>
-
-	<script src="{{data.oma.args.website_prefix}}/script/main.js"></script>
-	<script src="{{data.oma.args.player_url}}/chunk-vendors.js"></script>
-	<script src="{{data.oma.args.player_url}}/app.js"></script>
-	<link href="{{data.oma.args.player_url}}/app.css" rel="stylesheet">
-
+	    <script type="text/javascript" src="{{data.oma.args.website_prefix}}/wp-content/themes/lnei-wp-theme-child-nova/dist/mainca34.js" id="mainjs-js" data-rocket-defer defer></script>
+		<script src="{{data.oma.args.website_prefix}}/script/main.js"></script>
+		<script src="{{data.oma.args.player_url}}/chunk-vendors.js"></script><script src="{{data.oma.args.player_url}}/app.js"></script><link href="{{data.oma.args.player_url}}/app.css" rel="stylesheet">
+		
 
 	</body>
 </html>
