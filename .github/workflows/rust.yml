@@ -76,7 +76,7 @@ jobs:
             --output "./soundbase/website" \
             --soundbase-prefix '../' \
             --website-prefix "/website_test/website" \
-            --radio-host "" \
+            --radio-host "wss://example.com/socket" \
             --player-url "./player"
 
       # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
