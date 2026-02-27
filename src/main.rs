@@ -98,6 +98,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let page_dir = oma.args.output.clone() + "/page/";
     std::fs::create_dir_all(page_dir.clone())?;
 
+    let articles_dir = oma.args.output.clone() + "/articles/";
+    std::fs::create_dir_all(articles_dir.clone())?;
 	
     println!("Construction de Tera et chargement des modèles de page…");
     let mut tera = Tera::default();
@@ -129,6 +131,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Événements.html", include_str!("templates/Événements.html")),
         ("Tout_sur_la_Radio.html", include_str!("templates/Tout_sur_la_Radio.html")),
         ("Activités_locales.html", include_str!("templates/Activités_locales.html")),
+        ("Critique_du_parti.html", include_str!("templates/Critique_du_parti.html")),
 
         ("carte.html", include_str!("templates/carte.html")),
         ("style.css", include_str!("templates/style.css")),
@@ -181,7 +184,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         oma.args.output.clone() + "/carte.html",
         tera.render("carte.html", &context).unwrap()
     );
-
+    let _ = std::fs::write(
+        oma.args.output.clone() + "/articles/Critique_du_parti.html",
+        tera.render("Critique_du_parti.html", &context).unwrap()
+    );
 	let _ = std::fs::write(
         oma.args.output.clone() + "/Description_liaison_radio.html",
         tera.render("Description_liaison_radio.html", &context).unwrap()
