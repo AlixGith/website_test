@@ -47,7 +47,14 @@ jobs:
           override: true
           profile: minimal
 
-      # 7️⃣ Télécharger et builder le player Node
+      # 7️⃣ Préparer le dossier radios-data et all.json pour le player
+      - name: Prepare all.json for player
+        run: |
+          mkdir -p ./soundbase/website/radios-data/alixgith.github.io
+          # Crée un all.json vide (ou tu peux y mettre ton vrai JSON généré)
+          echo '{}' > ./soundbase/website/radios-data/alixgith.github.io/all.json
+
+      # 8️⃣ Télécharger et builder le player Node
       - name: Download and build Node player
         run: |
           git clone https://gitlab.com/omaradio/player.git soundbase/player
@@ -55,13 +62,13 @@ jobs:
           npm ci
           npm run build
 
-      # 8️⃣ Copier le player construit dans le dossier du site
+      # 9️⃣ Copier le player construit dans le dossier du site
       - name: Copy built player to website
         run: |
           mkdir -p ./soundbase/website/player
           cp -r ./soundbase/player/dist/* ./soundbase/website/player/
 
-      # 9️⃣ Construire l’application Rust
+      # 🔟 Construire l’application Rust
       - name: Build and run Rust application
         run: |
           cargo run --release -- \
@@ -72,13 +79,13 @@ jobs:
             --radio-host "" \
             --player-url "./player"
 
-      # 🔟 Upload de l'artefact pour GitHub Pages
+      # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./soundbase
 
-      # 1️⃣1️⃣ Déployer sur GitHub Pages
+      # 1️⃣2️⃣ Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
