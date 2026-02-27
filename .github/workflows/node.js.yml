@@ -10,6 +10,13 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 16
+
+    
+    - name: Download and extract player
+      run: |
+        git clone https://gitlab.com/omaradio/player.git soundbase/player
+
+
     - run: npm install
       working-directory: ./player
 

@@ -24,11 +24,6 @@ jobs:
           mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
 
-      - name: Download and extract player
-        run: |
-           git clone https://gitlab.com/omaradio/player.git soundbase/player
-
-
       - name: Extract content
         run: |
           unzip src/wp-content.zip -d src/
