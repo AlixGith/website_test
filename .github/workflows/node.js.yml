@@ -11,3 +11,7 @@ jobs:
       with:
         node-version: 16
     - run: npm install
+      working-directory: ./player
+
+    - run: npm run build
+      working-directory: ./player
