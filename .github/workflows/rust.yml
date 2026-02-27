@@ -1,39 +1,45 @@
+name: Build and Deploy Rust + Player
+
 on:
   push:
     branches:
-      - main # ou la branche que vous utilisez pour le déploiement (par exemple, master)
-  workflow_dispatch: # Permet de déclencher le workflow manuellement
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write # Nécessaire pour publier sur GitHub Pages
+      contents: write
       pages: write
       id-token: write
 
     steps:
+      # 1️⃣ Checkout du repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Télécharger Soundbase
       - name: Download and extract soundbase
         run: |
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
-          # Crée le dossier 'soundbase' et y extrait le contenu
           mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
 
-      - name: Extract content
-        run: |
-          unzip src/wp-content.zip -d src/
+      # 3️⃣ Extraire le contenu wp-content si besoin
+      - name: Extract wp-content
+        run: unzip src/wp-content.zip -d src/
 
-      - name : Include
-        run : cargo add include_dir
-        # NOUVELLE ÉTAPE : Déplacer l'index.html de la racine vers le dossier soundbase
-      - name: Move root index.html to soundbase
+      # 4️⃣ Installer la dépendance Rust include_dir
+      - name: Include Dir Rust
+        run: cargo add include_dir
+
+      # 5️⃣ Déplacer index.html dans soundbase
+      - name: Move root index.html
         run: mv index.html soundbase/index.html
-        
+
+      # 6️⃣ Setup Rust
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -41,20 +47,38 @@ jobs:
           override: true
           profile: minimal
 
-      # Votre commande pour construire et exécuter l'application Rust
+      # 7️⃣ Télécharger et builder le player Node
+      - name: Download and build Node player
+        run: |
+          git clone https://gitlab.com/omaradio/player.git soundbase/player
+          cd soundbase/player
+          npm ci
+          npm run build
+
+      # 8️⃣ Copier le player construit dans le dossier du site
+      - name: Copy built player to website
+        run: |
+          mkdir -p ./soundbase/website/player
+          cp -r ./soundbase/player/dist/* ./soundbase/website/player/
+
+      # 9️⃣ Construire l’application Rust
       - name: Build and run Rust application
-        # Si votre application Rust est configurée pour chercher les templates
-        # dans un chemin relatif au répertoire de travail de 'cargo run',
-        # alors elle devrait maintenant trouver 'src/templates/'.
-        run: cargo run --release -- --soundbase-path "./soundbase" --output "./soundbase/website" --soundbase-prefix '../' --website-prefix "/website_test/website" --radio-host "" --player-url "../player"
+        run: |
+          cargo run --release -- \
+            --soundbase-path "./soundbase" \
+            --output "./soundbase/website" \
+            --soundbase-prefix '../' \
+            --website-prefix "/website_test/website" \
+            --radio-host "" \
+            --player-url "./player"
 
-
+      # 🔟 Upload de l'artefact pour GitHub Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./soundbase
 
+      # 1️⃣1️⃣ Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
