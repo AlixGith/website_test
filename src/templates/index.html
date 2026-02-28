@@ -3,8 +3,8 @@
 {% block content %}
 
 
-	<section style="@media (min-device-width: 1200px) {display:none;}">
-
+	<section class="no-phone">
+		<section>
 		<!-- Le carroussel de carte -->
 			{% include "Cards_brochure.html" %}
 			
@@ -26,11 +26,11 @@
 	
 	</section>
 	
-	<section  style="@media (max-device-width: 1199px) {display:none;}">
+	<section class="phone">
 	
-		<div class="media">
-			<img fetchpriority="high" src="./img/publication site FA_1.webp" class="image_default no-lazy" />
-			<img fetchpriority="high" src="./img/publication site FA_2.webp" class="image_default no-lazy" />
+		<div class="media" style="display: grid !important;">
+			<img fetchpriority="high" src="./img/publication site FA_1.webp" class="image_default no-lazy" style="width: 100%!important;">
+			<img fetchpriority="high" src="./img/publication site FA_2.webp" class="image_default no-lazy" style="width: 100%!important;">
 		</div>
 
 	</section>

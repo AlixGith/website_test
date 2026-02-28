@@ -2,6 +2,22 @@
  * 							General
  *****************************************************************************/
 
+ @media (max-width: 1250px) {
+    .no_phone {
+      display: none;
+  }
+  .height-100 {
+    height: 100%;
+    width: 118% !important;
+  }
+}
+
+
+ @media (min-width: 1251px) {
+    .phone{
+      display: none;
+    }
+ }
 
 html, body {
 	margin:0;
