@@ -14,9 +14,10 @@
 </head>
 
 
-	<body id="mainbody" role="document" data-barba="container" >
+	<body id="mainbody" role="document">
 	
-   
+           
+	<div  class="wrap" role="document" data-barba="container">
 	<header class="banner  "    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
     <div  class="container-header">
 
@@ -211,7 +212,7 @@
 		
 	<script type="text/javascript" src="https://viewer.diagrams.net/math4/es5/startup.js"></script>
 	</header>
-	
+	</div>
 	
 	<main id="maincontent">
 		{% block content %}
