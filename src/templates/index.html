@@ -2,9 +2,10 @@
 
 {% block content %}
 
-		<section>
-	
-	<!-- Le carroussel de carte -->
+
+	<section style="@media (min-device-width: 1200px) {display:none;}">
+
+		<!-- Le carroussel de carte -->
 			{% include "Cards_brochure.html" %}
 			
 		</section>
@@ -22,6 +23,17 @@
 			{% include "Section_accueil.html" %}
 			
 		</section>
+	
+	</section>
+	
+	<section  style="@media (max-device-width: 1199px) {display:none;}">
+	
+		<div class="media">
+			<img fetchpriority="high" src="./img/publication site FA_1.webp" class="image_default no-lazy" />
+			<img fetchpriority="high" src="./img/publication site FA_2.webp" class="image_default no-lazy" />
+		</div>
+
+	</section>
 		
 
 {% endblock content %}
