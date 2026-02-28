@@ -14,8 +14,9 @@
 </head>
 
 
-	<body id="mainbody" role="document" >
-
+	<body id="mainbody" role="document" data-barba="container" >
+	
+   
 	<header class="banner  "    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
     <div  class="container-header">
 
@@ -34,7 +35,7 @@
                     </div>
                 </nav>
                             </div>
-            <div class="col-4 padlr-mob0 height-100 logo_container no-phone">
+            <div class="col-4 padlr-mob0 height-100 logo_container">
                                     <div class="logo_site">
                                                                             <h1>
                                                 <a class="brand" href="{{data.oma.args.website_prefix}}/index.html">
@@ -80,7 +81,7 @@
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Événements.html">Événements</a></li>
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Activités_locales.html">Activités locales</a></li>
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/index.html#réseau">Réseaux</a></li>
-</ul></div>
+					</ul></div>
                                                                                     <div class="infos_appNova">
                                                                                         <p>Télécharger l’application Nova</p>
                                                         <ul>
@@ -116,12 +117,6 @@
         </div>
     </div>
 
-
-    <div  class="sticky_homebar">
-        <ul id="mainNav" class="select">
-            <li class="init"></li>
-        </ul>
-    </div>
 
 	        <div  class="links_container">
 
