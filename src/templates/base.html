@@ -14,7 +14,7 @@
 </head>
 
 
-	<body id="mainbody" role="document">
+	<body id="mainbody" role="document" class="home wp-singular page-template page-template-template-home template-home page page-id-237 wp-theme-lnei-wp-themeresources wp-child-theme-lnei-wp-theme-child-novaresources has-infinite-scroll app-data index-data singular-data page-data page-237-data page-accueil-data template-home-data front-page-data scroll-down">
 	
            
 	<header class="banner  "    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
@@ -240,7 +240,27 @@
 	<main id="maincontent">
 		{% block content %}
 		{% endblock content %}
+
+		
 	</main>
+	<section  class="stickyBar_menu d-lg-none d-block">
+		<div  class="row full_height">
+			<div  class="col-4 full_height">
+				<a href="index.html" class="link-stickyMenu">
+					<span class="icon-Home"></span>
+					Accueil
+				</a>
+			</div>
+			<div  class="col-4 full_height">
+				<a href="javascript:void(0)" class="link-stickyMenu search_toggle">
+					<span class="icon-Search"></span>
+					Recherche
+				</a>
+			</div>
+			<div  class="col-4 full_height">
+						</div>
+		</div>
+	</section>
 	<div id="app"></div>
 
 		<footer>
@@ -251,6 +271,7 @@
 			  	<li><a target="blank" href="{{data.oma.args.manager_url}}">Gestion de la radio</a></li>
 			  {% endif %}
 		    </ul>
+
 		</footer>
 		<script>
 		  window.OMA_DATA = null;
