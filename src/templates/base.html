@@ -16,7 +16,8 @@
 
 	<body id="mainbody" role="document" class="home wp-singular page-template page-template-template-home template-home page page-id-237 wp-theme-lnei-wp-themeresources wp-child-theme-lnei-wp-theme-child-novaresources has-infinite-scroll app-data index-data singular-data page-data page-237-data page-accueil-data template-home-data front-page-data scroll-down">
 	
-           
+    
+     <div  class="wrap" role="document" data-barba="container"> 
 	<header class="banner  "    [class]="'banner' + ( navMenuExpanded ? ' menu-open' : '' )">
     <div  class="container-header">
 
@@ -135,11 +136,11 @@
             </div>
         </div>
     </div>
-<div  class="sticky_homebar">
-        <ul id="mainNav" class="select">
-            <li class="init"></li>
-        </ul>
-    </div>
+	<div  class="sticky_homebar">
+			<ul id="mainNav" class="select">
+				<li class="init"></li>
+			</ul>
+		</div>
 
 
 	        <div  class="links_container">
@@ -175,7 +176,7 @@
 					</ul></div>	
 					</div>
 				</div>
-            </div>
+    
     
     </header>
 	<header id="top" style="height: 160px">
@@ -235,8 +236,7 @@
 		
 	<script type="text/javascript" src="https://viewer.diagrams.net/math4/es5/startup.js"></script>
 	</header>
-
-	
+	</div>  
 	<main id="maincontent">
 		{% block content %}
 		{% endblock content %}
