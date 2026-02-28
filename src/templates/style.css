@@ -10682,8 +10682,8 @@ a > img {
 
 @font-face {
   font-family: "icomoon";
-  src: url("../../lnei-wp-theme/resources/assets/fonts/icomoonfb73.eot?5sf1hs");
-  src: url("../../lnei-wp-theme/resources/assets/fonts/icomoonfb73.eot?5sf1hs#iefix") format("embedded-opentype"), url("../../lnei-wp-theme/resources/assets/fonts/icomoonfb73.ttf?5sf1hs") format("truetype"), url("../../lnei-wp-theme/resources/assets/fonts/icomoonfb73.woff?5sf1hs") format("woff"), url("../../lnei-wp-theme/resources/assets/fonts/icomoonfb73.svg?5sf1hs#icomoon") format("svg");
+  src: url("./wp-content/themes/lnei-wp-theme/resources/assets/fonts/icomoonfb73.eot?5sf1hs");
+  src: url("./wp-content/lnei-wp-theme/resources/assets/fonts/icomoonfb73.eot?5sf1hs#iefix") format("embedded-opentype"), url("./wp-content/lnei-wp-theme/resources/assets/fonts/icomoonfb73.ttf?5sf1hs") format("truetype"), url("./wp-content/lnei-wp-theme/resources/assets/fonts/icomoonfb73.woff?5sf1hs") format("woff"), url("./wp-content/lnei-wp-theme/resources/assets/fonts/icomoonfb73.svg?5sf1hs#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
