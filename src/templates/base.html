@@ -47,7 +47,26 @@
                             </div>
             <div class="text-right col-md-4 col-4 right-part usernav_container">
                 <div class="icons-header">
-
+					<div class="no_phone">
+					<h2>Écouter</h2>
+						<div class="tohide">
+							<p>En direct</p>
+							<audio controls="controls" preload="none" class="tohide" id="direct">
+								<source src="/direct.ogg" />
+							</audio>
+						</div>
+						<div class="toshow playbuttons">
+							<p><button onclick="window.OMA_DATA.player.playDirect()">En direct</button></p>
+							<p>
+								Ou <button class="toshow" onclick="window.OMA_DATA.player.setDateHuman(
+									document.getElementById('replaydate').value,
+									document.getElementById('replaytime').value
+								)">À une date passée</button> :
+								<input type="date" name="replaydate" id="replaydate" />
+								<input type="time" name="replaytime", id="replaytime" value="10:00" />
+							</p>
+						</div>
+					</div>
 
 
                     <a href="javascript:void(0)" class="search search_toggle"><span class="icon-Search"></span></a>
