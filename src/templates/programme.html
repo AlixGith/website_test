@@ -13,16 +13,17 @@
 
 <div class="hs__wrapper grille_wrapper">
 	<ul id="js-daysFilter" class="days_list hs js-sticky">
-		<li openTab(0, 'Lundi')>Lundi</li>
-		<li openTab(0, 'Mardi')>Mardi</li>
-		<li openTab(0, 'Mercredi')>Mercredi</li>
-		<li openTab(0, 'Jeudi')>Jeudi</li>
-		<li openTab(0, 'Vendredi')>Vendredi</li>
-		<li openTab(0, 'Samedi')>Samedi</li>
-		<li openTab(0, 'Dimanche')>Dimanche</li>
+		<li onclick="openTab(0, 'Lundi')">Lundi</li>
+		<li onclick="openTab(0, 'Mardi')">Mardi</li>
+		<li onclick="openTab(0, 'Mercredi')">Mercredi</li>
+		<li onclick="openTab(0, 'Jeudi')">Jeudi</li>
+		<li onclick="openTab(0, 'Vendredi')">Vendredi</li>
+		<li onclick="openTab(0, 'Samedi')">Samedi</li>
+		<li onclick="openTab(0, 'Dimanche')">Dimanche</li>
 	</ul>
 </div>
 <div style="display: none;">
+
 <nav id="prog">
 {% for var in data.prog.patterns.0.vars %}
 	{% if loop.last == false %}
