@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block content %}
-<nav id="article">
+<nav id="article" style="margin-top: 40px;">
 <h2>{{ serie.fic | get(key="Titre", default="") }}</h2>
 		{% if serie.fic.Texte %}
 			<p>{{ txt_content(name=serie.fic.Texte) | safe }}</p>

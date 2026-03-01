@@ -1,1 +1,9 @@
-
+<div class="flex_container">
+	{% set serie_fic = serie.fic %}
+	{% for episode_name in serie.fic | get(key='Episodes', default="") | split(pat=" ") %}
+		{% if episode_name %}
+			{% set item = serie.episodes | get(key=episode_name) %}
+			{% include "single_episode.html" %}
+		{% endif %}
+	{% endfor %}
+</div>
