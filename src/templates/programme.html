@@ -63,12 +63,12 @@
 <div class="grid_container container">
 	<div class="row">
 	<div class="col-md-10 mx-auto">
-		{% for pattern in data.prog.patterns %}
+		
 			<div class="program-item">
 				<div class="row align-items-center">
 					<div class="col-lg-5 pad_mobile">
 						<div class="infos_grille d-lg-none d-block">
-							{{ macros::resolve_pattern(pattern=pattern.pattern, title=pattern.title, vars=pattern.vars, variables=data.prog.variables, depth=0, replaced="", stackedReplaced="") }}
+							
 				
 						<p class="date"></p>
 						</div>
@@ -78,7 +78,7 @@
 					</div>
 					<div class="col-lg-7">
 						<div class="infos_grille">
-							{{ macros::resolve_pattern(pattern=pattern.pattern, title=pattern.title, vars=pattern.vars, variables=data.prog.variables, depth=0, replaced="", stackedReplaced="") }}
+							
 				
 							<p class="date d-lg-block d-none"></p>
 
@@ -99,10 +99,17 @@
 					</div>
 				</div>
 			</div>
-		{% endfor %}
+
 		</div>
 	</div>
 </div>
+<div style="display: none;">
+	{% for pattern in data.prog.patterns %}
+	{{ macros::resolve_pattern(pattern=pattern.pattern, title=pattern.title, vars=pattern.vars, variables=data.prog.variables, depth=0, replaced="", stackedReplaced="") }}
+	{% endfor %}
+</div>
+
+
 <script>
 	window.setTimeout(() => {
 		openTab(0, null, true);
