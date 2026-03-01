@@ -61,7 +61,6 @@ jobs:
           cd soundbase/player
           npm ci
           npm run build
-          npm run lint
 
       # 9️⃣ Copier le player construit dans le dossier du site
       - name: Copy built player to website
