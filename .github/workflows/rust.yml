@@ -76,7 +76,8 @@ jobs:
             --output "./soundbase/website" \
             --soundbase-prefix '../' \
             --website-prefix "/website_test/website" \
-            --radio-host "http://localhost:8080" \
+            --radio-host "radiodemo.oma-radio.fr" \
+            --websocket-port 2004 \
             --player-url "./player"
 
       # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
