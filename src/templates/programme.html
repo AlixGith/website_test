@@ -13,15 +13,16 @@
 
 <div class="hs__wrapper grille_wrapper">
 	<ul id="js-daysFilter" class="days_list hs js-sticky">
-		<li onclick="openTab(0, 'Lundi')">Lundi</li>
-		<li onclick="openTab(0, 'Mardi')">Mardi</li>
-		<li onclick="openTab(0, 'Mercredi')">Mercredi</li>
-		<li onclick="openTab(0, 'Jeudi')">Jeudi</li>
-		<li onclick="openTab(0, 'Vendredi')">Vendredi</li>
-		<li onclick="openTab(0, 'Samedi')">Samedi</li>
-		<li onclick="openTab(0, 'Dimanche')">Dimanche</li>
+		<li data-day="1" onclick="openTab(0, 'Lundi')" class="active">Lundi</li>
+		<li data-day="2"  onclick="openTab(0, 'Mardi')">Mardi</li>
+		<li data-day="3" onclick="openTab(0, 'Mercredi')">Mercredi</li>
+		<li  data-day="4"onclick="openTab(0, 'Jeudi')">Jeudi</li>
+		<li  data-day="5"onclick="openTab(0, 'Vendredi')">Vendredi</li>
+		<li  data-day="6"onclick="openTab(0, 'Samedi')">Samedi</li>
+		<li  data-day="7"onclick="openTab(0, 'Dimanche')">Dimanche</li>
 	</ul>
 </div>
+
 <div style="display: none;">
 
 <nav id="prog">
@@ -42,54 +43,10 @@
 </div>
 
 
-<div class="grid_container container">
-	<div class="row">
-	<div class="col-md-10 mx-auto">
-		
-			<div class="tabcontent tab-Mardi program-item">
-				<div class="row align-items-center">
-					<div class="col-lg-5 pad_mobile">
-						<div class="infos_grille d-lg-none d-block">
-							
-				
-						<p class="date"></p>
-						</div>
-						<div class="img_grille">
-						<img src="" class="medium" alt="">
-						</div>
-					</div>
-					<div class="col-lg-7">
-						<div class="infos_grille">
-							
-				
-							<p class="date d-lg-block d-none"></p>
+{% for pattern in data.prog.patterns %}
+{{ macros::resolve_pattern(pattern=pattern.pattern, title=pattern.title, vars=pattern.vars, variables=data.prog.variables, depth=0, replaced="", stackedReplaced="") }}
+{% endfor %}
 
-							<h2 class="t-header-listing"></h2>
-
-							<div class="content">
-							<!-- wp:paragraph -->
-							<p></p>
-							<!-- /wp:paragraph -->
-							</div>
-
-							<div class="presenter"><span></span>
-							<p></p>
-							</div>
-
-							<a class="btn btn_white" href=""><span class="icon-Arrow"></span></a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-<div style="display: none;">
-	{% for pattern in data.prog.patterns %}
-	{{ macros::resolve_pattern(pattern=pattern.pattern, title=pattern.title, vars=pattern.vars, variables=data.prog.variables, depth=0, replaced="", stackedReplaced="") }}
-	{% endfor %}
-</div>
 
 
 <script>
