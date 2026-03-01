@@ -2,9 +2,9 @@
 
 		<a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/serie/{{serie._filename}}.html">
 			{% if serie.Photo %}
-				<img src="{{data.oma.args.soundbase-path}}/webpL/{{serie.Photo}}.webpL" />
+				<img src="{{data.oma.args.soundbase_path}}/webpL/{{serie.Photo}}.webpL" />
 			{% elif data.config.Logo %}
-				<img src="{{data.oma.args.soundbase-path}}/webpL/{{data.config.Logo}}.webpL" alt="Logo de la radio" />
+				<img src="{{data.oma.args.soundbase_path}}/webpL/{{data.config.Logo}}.webpL" alt="Logo de la radio" />
 			{% else %}
 				<img src="{{data.oma.args.website_prefix}}/img/earth.svg" alt="image par défaut" />
 			{% endif %}
