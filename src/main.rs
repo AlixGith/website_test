@@ -132,6 +132,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Tout_sur_la_Radio.html", include_str!("templates/Tout_sur_la_Radio.html")),
         ("Activités_locales.html", include_str!("templates/Activités_locales.html")),
         ("Critique_du_Parti.html", include_str!("templates/Critique_du_Parti.html")),
+        ("Proposition_10_sept.html", include_str!("templates/Proposition_10_sept.html")),
 
         ("carte.html", include_str!("templates/carte.html")),
         ("style.css", include_str!("templates/style.css")),
@@ -187,6 +188,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = std::fs::write(
         oma.args.output.clone() + "/articles/Critique_du_Parti.html",
         tera.render("Critique_du_Parti.html", &context).unwrap()
+    );
+
+    let _ = std::fs::write(
+        oma.args.output.clone() + "/articles/Proposition_10_sept.html",
+        tera.render("Proposition_10_sept.html", &context).unwrap()
     );
 	let _ = std::fs::write(
         oma.args.output.clone() + "/Description_liaison_radio.html",

@@ -60,7 +60,6 @@ jobs:
           git clone https://gitlab.com/omaradio/player.git soundbase/player
           cd soundbase/player
           npm ci
-          npm run serve
           npm run build
           npm run lint
 
