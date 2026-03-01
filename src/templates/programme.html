@@ -11,40 +11,18 @@
 
 {% block content %}
 
-
-	
-
-			<div data-days="[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;]" class="program-item">
-				<div class="row align-items-center">
-				<div class="col-lg-5 pad_mobile">
-					<div class="infos_grille d-lg-none d-block">
-					<p class="date">06:30</p>
-					</div>
-					<div class="img_grille">
-					<img src="./wp-content/thumbnails/uploads/sites/2/2023/09/nova-le-matin-t-1260x1260.jpg" class="medium" alt="Nova le matin'">
-					</div>
-				</div>
-					<div class="col-lg-7">
-						<div class="infos_grille">
-						<p class="date d-lg-block d-none">06:30</p>
-						<h2 class="t-header-listing">Nova le matin</h2>
-						<div class="content">
-						<!-- wp:paragraph -->
-						<p>Ségo Raffaitin et Azzeddine Ahmed-Chaouch donnent le ton avec la matinale culturelle et musicale de Radio Nova. Décryptage d’actu décalé, chroniques pop culture, musique… et nos chroniqueuses et chroniqueurs Thomas VDB, Alex Ramirès ou encore Mylène Bertaux pour des pastilles humoristiques !</p>
-						<!-- /wp:paragraph -->
-						</div>
-						<div class="presenter"><span>Avec </span>
-						<p>Ségo Raffaitin et Azzeddine Ahmed-Chaouch</p>
-						</div>
-														<a class="btn btn_white" href="https://podcasts.nova.fr/radio-nova-t-vu-lheure/">Voir le
-						podcast<span class="icon-Arrow"></span></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		
-	
-
+<div class="hs__wrapper grille_wrapper">
+	<ul id="js-daysFilter" class="days_list hs js-sticky">
+		<li openTab(0, 'Lundi')>Lundi</li>
+		<li openTab(0, 'Mardi')>Mardi</li>
+		<li openTab(0, 'Mercredi')>Mercredi</li>
+		<li openTab(0, 'Jeudi')>Jeudi</li>
+		<li openTab(0, 'Vendredi')>Vendredi</li>
+		<li openTab(0, 'Samedi')>Samedi</li>
+		<li openTab(0, 'Dimanche')>Dimanche</li>
+	</ul>
+</div>
+<div style="display: none;">
 <nav id="prog">
 {% for var in data.prog.patterns.0.vars %}
 	{% if loop.last == false %}
@@ -60,11 +38,14 @@
 {% endfor %}
 </nav>
 
+</div>
+
+
 <div class="grid_container container">
 	<div class="row">
 	<div class="col-md-10 mx-auto">
 		
-			<div class="program-item">
+			<div class="tabcontent tab-Mardi program-item">
 				<div class="row align-items-center">
 					<div class="col-lg-5 pad_mobile">
 						<div class="infos_grille d-lg-none d-block">
