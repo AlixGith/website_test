@@ -60,7 +60,9 @@ jobs:
           git clone https://gitlab.com/omaradio/player.git soundbase/player
           cd soundbase/player
           npm ci
+          npm run serve
           npm run build
+          npm run lint
 
       # 9️⃣ Copier le player construit dans le dossier du site
       - name: Copy built player to website
@@ -76,7 +78,7 @@ jobs:
             --output "./soundbase/website" \
             --soundbase-prefix '../' \
             --website-prefix "/website_test/website" \
-            --radio-host "https://static.jean-cloud.net/player-interface/1.6.2" \
+            --radio-host "http://localhost:8080" \
             --player-url "./player"
 
       # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
