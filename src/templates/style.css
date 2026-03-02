@@ -251,8 +251,8 @@ footer ul {
 }
 
 .single_serie > a > img, .single_serie > a {
-	height: 300px;
-	width: 300px;
+	height: fit-content;
+	width: fit-content;
 	vertical-align: top;
 	display: block;
 	margin: 5px auto;
@@ -267,8 +267,8 @@ footer ul {
 
 .single_serie .actions > a {
 	display: block;
-	width: 48px;
-	height: 48px;
+	width: fit-content;
+	height: fit-content;
 	/*border-bottom: 1px solid black;*/
 	text-align: center;
 }
@@ -283,7 +283,7 @@ footer ul {
 }
 
 .single_serie audio {
-	width: 100%;
+	width: fit-content;
 	vertical-align: top;
 	border-radius: 0 0 17px 17px;
 }
