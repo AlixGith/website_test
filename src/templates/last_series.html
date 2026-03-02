@@ -1,16 +1,16 @@
-<div  class="wrap" role="document">
-	<div class="swiper-container podcasts_header swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
-		<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
-			{% for t in data.series_by_last_episode %}
-				{# TODO paginate #}
-				{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
-					{% break %}
-				{% endif %}
-				{% set serie = data.series[t[0]].fic %}
-				{% include "single_serie.html" %}
-			{% endfor %}
-		</div>
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
+<div class="swiper-container swiper_fiveposts">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+		{% for t in data.series_by_last_episode %}
+			{# TODO paginate #}
+			{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
+				{% break %}
+			{% endif %}
+			{% set serie = data.series[t[0]].fic %}
+			{% include "single_serie.html" %}
+		{% endfor %}
 	</div>
+	<div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
 </div>
+
