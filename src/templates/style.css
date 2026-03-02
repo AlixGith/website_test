@@ -17226,7 +17226,7 @@ Pave-Bas2 : 300x250
   width: 100vw;
   position: relative;
   margin-left: calc(50% - 50vw);
-  background: #0c0c0e;
+  background: #1a1a1b;
 }
 .media-cards .swiper-container {
   opacity: 0;
@@ -17236,6 +17236,17 @@ Pave-Bas2 : 300x250
   opacity: 1;
 }
 
+.home .phone .media-cards::before
+{
+  content: "";
+  display: block;
+  height: 0% !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  background: #1a1a1b;
+}
 .home .media-cards::before {
   content: "";
   display: block;
@@ -17244,7 +17255,7 @@ Pave-Bas2 : 300x250
   left: 0;
   right: 0;
   bottom: 100%;
-  background: #0c0c0e;
+  background: #1a1a1b;
 }
 
 /*
