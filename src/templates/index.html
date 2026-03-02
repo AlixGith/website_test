@@ -2,21 +2,21 @@
 
 {% block content %}
 
-
-	<div class="no_phone">
+<section>
+<div class="no_phone">
 		<div>
 		<!-- Le carroussel de carte -->
 			{% include "Cards_brochure.html" %}
 			
 		</div>
 
-		<div  class="js-section_title header_slider theme-black">
+		<section  class="js-section_title header_slider theme-black">
 			<div id="réseau" style ="display: flex !important; position: relative; text-align: center; align-content: center; justify-content: center;">
 				
 				{% include "carte.html" %}
 				
 			</div>
-		</div>
+		</section>
 
 		<div id="qui">
 			
@@ -46,6 +46,9 @@
 				
 			</div>
 	</div>
+
+</section>
+	
 		
 
 {% endblock content %}
