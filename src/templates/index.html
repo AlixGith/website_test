@@ -3,30 +3,30 @@
 {% block content %}
 
 
-	<section class="no_phone">
-		<section>
+	<div class="no_phone">
+		<div>
 		<!-- Le carroussel de carte -->
 			{% include "Cards_brochure.html" %}
 			
-		</section>
+		</div>
 
-		<section  class="js-section_title header_slider theme-black">
-			<section id="réseau" style ="display: flex !important; position: relative; text-align: center; align-content: center; justify-content: center;">
+		<div  class="js-section_title header_slider theme-black">
+			<div id="réseau" style ="display: flex !important; position: relative; text-align: center; align-content: center; justify-content: center;">
 				
 				{% include "carte.html" %}
 				
-			</section>
-		</section>
+			</div>
+		</div>
 
-		<section id="qui">
+		<div id="qui">
 			
 			{% include "Section_accueil.html" %}
 			
-		</section>
+		</div>
 	
-	</section>
+	</div>
 	
-	<section class="phone">
+	<div class="phone">
 	
 		<div class="media" style="display: grid !important;">
 			<img fetchpriority="high" src="./img/publication site FA_1.webp" class="image_default no-lazy" style="width: 100%!important;">
@@ -34,18 +34,18 @@
 			<img fetchpriority="high" src="./img/publication site FA_2.webp" class="image_default no-lazy" style="width: 100%!important;">
 		</div>
 
-		<section id="qui">
+		<div id="qui">
 			
 			{% include "Section_accueil.html" %}
 			
-		</section>
+		</div>
 		
-		<section>
+		<div>
 			<!-- Le carroussel de carte -->
 				{% include "Cards_brochure.html" %}
 				
-			</section>
-	</section>
+			</div>
+	</div>
 		
 
 {% endblock content %}
