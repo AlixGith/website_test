@@ -250,8 +250,8 @@ footer ul {
 }
 
 .single_serie > a > img, .single_serie > a {
-	height: fit-content;
-	width: fit-content;
+	height: 30%;
+	width: 30%;
 	vertical-align: top;
 	display: block;
 	margin: 5px auto;
