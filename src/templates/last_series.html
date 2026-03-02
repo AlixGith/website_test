@@ -1,6 +1,8 @@
-<div class="swiper-container swiper_fiveposts">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
+<section class="podcasts-section js-section_title">
+	<div class="container-fullslider">
+		<div class="swiper-container swiper_fiveposts">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
 		{% for t in data.series_by_last_episode %}
 			{# TODO paginate #}
 			{% if loop.index > data.config.LastSeriesInHome | int and not show_all_series %}
@@ -12,5 +14,7 @@
 	</div>
 	<div class="swiper-button-prev"></div>
 	<div class="swiper-button-next"></div>
-</div>
 
+		</div>
+	</div>
+</section>
