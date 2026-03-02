@@ -250,8 +250,8 @@ footer ul {
 }
 
 .single_serie > a > img, .single_serie > a {
-	height: 30%;
-	width: 30%;
+	height: fit-content;
+	width: fit-content;
 	vertical-align: top;
 	display: block;
 	margin: 5px auto;
@@ -266,8 +266,8 @@ footer ul {
 
 .single_serie .actions > a {
 	display: block;
-	width: fit-content;
-	height: fit-content;
+	width: 30%;
+	height: 30%;
 	/*border-bottom: 1px solid black;*/
 	text-align: center;
 }
