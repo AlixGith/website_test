@@ -1,66 +1,65 @@
 
-					
-							<section  class="js-section_title header_slider theme-black">
-                        
-												<div class="header_slider--header">
-													
-													<div class="right">
-														<div class="title">Émissions, interviews, potcast à Villeurbanne et à Lyon </div>
-														<div class="subtitle">Nouvelle oeuvre locale de la liaison commune de Lyon de la Fédération Anarchiste à Lyon</div>
-														<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
-														<div>
-														<h2>À écouter bientôt sur cette page ...</h2>
-														
-														<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
 
-														<div class="tohide">
-																<p>En direct</p>
-																<audio controls="controls" preload="none" class="tohide" id="direct">
-																	<source src="/direct.ogg" />
-																</audio>
-															</div>
-															<div class="toshow playbuttons">
-																<p><button onclick="window.OMA_DATA.player.playDirect()">En direct</button></p>
-																<p>
-																	Ou <button class="toshow" onclick="window.OMA_DATA.player.setDateHuman(
-																		document.getElementById('replaydate').value,
-																		document.getElementById('replaytime').value
-																	)">À une date passée</button> :
-																	<input type="date" name="replaydate" id="replaydate" />
-																	<input type="time" name="replaytime", id="replaytime" value="10:00" />
-																</p>
-															</div>
-														-->
-															
-														</div>
-														
-														
-																					</div>
-																					<div class="media">
-														<img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" style="width: 53%; height: auto;"/>
-													</div>
-												</div>
+<section  class="js-section_title header_slider theme-black">
 
-												
-							</section>
-							<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
-							{% if data.episodes_by_date %}
-							<section>
-								<div class="header_slider--header">
-																	
-									<div class="right">
-										<div class="title">Émission</div>
-										<div class="subtitle">Voir tous les épisodes</div>
-										<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
-								</div>
-											
-								</div>
-								{% include "last_episodes.html" %}
-								<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
-							</section>
-							-->
-							
-
-							
-						{% endif %}
+					<div class="header_slider--header">
 						
+						<div class="right">
+							<div class="title">Émissions, interviews, potcast à Villeurbanne et à Lyon </div>
+							<div class="subtitle">Nouvelle oeuvre locale de la liaison commune de Lyon de la Fédération Anarchiste à Lyon</div>
+							<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+							<div>
+							<h2>À écouter bientôt sur cette page ...</h2>
+
+							<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
+
+							<div class="tohide">
+									<p>En direct</p>
+									<audio controls="controls" preload="none" class="tohide" id="direct">
+										<source src="/direct.ogg" />
+									</audio>
+								</div>
+								<div class="toshow playbuttons">
+									<p><button onclick="window.OMA_DATA.player.playDirect()">En direct</button></p>
+									<p>
+										Ou <button class="toshow" onclick="window.OMA_DATA.player.setDateHuman(
+											document.getElementById('replaydate').value,
+											document.getElementById('replaytime').value
+										)">À une date passée</button> :
+										<input type="date" name="replaydate" id="replaydate" />
+										<input type="time" name="replaytime", id="replaytime" value="10:00" />
+									</p>
+								</div>
+							-->
+								
+							</div>
+							
+							
+						</div>
+							<div class="media">
+							<img width=auto height=auto src="wp-content/uploads/sites/images/radio_logo.png" class="image_default no-lazy" alt="la dernière" decoding="async" style="width: 53%; height: auto;"/>
+						</div>
+					</div>
+
+					
+</section>
+<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
+{% if data.episodes_by_date %}
+<section>
+	<div class="header_slider--header">
+										
+		<div class="right">
+			<div class="title">Émission</div>
+			<div class="subtitle">Voir tous les épisodes</div>
+			<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
+	</div>
+				
+	</div>
+	{% include "last_episodes.html" %}
+	<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
+</section>
+-->
+
+
+
+{% endif %}
