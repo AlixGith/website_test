@@ -5,12 +5,15 @@
 												<div class="header_slider--header">
 													
 													<div class="right">
-														<div class="title">Emissions, interviews, potcast à Villeurbanne et à Lyon </div>
+														<div class="title">Émissions, interviews, potcast à Villeurbanne et à Lyon </div>
 														<div class="subtitle">Nouvelle oeuvre locale de la liaison commune de Lyon de la Fédération Anarchiste à Lyon</div>
 														<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
 														<div>
-														<h2>Écouter</h2>
-															<div class="tohide">
+														<h2>À écouter bientôt sur cette page ...</h2>
+														
+														<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
+
+														<div class="tohide">
 																<p>En direct</p>
 																<audio controls="controls" preload="none" class="tohide" id="direct">
 																	<source src="/direct.ogg" />
@@ -27,15 +30,10 @@
 																	<input type="time" name="replaytime", id="replaytime" value="10:00" />
 																</p>
 															</div>
+														-->
+															
 														</div>
-														<div class="link">
-															<a href="news/Radio_Grabuges/index.html"
-																class="btn btn_black"
-																target="">
-																Lire l'article
-																<span class="icon-Arrow"></span>
-															</a>
-														</div>
+														
 														
 																					</div>
 																					<div class="media">
@@ -45,12 +43,13 @@
 
 												
 							</section>
+							<!-- COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
 							{% if data.episodes_by_date %}
 							<section>
 								<div class="header_slider--header">
 																	
 									<div class="right">
-										<div class="title">Emission</div>
+										<div class="title">Émission</div>
 										<div class="subtitle">Voir tous les épisodes</div>
 										<div class="description">Radio Grabuges sert à la diffusion et à l'information des idées anarchistes et de leurs mises en pratique à Lyon et dans ses environs.</div>
 								</div>
@@ -59,6 +58,8 @@
 								{% include "last_episodes.html" %}
 								<p><a onclick="return internalNavigation(event)" href="{{data.oma.args.website_prefix}}/episode/">Voir tous les épisodes</a></p>
 							</section>
+							-->
+							
 
 							
 						{% endif %}
