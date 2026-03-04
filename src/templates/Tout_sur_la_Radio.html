@@ -109,14 +109,17 @@
     </div>
 </section>
 
-<!-- Section sélection de séries -->
-{% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
+<!-- Section sélection de séries COMMENTAIRE A ENLEVER UNE FOIS LA RADIO FONCTIONNELLE
+ {% set serie = data.series | get(key="_Selection-Manuelle", default="") %}
 {% if serie %}
 <section>
     <h2>{{ serie | get(key="Titre", default="Notre sélection") }}</h2>
     {% include "episodes_serie.html" %}
 </section>
 {% endif %}
+
+-->
+
 
 <!-- Section description radio -->
 <section id="radio">
