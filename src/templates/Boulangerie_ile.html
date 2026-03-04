@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+	{% block content %}
+		<section class="js-section_title header_slider theme-black">
+							
+			<div  class="header_slider--header">
+				<div class="media" style="width: fit-content;  height: fit-content;" >
+					<img fetchpriority="high" width="1488" height="900" src="../img/Pain_logo.png" class="image_default no-lazy" style="background-color: #1a1a1b !important;" alt="illustration_radio" decoding="async" />
+				</div>
+				<div class="right">
+					<div class="title">La Miebertaire - Boulangerie autogérée à l'île-égalité</div>
+					<div class="link">
+						<a href="https://mie-bertaire.frama.space/apps/paheko_fspace/"
+							class="btn btn_black"
+							target="">
+							Réserver du pain ! 
+							<span class="icon-Arrow"></span>
+						</a>
+					</div>	
+					<div class="subtitle">Sinon Il suffit d'envoyer un message par mail pour rentrer en contact et expliquer le besoin spécifique pour des associations etc.</div>
+					<div class="link">
+						<a href="mailto:"
+							class="btn btn_black"
+							target="">
+							Envoyer un mail pour rentrer en contact ! 
+							<span class="icon-Arrow"></span>
+						</a>
+					</div>	
+					<div class="description">Livret diffusé à Lyon</div>
+				<div class="media" style="width: fit-content;  height: fit-content;" >
+					<img fetchpriority="high" width="1488" height="900" src="../img/Critique_du_Parti.png" class="image_default no-lazy" style="background-color: #1a1a1b !important;" alt="illustration_radio" decoding="async" />
+				</div>	
+					
+
+		</div>
+		</div>
+		</section>
+
+		<div>
+		<!-- Le carroussel de carte -->
+			{% include "Cards_brochure.html" %}
+			
+		</div>
+	{% endblock content %}
+
