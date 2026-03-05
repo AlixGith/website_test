@@ -75,7 +75,7 @@ jobs:
             --soundbase-path "./soundbase" \
             --output "./soundbase/website" \
             --soundbase-prefix '../' \
-            --website-prefix "website_test/website" \
+            --website-prefix "./website_test/website" \
             --radio-host radiodemo.oma-radio.fr \
             --websocket-port 2004 \
             --player-url "./player"
