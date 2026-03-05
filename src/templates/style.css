@@ -124,6 +124,22 @@ nav#mainmenu img {
 	height: 1em;
 }
 
+svg.svgwave {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+svg.svgwave path {
+    fill:transparent;
+    stroke:rgb(96, 45, 109);
+    stroke-width:1px;
+}
+
+svg.svgwave text {
+    font-size:20px;
+    fill: white;
+}
 /******************************************************************************
  * 							header
  *****************************************************************************/
