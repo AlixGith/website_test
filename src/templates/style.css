@@ -178,6 +178,274 @@ svg.svgwave text {
     background-color: black;
 }
 
+/* 
+
+CSS Reveal Animations with AOS
+by Michael Thomas aka SUPAMIKE
+
+*/
+.aos-reveal-ltr,
+.aos-reveal-rtl,
+.aos-reveal-ttb,
+.aos-reveal-btt {
+  
+  	/* default settings */
+    --aos-reveal-speed: 1s;
+    --aos-reveal-colorstart: #c46398;
+    --aos-reveal-colorend: #a186cc;
+    --aos-reveal-delay: 0s;
+    --aos-reveal-entrance: aos-reveal-none;
+  	/* end of default settings */
+
+    position: relative;
+    overflow: hidden;
+}
+
+.aos-reveal-ltr[data-aos=fade].aos-animate>*,
+.aos-reveal-rtl[data-aos=fade].aos-animate>*,
+.aos-reveal-ttb[data-aos=fade].aos-animate>*,
+.aos-reveal-btt[data-aos=fade].aos-animate>* {
+    animation: var(--aos-reveal-entrance) calc(var(--aos-reveal-speed) * 1) calc(var(--aos-reveal-speed) + var(--aos-reveal-delay));
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.aos-reveal-ltr[data-aos=fade].aos-animate::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-101%);
+    animation: aos-revealin-ltr var(--aos-reveal-speed) var(--aos-reveal-delay), aos-revealout-ltr var(--aos-reveal-speed) calc(var(--aos-reveal-speed) + var(--aos-reveal-delay));
+    animation-fill-mode: forwards;
+}
+
+.aos-reveal-rtl[data-aos=fade].aos-animate::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-101%);
+    animation: aos-revealin-rtl var(--aos-reveal-speed) var(--aos-reveal-delay), aos-revealout-rtl var(--aos-reveal-speed) calc(var(--aos-reveal-speed) + var(--aos-reveal-delay));
+    animation-fill-mode: forwards;
+}
+
+.aos-reveal-ttb[data-aos=fade].aos-animate::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-101%);
+    animation: aos-revealin-ttb var(--aos-reveal-speed) var(--aos-reveal-delay), aos-revealout-ttb var(--aos-reveal-speed) calc(var(--aos-reveal-speed) + var(--aos-reveal-delay));
+    animation-fill-mode: forwards;
+}
+
+.aos-reveal-btt[data-aos=fade].aos-animate::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(101%);
+    animation: aos-revealin-btt var(--aos-reveal-speed) var(--aos-reveal-delay), aos-revealout-btt var(--aos-reveal-speed) calc(var(--aos-reveal-speed) + var(--aos-reveal-delay));
+    animation-fill-mode: forwards;
+}
+
+@keyframes aos-reveal-none {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aos-reveal-fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes aos-reveal-slideleft {
+    0% {
+        opacity: 1;
+        transform: translatex(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatex(0px);
+    }
+}
+
+@keyframes aos-reveal-slideright {
+    0% {
+        opacity: 1;
+        transform: translatex(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatex(0px);
+    }
+}
+
+@keyframes aos-reveal-slideup {
+    0% {
+        opacity: 1;
+        transform: translatey(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+
+@keyframes aos-reveal-slidedown {
+    0% {
+        opacity: 1;
+        transform: translatey(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(0px);
+    }
+}
+
+@keyframes aos-reveal-zoomin {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aos-reveal-zoomout {
+    0% {
+        opacity: 1;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aos-revealin-ltr {
+    0% {
+        transform: translateX(-101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+}
+
+@keyframes aos-revealout-ltr {
+    0% {
+        transform: translateX(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+
+    100% {
+        transform: translateX(101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+}
+
+@keyframes aos-revealin-rtl {
+    0% {
+        transform: translateX(101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+}
+
+@keyframes aos-revealout-rtl {
+    0% {
+        transform: translateX(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+
+    100% {
+        transform: translateX(-101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+}
+
+@keyframes aos-revealin-ttb {
+    0% {
+        transform: translateY(-101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+
+    100% {
+        transform: translateY(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+}
+
+@keyframes aos-revealout-ttb {
+    0% {
+        transform: translateY(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+
+    100% {
+        transform: translateY(101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+}
+
+@keyframes aos-revealin-btt {
+    0% {
+        transform: translateY(101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+
+    100% {
+        transform: translateY(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+}
+
+@keyframes aos-revealout-btt {
+    0% {
+        transform: translateY(0);
+        background-color: var(--aos-reveal-colorend);
+    }
+
+    100% {
+        transform: translateY(-101%);
+        background-color: var(--aos-reveal-colorstart);
+    }
+}
+
 /******************************************************************************
  * 							Footer
  *****************************************************************************/
