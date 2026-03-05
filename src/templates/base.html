@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>{% block title %}{% endblock title %}{{ data.config.PrettyName }}</title>
+    <title>{% block title %}{% endblock title %}Effraie</title>
     <meta charset="utf-8" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -159,9 +159,11 @@
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Tout_sur_la_Radio.html">La Radio</a></li>
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Événements.html">Événements</a></li>
 					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Activités_locales.html">Activités locales</a></li>
-					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/index.html#réseau">Réseaux</a></li>
 					
-					<!--<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Articles">Articles</a></li> -->
+					
+					<!--
+					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/index.html#réseau">Réseaux</a></li>
+					<li id="menu-item-268581" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-268581"><a href="{{data.oma.args.website_prefix}}/Articles">Articles</a></li> -->
 
 					
 					</ul>
@@ -338,7 +340,36 @@
 		<script src="{{data.oma.args.player_url}}/chunk-vendors.js"></script>
 		<script src="{{data.oma.args.player_url}}/app.js"></script>
 		<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+		
+		<script>
 
+			var graph;
+
+			function initCanvas() {
+
+			//This function is called onload of body itself and it will make the mxgraph canvas
+			debugger
+			graph = new mxGraph(document.getElementById('graph-wrapper'));
+			graph.htmlLabels = true;
+			graph.cellsEditable = false;
+
+				graph.model.beginUpdate();
+				var graphXmlStr =  `<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/><div xmlns="http://www.w3.org/1999/xhtml" id="2" style="width: 100px; height: 100px; border-radius: 50%; background: red; display: inline-flex; text-align: center; color: #fff; align-items: center; justify-content: center;">&#xa;                Pipe&#xa;           <mxCell xmlns="" style="fillColor=none;strokeColor=none" vertex="1" parent="1"><mxGeometry x="150" y="50" width="100" height="100" as="geometry"/></mxCell></div></root></mxGraphModel>`;
+				var doc = mxUtils.parseXml(graphXmlStr);
+				var codec = new mxCodec(doc);
+				codec.decode(doc.documentElement, graph.getModel());
+				graph.model.endUpdate();
+				
+				//graph.graphModelChanged([])
+				// render as HTML node always. You probably won't want that in real world though
+				graph.convertValueToString = function(cell) {
+					return cell.value;
+				}
+				
+				graph.refresh();
+
+			} 
+				</script>
 		<!--
 			
 		-->
