@@ -132,13 +132,13 @@ svg.svgwave {
 
 svg.svgwave path {
     fill:transparent;
-    stroke:rgb(96, 45, 109);
+    stroke:transparent;
     stroke-width:1px;
 }
 
 svg.svgwave text {
     font-size:20px;
-    fill: white;
+    fill: #8350ad;
 }
 /******************************************************************************
  * 							header
