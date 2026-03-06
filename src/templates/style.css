@@ -18,6 +18,10 @@
     height: 400px !important;
     overflow: visible;
 }
+  svg.svgwave text {
+    font-size: 34px;
+    fill: #9ba3f8;
+  }
 }
 
 
