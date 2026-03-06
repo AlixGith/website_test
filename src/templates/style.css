@@ -19,7 +19,7 @@
     overflow: visible;
 }
   svg.svgwave text {
-    font-size: 34px;
+    font-size: 34px !important;
     fill: #9ba3f8;
   }
 }
