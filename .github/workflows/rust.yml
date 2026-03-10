@@ -74,8 +74,8 @@ jobs:
           cargo run --release -- \
             --soundbase-path "./soundbase" \
             --output "./soundbase/website" \
-            --soundbase-prefix '../' \
-            --website-prefix "./" \
+            --soundbase-prefix "../" \
+            --website-prefix "." \
             --radio-host radiodemo.oma-radio.fr \
             --websocket-port 2004 \
             --player-url "./player"
