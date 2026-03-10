@@ -36,8 +36,8 @@ jobs:
         run: cargo add include_dir
 
       # 5️⃣ Déplacer index.html dans soundbase
-      - name: Move root index.html
-        run: mv index.html soundbase/index.html
+      #- name: Move root index.html
+      #  run: mv index.html soundbase/index.html
 
       # 6️⃣ Setup Rust
       - name: Setup Rust
@@ -75,16 +75,16 @@ jobs:
             --soundbase-path "./soundbase" \
             --output "./soundbase/website" \
             --soundbase-prefix '../' \
-            --website-prefix "/website_test/website" \
+            --website-prefix "/" \
             --radio-host radiodemo.oma-radio.fr \
             --websocket-port 2004 \
             --player-url "./player"
 
       # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: ./soundbase
+          path: ./soundbase/website
 
       # 1️⃣2️⃣ Déployer sur GitHub Pages
       - name: Deploy to GitHub Pages
