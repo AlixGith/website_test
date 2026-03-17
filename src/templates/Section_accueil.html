@@ -45,6 +45,15 @@ function enableScrolling() {
 
 const [ $drawer ] = /** @type {Array<HTMLElement>} */(utils.$('.drawer'));
 
+
+const movetiles = createTimeline({
+	loop: true,
+	alternate: true,
+	delay: 3000,
+
+})
+.add('.square', {x:"2rem"})
+
 const drawerOpenAnim = createTimeline({
   autoplay: false,
   defaults: { ease: 'linear' }
@@ -88,6 +97,7 @@ utils.$('#toggle-drawer')[0].onclick = () => {
     ease: 'out(4)',
   });
 }
+
 
 drawer.progressY = 1;
 
@@ -252,17 +262,17 @@ right.onUpdate = ({ x }) => {
 					<div id="transformed-container" class="container overflow margin">
 						
 						<div class="draggable square" style="background-color: #cf7676;">
-							<img src="./img/Pain_logo.png" style="transform: skew(-15deg) !important;"/>
+							<img src="./img/Pain_logo.png" style="transform: translateY(-5px) translateX(10px) rotation(40deg) skew(-15deg) !important;"/>
 							
 							
 						</div>	
 						<div class="draggable square" style="background-color: #d195db;">
-							<img src="./img/Pain_logo.png" style="transform: skew(-15deg) !important;"/>
+							<img src="./img/Pain_logo.png" style="transform: translateY(-5px) translateX(10px) rotation(40deg) skew(-15deg) !important;"/>
 							
 							
 						</div>
 						<div class="draggable square" style="background-color: #cfcecd;">
-							<img src="./img/Pain_logo.png" style="transform: skew(-15deg) !important;"/>
+							<img src="./img/Pain_logo.png" style="transform: translateY(-5px) translateX(10px) rotation(40deg) skew(-15deg) !important;"/>
 							
 						</div>
 					
