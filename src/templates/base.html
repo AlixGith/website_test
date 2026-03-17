@@ -349,6 +349,18 @@
 			];
 		</script>
 
+		<script src="https://esm.sh/animejs">
+			import { createTimeline } from 'https://esm.sh/animejs';
+
+				const chaagename = createTimeline({
+				loop: true,
+				alternate: true,
+				delay: 3000,
+				})
+				.add('.square',   { x: '15rem' });
+
+		</script>
+
 		
 		<script type="speculationrules">
 		{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/sites/2/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/lnei-wp-theme-child-nova/resources/*","/wp-content/themes/lnei-wp-theme/resources/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
