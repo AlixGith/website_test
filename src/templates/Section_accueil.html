@@ -43,8 +43,22 @@
 			<p style="text-align: center;color : #cf7edd !important; margin-bottom: 30%;"><strong>&nbsp;&laquo; A chacun.e selon ses besoins,<br>de chacun.e selon ses moyens ! &raquo;</strong><br>Ainsi, c&eacute;l&eacute;brons chacune de nos luttes.</p>
 		</div>
 
-		<div class="docs-demo-html">
-			<div class="phone">
+
+		<script type="module">
+		
+		import { createTimeline, utils } from 'https://esm.sh/animejs';
+		const chaagename = createTimeline({
+		loop: true,
+		alternate: true,
+		delay: 3000,
+		})
+		.add('.first',   { x: '15rem' })
+		.add('.second', { y: '15rem' }, 500)
+		.add('.last', { x: '15rem' }, 1500);
+		</script>
+		<div class="phone">
+			<div class="docs-demo-html">
+			
 				<div id="draggables" class="grid">
 				<div class="example">
 						<div class="title">Nos activités et nos pensées</div>
@@ -52,17 +66,17 @@
 						<div class="margin margin-overlay"></div>
 							<div id="transformed-container" class="container overflow margin">
 								
-								<div class="draggable square" style="background-color: #cf7676;">
+								<div class="draggable square last" style="background-color: #cf7676;">
 									<img src="./img/Pain_logo.png" style="transform: translateX(-5px) translateY(10px) rotate(40deg) skew(-15deg) !important;"/>
 									
 									
 								</div>	
-								<div class="draggable square" style="background-color: #d195db;">
+								<div class="draggable square second" style="background-color: #d195db;">
 									<img src="./img/Pain_logo.png" style="transform:  translateX(-5px) translateY(10px)rotate(40deg) skew(-15deg) !important;"/>
 									
 									
 								</div>
-								<div class="draggable square" style="background-color: #cfcecd;">
+								<div class="draggable square first last" style="background-color: #cfcecd;">
 									<img src="./img/Pain_logo.png" style="transform:  translateX(-5px) translateY(10px)rotate(40deg) skew(-15deg) !important;"/>
 									
 								</div>
