@@ -49,22 +49,39 @@
 		import { createTimeline, utils, waapi } from 'https://esm.sh/animejs';
 		const [ $restartButton ] = utils.$('.restart');
 
-		const Animation_square = createTimeline({
+		const Animation_first = createTimeline({
 		loop: true,
 		alternate: true,
 		delay: 2000,
 		})
 		.add('.first',   { x: '10rem'})
+		.add('.first',   { scale: ['1', '0'] },2000)
+
+
+		const Animation_second = createTimeline({
+		loop: true,
+		alternate: true,
+		delay: 2000,
+		})
 		.add('.second', { x: '10rem' }, 500)
-		.add('.last', { y: '15rem' }, 1500)
-		.sync(waapi.animate('.draggable', {
-			scale: ['1', '0'],
-			duration: 5000,
-		}), 2000);
-		
+		.add('.second', {scale: ['1', '0'] }, 1500)
+
+		const Animation_last = createTimeline({
+		loop: true,
+		alternate: true,
+		delay: 2000,
+		})
+		.add('.last', { x: '10rem' }, 1500)
+		.add('.last', {scale: ['1', '0'] }, 500)
+
+
 		const restartTimeline = () => {
-		Animation_square.seek(0).play();
-		console.log(Animation_square.currentTime);
+		Animation_first.seek(0).play();
+		console.log(Animation_first.currentTime);
+		Animation_second.seek(0).play();
+		console.log(Animation_second.currentTime);
+		Animation_last.seek(0).play();
+		console.log(Animation_last.currentTime);
 		}
 		
 		$restartButton.addEventListener('click', restartTimeline);
@@ -115,13 +132,13 @@
 											</a>
 
 											
-											<div class="square description" style="background-color: #c991ce00; transform: translateX(10rem) translateY(-30rem); ">
+											<div class="square description" style="background-color: #c991ce00; transform: translateX(15rem) translateY(-25rem);  margin-bottom: 0; ">
 												Syndicalisme CNT-SO-AIT
 											</div>
-											<div class="square description" style="background-color: #c991ce00; transform: translateX(10rem) translateY(-25rem); ">
+											<div class="square description" style="background-color: #c991ce00; transform: translateX(15rem) translateY(-25rem); ">
 												Boulangerie autogéreé à l'île égalité
 											</div>
-											<div class="square description" style="background-color: #c991ce00; transform: translateX(5rem) translateY(-15rem); ">
+											<div class="square description" style="background-color: #c991ce00; transform: translateX(5rem) translateY(-25rem); ">
 												Revues Intersectionnelles
 											</div>
 										</div>
