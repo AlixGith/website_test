@@ -50,7 +50,7 @@
 		const chaagename = createTimeline({
 		loop: true,
 		alternate: true,
-		delay: 3000,
+		delay: 6000,
 		})
 		.add('.first',   { x: '10rem' })
 		.add('.last', { y: '15rem' }, 1500)
@@ -63,9 +63,15 @@
 				<div class="example">
 						<div class="title">Nos activités et nos pensées</div>
 						<div class="example-content example-content-vertical transformed-example">
-						<div class="margin margin-overlay"></div>
+						<div class="margin margin-overlay" style="box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);"></div>
 							<div id="container-no-scroll" class="container margin">
-								        <div class="grid" style="--border-color: #cf7edd">
+								        <div class="grid">
+
+											<div class="square" style="background-color: #cf9e768f; transform: translateX(10rem) translateY(5px) ">
+												<img src="./img/icone_bakery.webp" style="transform: translateX(10px) translateY(5px) rotate(40deg) skew(-15deg) !important;"/>
+												
+												
+											</div>
 											<div class="draggable square last" style="background-color: #cf7676;">
 												<img src="./img/Pain_logo.png" style="transform: translateX(10px) translateY(5px) rotate(40deg) skew(-15deg) !important;"/>
 												
@@ -76,8 +82,8 @@
 												
 												
 											</div>
-											<div class="draggable square first" style="background-color: #cfcecd;">
-												<img src="./img/Pain_logo.png" style="transform:  translateX(10px) translateY(5px) rotate(40deg) skew(-15deg) !important;"/>
+											<div class="draggable square first" style="background-color: #cfcecd00;">
+												<img src="./img/Mutualism.webp" style="transform:  translateX(10px) translateY(5px) rotate(40deg) skew(-15deg) !important;"/>
 												
 											</div>
 																		
