@@ -47,7 +47,9 @@
 		<script type="module">
 		
 		import { createTimeline, utils, waapi } from 'https://esm.sh/animejs';
-		const chaagename = createTimeline({
+		const [ $restartButton ] = utils.$('.restart');
+
+		const Animation_square = createTimeline({
 		loop: true,
 		alternate: true,
 		delay: 2000,
@@ -60,6 +62,12 @@
 			duration: 5000,
 		}), 500);
 		
+		const restartTimeline = () => {
+		Animation_square.seek(0).play();
+		console.log(Animation_square.currentTime);
+		}
+		
+		$restartButton.addEventListener('click', restartTimeline);
 		</script>
 		<div class="phone">
 			<div class="docs-demo-html">
@@ -70,7 +78,7 @@
 						<div class="example-content example-content-vertical transformed-example">
 						<div class="margin margin-overlay" style="box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);"></div>
 							<div id="container-no-scroll" class="container margin">
-								        <div class="grid">
+								        <div class="grid restart">
 
 											
 											<div class="draggable square last" style="background-color: #cf767600;">
