@@ -55,9 +55,11 @@
 		.add('.first',   { x: '10rem'})
 		.add('.second', { x: '10rem' }, 500)
 		.add('.last', { y: '15rem' }, 1500)
-		.add('.first',   {scale: ['1', '0'], duration: 5000 })
-		.add('.second',   {scale: ['1', '0'], duration: 5000 })
-		.add('.last',   {scale: ['1', '0'], duration: 5000 })
+		.sync(waapi.animate('.draggable', {
+			scale: ['1', '0'],
+			duration: 5000,
+		}), 500);
+		
 		</script>
 		<div class="phone">
 			<div class="docs-demo-html">
@@ -88,19 +90,19 @@
 
 											<a href="articles/Boulangerie_ile.html">
 												<div class="square" style="background-color: #df9f6a8f; transform: translateX(10rem) translateY(-5rem) ">
-													<img src="./img/icone_bakery.webp" style="transform: translateX(10px) translateY(5px) rotate(40deg) skew(-10deg) !important; width: 86%;"/>
+													<img src="./img/icone_bakery.webp" style="transform: translateX(10px) translateY(5px); width: 86%;"/>
 												</div>
 											</a>
 											
 											<a href="Activités_locales.html">
 												<div class="square" style="background-color: #bdb0b0cb; transform: translateX(10rem) translateY(-15rem) ">
-													<img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=360/uploads/users/358/posts/25351/image/22-surfaces.png" style="transform: translateX(20px) translateY(-30px)  rotate(40deg) skew(-10deg) !important; width: 110%;"/>
+													<img src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=360/uploads/users/358/posts/25351/image/22-surfaces.png" style="transform:translateY(-30px); width: 110%;"/>
 												</div>
 											</a>	
 											
 											<a href="articles/Proposition_10_sept.html">
-												<div class="square" style="background-color: #c278c9cb; transform: translateY(-10rem)">
-													<img src="./img/Intersec_FA_project.png" style="transform: translateX(20px) translateY(-30px)  rotate(40deg) skew(-10deg) !important; width: 110%;"/>
+												<div class="square" style="background-color: #c991cecb; transform: translateY(-10rem)">
+													<img src="./img/Intersec_FA_project.png" style="margin-left: 20%; height: 100%; width: auto;"/>
 												</div>
 											</a>
 										</div>
