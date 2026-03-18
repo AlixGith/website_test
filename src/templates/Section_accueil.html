@@ -52,27 +52,27 @@
 		const Animation_first = createTimeline({
 		loop: true,
 		alternate: true,
-		delay: 2000,
+		delay: 500,
 		})
 		.add('.first',   { x: '10rem'})
-		.add('.first',   { scale: ['1', '0'] },2000)
+		.add('.first',   { scale: ['1', '0'] },1500)
 
 
 		const Animation_second = createTimeline({
 		loop: true,
 		alternate: true,
-		delay: 2000,
+		delay: 1000,
 		})
-		.add('.second', { x: '10rem' }, 500)
+		.add('.second', { x: '10rem' })
 		.add('.second', {scale: ['1', '0'] }, 1500)
 
 		const Animation_last = createTimeline({
 		loop: true,
 		alternate: true,
-		delay: 2000,
+		delay: 1500,
 		})
-		.add('.last', { x: '10rem' }, 1500)
-		.add('.last', {scale: ['1', '0'] }, 500)
+		.add('.last', { x: '10rem' })
+		.add('.last', {scale: ['1', '0'] }, 1500)
 
 
 		const restartTimeline = () => {
