@@ -55,7 +55,7 @@
 		delay: 500,
 		})
 		.add('.first',   { x: '10rem'})
-		.add('.first',   { scale: ['1', '0'] },1500)
+		.add('.first',   { scale: ['1', '0'] },1500);
 
 
 		const Animation_second = createTimeline({
@@ -64,7 +64,7 @@
 		delay: 1000,
 		})
 		.add('.second', { x: '10rem' })
-		.add('.second', {scale: ['1', '0'] }, 1500)
+		.add('.second', {scale: ['1', '0'] }, 1500);
 
 		const Animation_last = createTimeline({
 		loop: true,
@@ -72,7 +72,7 @@
 		delay: 1500,
 		})
 		.add('.last', { y: '15rem' })
-		.add('.last', {scale: ['1', '0'] }, 1500)
+		.add('.last', {scale: ['1', '0'] }, 1500);
 
 
 		const restartTimeline = () => {
@@ -84,7 +84,7 @@
 		console.log(Animation_last.currentTime);
 		}
 		
-		$restartButton.addEventListener('click', restartTimeline);
+		$restartButton.addEventListener("click", restartTimeline);
 		</script>
 		<div class="phone">
 			<div class="docs-demo-html">
