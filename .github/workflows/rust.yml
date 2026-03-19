@@ -50,9 +50,9 @@ jobs:
       # 7️⃣ Préparer le dossier radios-data et all.json pour le player
       - name: Prepare all.json for player
         run: |
-          mkdir -p ./soundbase/website/radios-data/alixgith.github.io
+          mkdir -p ./radios-data/alixgith.github.io
           # Crée un all.json vide (ou tu peux y mettre ton vrai JSON généré)
-          echo '{}' > ./soundbase/website/radios-data/alixgith.github.io/all.json
+          echo '{}' > ./radios-data/alixgith.github.io/all.json
 
       # 8️⃣ Télécharger et builder le player Node
       - name: Download and build Node player
