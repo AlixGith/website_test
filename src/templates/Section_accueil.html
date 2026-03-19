@@ -80,7 +80,7 @@
 		<script type="module">
 		
 		import { createTimeline, utils, waapi } from 'https://esm.sh/animejs';
-		const [ $restartButton ] = utils.$('.restart');
+
 
 		const Animation_first = createTimeline({
 		loop: true,
@@ -108,16 +108,6 @@
 		.add('.last', {scale: ['1', '0'] }, 1500);
 
 
-		const restartTimeline = () => {
-		Animation_first.seek(0).play();
-		console.log(Animation_first.currentTime);
-		Animation_second.seek(0).play();
-		console.log(Animation_second.currentTime);
-		Animation_last.seek(0).play();
-		console.log(Animation_last.currentTime);
-		}
-		
-		$restartButton.addEventListener("click", restartTimeline);
 		</script>
 		<div class="phone">
 			<div class="docs-demo-html">
@@ -125,7 +115,6 @@
 				<div id="draggables" class="grid">
 				<div class="example">
 						<div class="title">Nos activités et nos pensées</div>
-						<button class="button restart" style="width:30px; height: 20px;">test</button>
 						<div class="example-content example-content-vertical transformed-example">
 						<div class="margin margin-overlay" style="box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);"></div>
 							<div id="container-no-scroll" class="container margin">
@@ -170,7 +159,7 @@
 											<div class="square description" style="background-color: #c991ce00; transform: translateX(15rem) translateY(-25rem);  margin-bottom: 0; ">
 												Syndicalisme CNT-SO-AIT
 											</div>
-											<div class="square description" style="background-color: #c991ce00; transform: translateX(15rem) translateY(-25rem); ">
+											<div class="square description" style="background-color: #c991ce00; transform: translateX(15rem) translateY(-25rem); margin-bottom: 0;">
 												Boulangerie autogéreé à l'île égalité
 											</div>
 											<div class="square description" style="background-color: #c991ce00; transform: translateX(5rem) translateY(-25rem); ">
