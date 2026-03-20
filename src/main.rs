@@ -187,7 +187,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	}
 
     
-    for (name, dir) in &dirs
+    for (communiques, dir) in &dirs
     {
         let _ = std::fs::write(
         oma.args.output.clone() + "/communiques/" + name +".html",
