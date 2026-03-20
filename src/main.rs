@@ -190,12 +190,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	}
 
     
-    for (name, dir) in &dirs_com
+    for (name, communique_dir) in &dirs_com
     {
         let _ = std::fs::write(
         oma.args.output.clone() + "/communiques/" + name +".html",
         tera.render(name, &context).unwrap());
     }
+    
     println!("Construction des pages web standard…");
     let _ = std::fs::write(
         oma.args.output.clone() + "/index.html",
