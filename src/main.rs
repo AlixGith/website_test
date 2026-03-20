@@ -167,12 +167,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ("communiques", include_dir!("src/templates/communiques")),
 	];
 
-    for (name, dir) in dirs
-    {
-        let _ = std::fs::write(
-        oma.args.output.clone() + "/communiques/" + name +".html",
-        tera.render(name +".html", &context).unwrap());
-    }
 
     let mut context = tera::Context::new();
     context.insert("data", &data);
@@ -192,6 +186,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		}
 	}
 
+    
+    for (name, dir) in dirs
+    {
+        let _ = std::fs::write(
+        oma.args.output.clone() + "/communiques/" + name +".html",
+        tera.render(name +".html", &context).unwrap());
+    }
     println!("Construction des pages web standard…");
     let _ = std::fs::write(
         oma.args.output.clone() + "/index.html",
