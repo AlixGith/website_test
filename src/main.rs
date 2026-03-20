@@ -167,6 +167,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ("communiques", include_dir!("src/templates/communiques")),
 	];
 
+    for (name, dir) in dirs
+    {
+        let _ = std::fs::write(
+        oma.args.output.clone() + "/communiques/" + name +".html",
+        tera.render(name +".html", &context).unwrap());
+    }
+
     let mut context = tera::Context::new();
     context.insert("data", &data);
 
@@ -284,6 +291,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         oma.args.output.clone() + "/script/main.js",
         include_str!("script/main.js")
     );
+
 
 
     println!("Construction des pages web personnalisées…");
