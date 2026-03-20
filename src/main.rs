@@ -164,8 +164,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ("wp-includes", include_dir!("src/wp-includes")),
     ("wp-json", include_dir!("src/wp-json")),
     ("img", include_dir!("src/templates/img")),
-    ("communiques", include_dir!("src/templates/communiques")),
 	];
+
+    let dirs_com: Vec<(&str, Dir<'static>)> = vec![
+        ("communiques", include_dir!("src/templates/communiques")),
+    ];
 
 
     let mut context = tera::Context::new();
@@ -187,7 +190,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 	}
 
     
-    for (communiques, dir) in &dirs
+    for (name, dir) in &dirs_com
     {
         let _ = std::fs::write(
         oma.args.output.clone() + "/communiques/" + name +".html",
