@@ -101,6 +101,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let articles_dir = oma.args.output.clone() + "/articles/";
     std::fs::create_dir_all(articles_dir.clone())?;
 	
+
+    let communique_dir = oma.args.output.clone() + "/communiques/";
+    std::fs::create_dir_all(communique_dir.clone())?;
+
     println!("Construction de Tera et chargement des modèles de page…");
     let mut tera = Tera::default();
     tera.register_function("helper_test", helper_test);
