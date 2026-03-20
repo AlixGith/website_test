@@ -142,6 +142,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Trans_FA_Lyon.html", include_str!("templates/Trans_FA_Lyon.html")),
         ("Boulangerie_ile.html", include_str!("templates/Boulangerie_ile.html")),
         ("Jeu_Arago_FA_Lyon.html", include_str!("templates/Jeu_Arago_FA_Lyon.html")),
+        ("Rojava_assiege.html", include_str!("templates/Rojava_assiege.html")),
 
         ("carte.html", include_str!("templates/carte.html")),
                 
@@ -166,9 +167,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     ("img", include_dir!("src/templates/img")),
 	];
 
-    let dirs_com: Vec<(&str, Dir<'static>)> = vec![
-        ("communiques", include_dir!("src/templates/communiques")),
-    ];
+
 
 
     let mut context = tera::Context::new();
@@ -189,13 +188,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 		}
 	}
 
-    
-    for (name) in &communique_dir
-    {
-        let _ = std::fs::write(
-        oma.args.output.clone() + "/communiques/" + name +".html",
-        tera.render(name, &context).unwrap());
-    }
+
     
     println!("Construction des pages web standard…");
     let _ = std::fs::write(
@@ -222,6 +215,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = std::fs::write(
         oma.args.output.clone() + "/articles/Critique_du_Parti.html",
         tera.render("Critique_du_Parti.html", &context).unwrap()
+    );
+    let _ = std::fs::write(
+        oma.args.output.clone() + "/communiques/Rojava_assiege.html",
+        tera.render("Rojava_assiege.html", &context).unwrap()
     );
     let _ = std::fs::write(
         oma.args.output.clone() + "/articles/Trans_FA_Lyon.html",
