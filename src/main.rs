@@ -191,7 +191,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     {
         let _ = std::fs::write(
         oma.args.output.clone() + "/communiques/" + name +".html",
-        tera.render("name.html", &context).unwrap());
+        tera.render(name, &context).unwrap());
     }
     println!("Construction des pages web standard…");
     let _ = std::fs::write(
