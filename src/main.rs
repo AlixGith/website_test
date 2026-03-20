@@ -102,9 +102,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     std::fs::create_dir_all(articles_dir.clone())?;
 	
 
-    let communique_dir = oma.args.output.clone() + "/communiques/";
-    std::fs::create_dir_all(communique_dir.clone())?;
-
     println!("Construction de Tera et chargement des modèles de page…");
     let mut tera = Tera::default();
     tera.register_function("helper_test", helper_test);
@@ -142,7 +139,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("Trans_FA_Lyon.html", include_str!("templates/Trans_FA_Lyon.html")),
         ("Boulangerie_ile.html", include_str!("templates/Boulangerie_ile.html")),
         ("Jeu_Arago_FA_Lyon.html", include_str!("templates/Jeu_Arago_FA_Lyon.html")),
-        ("Rojava_assiege.html", include_str!("templates/Rojava_assiege.html")),
+        ("Rojava_assiege.html", include_str!("templates/communiques/Rojava_assiege.html")),
 
         ("carte.html", include_str!("templates/carte.html")),
                 
@@ -217,7 +214,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         tera.render("Critique_du_Parti.html", &context).unwrap()
     );
     let _ = std::fs::write(
-        oma.args.output.clone() + "/communiques/Rojava_assiege.html",
+        oma.args.output.clone() + "/articles/Rojava_assiege.html",
         tera.render("Rojava_assiege.html", &context).unwrap()
     );
     let _ = std::fs::write(
