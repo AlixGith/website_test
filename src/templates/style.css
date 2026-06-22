@@ -464,7 +464,7 @@ by Michael Thomas aka SUPAMIKE
 footer {
 	text-align: center;
 	border-top: 1px solid #DDD;
-  	margin-top: 50px;
+  	margin-top: 0 !important;
 	clear: both;
 }
 
