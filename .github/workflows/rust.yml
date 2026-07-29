@@ -76,8 +76,8 @@ jobs:
             --output "./soundbase/website" \
             --soundbase-prefix "../" \
             --website-prefix "/website_test" \
-            --radio-host 192.168.1.92 \
-            --websocket-port 2004 \
+            --radio-host 192.168.1.31 \
+            --websocket-port 2001 \
             --player-url "./player"
 
       # 1️⃣1️⃣ Upload de l'artefact pour GitHub Pages
