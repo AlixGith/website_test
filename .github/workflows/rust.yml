@@ -29,12 +29,15 @@ jobs:
           mkdir -p soundbase/website/emission
 
       # 2️⃣ Télécharger emission
-      - name: Install pdown (Proton Downloader)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install and Setup pdown via NPM
         run: |
-          TAG=$(curl -s https://github.com | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-          curl -L "https://github.com{TAG}/pdown-linux-amd64" -o pdown
-          chmod +x pdown
-          sudo mv pdown /usr/local/bin/
+          npx -y download-cli https://github.com --out /usr/local/bin --filename pdown
+          chmod +x /usr/local/bin/pdown
 
       - name: Download Shared File without Authentication
         run: pdown "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" -o "soundbase/website/emission"
