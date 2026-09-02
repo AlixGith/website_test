@@ -31,7 +31,7 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Setup pupet and extract emissions  
         run: |
-          git clone https://gitlab.com/omaradio/player.git soundbase/player
+          git clone https://github.com/Bergbok/pdown.git
             npx pdown
           dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
