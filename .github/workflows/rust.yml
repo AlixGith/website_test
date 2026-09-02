@@ -38,7 +38,7 @@ jobs:
         run: npm install @Bergbok/pdown@1.0.5
 
       - name extract with pdown 
-        run: pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
+        run: pdown dl GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
