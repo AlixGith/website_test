@@ -31,8 +31,8 @@ jobs:
       - name: Download and extract emissions
         run: |
           wget https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
-          mkdir -p src/emission
-          mv GQ45T6MAY0 src/emission
+          mkdir -p soundbase/emission
+          mv GQ45T6MAY0 soundbase/emission
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
