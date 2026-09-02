@@ -31,7 +31,8 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Install pdown (Proton Downloader)
         run: |
-          wget https://github.com -O pdown
+          TAG=$(curl -s https://github.com | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+          curl -L "https://github.com{TAG}/pdown-linux-amd64" -o pdown
           chmod +x pdown
           sudo mv pdown /usr/local/bin/
 
