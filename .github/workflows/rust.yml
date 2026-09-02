@@ -28,11 +28,14 @@ jobs:
           unzip soundbase_dev_latest.zip -d soundbase
 
       # 2️⃣ Télécharger emission
-      - name: Download and extract emissions
-        run: |
-          rclone https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
-          mkdir -p soundbase/website/emission
-          mv GQ45T6MAY0 soundbase/website/emission
+      - name: Setup Rclone and extract emissions
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+      - run: |
+        mkdir soundbase/website/emission
+        rclone copy source:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:soundbase/website/emission
+
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
