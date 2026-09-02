@@ -31,7 +31,7 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Setup pupet and extract emissions  
         run: |
-          npm install @Bergbok/pdown@1.0.5
+          npm install @bergbok/pdown@1.0.5
           dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
