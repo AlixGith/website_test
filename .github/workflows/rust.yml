@@ -33,7 +33,7 @@ jobs:
         uses: AnimMouse/setup-rclone@v1
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
-      - run: rclone copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:soundbase/website/emission
+      - run: rclone copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg 
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
