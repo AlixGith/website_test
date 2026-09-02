@@ -29,11 +29,14 @@ jobs:
           mkdir -p soundbase/website/emission
 
       # 2️⃣ Télécharger emission
-      - name: Setup Rclone and extract emissions
+      - name: Setup Rclone and extract emissions  
         uses: wei/rclone@v1
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
-        run: copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg /soundbase/website/emission
+        run:
+          rclone env.copyurl env.path:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg env.dest:/soundbase/website/emission
+
+
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
