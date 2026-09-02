@@ -26,15 +26,14 @@ jobs:
           wget https://static.jean-cloud.net/oma-soundbases/soundbase_dev_latest.zip
           mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
+          mkdir -p soundbase/website/emission
 
       # 2️⃣ Télécharger emission
       - name: Setup Rclone and extract emissions
         uses: AnimMouse/setup-rclone@v1
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
-      - run: |
-        mkdir -p soundbase/website/emission
-        rclone copy source:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:soundbase/website/emission
+      - run: rclone copy source:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:soundbase/website/emission
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
