@@ -34,7 +34,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run:
-          rclone env.copyurl env.path:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg env.dest:/soundbase/website/emission
+          rclone env.RCLONE_CONF.copyurl env.RCLONE_CONF.path:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg env.RCLONE_CONF.dest:/soundbase/website/emission
 
 
 
