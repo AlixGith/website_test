@@ -44,7 +44,7 @@ jobs:
           npm list pdown
 
       - name: Download emission
-        run: 'npx pdown --puppeteerOptions '--no-sandbox' dl "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" --output soundbase/website/emission'
+        run: 'npx pdown --puppeteerOptions "$--no-sandbox" dl "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" --output soundbase/website/emission'
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
