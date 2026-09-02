@@ -32,7 +32,7 @@ jobs:
       - name: Setup Rclone and extract emissions
         uses: AnimMouse/setup-rclone@v1
 
-      - run: 'rclone lsd --http-url https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg :http:soundbase/website/emission'
+      - run: 'rclone lsd --http-url https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg :http: /soundbase/website/emission'
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
