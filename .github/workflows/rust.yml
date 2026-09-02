@@ -38,9 +38,7 @@ jobs:
 
       - name: Download Shared File without Authentication
         run: |
-          # Remplacez l'URL par votre lien de partage public Proton Drive
-          # Note : Le lien DOIT être configuré en mode "Tout le monde dispose du lien"
-          pdown "https://proton.me" -o "./mon_fichier_destination.ext"
+          pdown "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" -o "./soundbase/website/emission"
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
