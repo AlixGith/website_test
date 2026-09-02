@@ -33,8 +33,7 @@ jobs:
         uses: wei/rclone@v1
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
-        with:
-          args: copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg /soundbase/website/emission
+        run: copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg /soundbase/website/emission
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
