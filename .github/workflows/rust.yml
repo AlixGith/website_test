@@ -32,8 +32,7 @@ jobs:
       - name: Setup Rclone and extract emissions
         uses: AnimMouse/setup-rclone@v1
         with:
-          rclone_config: |
-          [rclone-test-remote]
+          rclone_config: [rclone-test-remote]
           type = http
           url = https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
         disable_base64: true
