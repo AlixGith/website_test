@@ -35,10 +35,9 @@ jobs:
           node-version: '20.x'
 
       - name: Install dependencies
-        run: npm install @Bergbok/pdown@1.0.5
-
-      - name extract with pdown 
-        run: dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
+        run: |
+          npm install @Bergbok/pdown@1.0.5
+          pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
