@@ -30,11 +30,13 @@ jobs:
 
       # 2️⃣ Télécharger emission
       - name: Setup Rclone and extract emissions  
-        uses: wei/rclone@v1
+        uses: AnimMouse/setup-rclone@v1
+        with:
+          rclone_config: ${{ secrets.RCLONE_CONFIG }}
+          
+      - run: rclone copy source:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:/soundbase/website/emission
         env:
-          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
-        run:
-          rclone env.RCLONE_CONF.copyurl env.RCLONE_CONF.path:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg env.RCLONE_CONF.dest:/soundbase/website/emission
+          RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
 
 
 
