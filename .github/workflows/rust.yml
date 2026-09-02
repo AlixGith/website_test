@@ -33,7 +33,7 @@ jobs:
         with:
           rclone_config: ${{ secrets.RCLONE_CONFIG }}
       - run: |
-        mkdir soundbase/website/emission
+        mkdir -p soundbase/website/emission
         rclone copy source:https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg dest:soundbase/website/emission
 
 
