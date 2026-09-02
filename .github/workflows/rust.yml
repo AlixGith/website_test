@@ -37,8 +37,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install pdown
-          
-      -name: use pdown
+
+      -name: Install dependencies
         run: pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
