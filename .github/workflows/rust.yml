@@ -29,12 +29,12 @@ jobs:
           mkdir -p soundbase/website/emission
 
       # 2️⃣ Télécharger emission
-      - name: Setup Rclone and extract emissions  
-        uses: AnimMouse/setup-rclone@v1
-          
-      - run: |
-        rclone copyurl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
-        mv test_music.mp3 soundbase/website/emission
+      - name: Setup pupet and extract emissions  
+        run: |
+          git clone https://gitlab.com/omaradio/player.git soundbase/player
+            npx pdown
+          dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
+
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
