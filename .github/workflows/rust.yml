@@ -29,17 +29,18 @@ jobs:
           mkdir -p soundbase/website/emission
 
       # 2️⃣ Télécharger emission
-      - name: Install Proton Drive CLI
+      - name: Install pdown (Proton Downloader)
         run: |
-          wget https://proton.me
-          chmod +x proton-drive
-          sudo mv proton-drive /usr/local/bin/
+          # Téléchargement de l'outil autonome 'pdown' pour Linux
+          wget https://github.com -O pdown
+          chmod +x pdown
+          sudo mv pdown /usr/local/bin/
 
-      - name: Authenticate and Download File
-        env:
-          PROTON_SESSION: ${{ secrets.PROTON_DRIVE_SESSION }}
+      - name: Download Shared File without Authentication
         run: |
-          proton-drive filesystem download "/emission/test_music.mp3" .
+          # Remplacez l'URL par votre lien de partage public Proton Drive
+          # Note : Le lien DOIT être configuré en mode "Tout le monde dispose du lien"
+          pdown "https://proton.me" -o "./mon_fichier_destination.ext"
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
