@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: '20.x'
         run: |
-          npm i pdown
+          npm install pdown
           pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
