@@ -31,10 +31,8 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Setup Rclone and extract emissions
         uses: AnimMouse/setup-rclone@v1
-        with:
-          rclone_config: [rclone-test-remote] type = http url = https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
-        disable_base64: true
-      - run: 'rclone lsd rclone-test-remote:soundbase/website/emission'
+
+      - run: 'rclone lsd --http-url https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg :http: /soundbase/website/emission'
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
