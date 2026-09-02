@@ -27,6 +27,13 @@ jobs:
           mkdir -p soundbase
           unzip soundbase_dev_latest.zip -d soundbase
 
+      # 2️⃣ Télécharger emission
+      - name: Download and extract emissions
+        run: |
+          wget https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
+          mkdir -p emission
+          mv test_music.mp3 emission
+
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
         run: unzip src/wp-content.zip -d src/
