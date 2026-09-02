@@ -31,14 +31,12 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Install pdown (Proton Downloader)
         run: |
-          # Téléchargement de l'outil autonome 'pdown' pour Linux
           wget https://github.com -O pdown
           chmod +x pdown
           sudo mv pdown /usr/local/bin/
 
       - name: Download Shared File without Authentication
-        run: |
-          pdown "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" -o "./soundbase/website/emission"
+        run: pdown "https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg" -o "./soundbase/website/emission"
 
       # 3️⃣ Extraire le contenu wp-content si besoin
       - name: Extract wp-content
