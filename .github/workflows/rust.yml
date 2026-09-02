@@ -37,7 +37,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm install pdown
-          npm pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
+          
+      -name: use pdown
+        run: pdown dl https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg -o soundbase/website/emission
 
 
       # 3️⃣ Extraire le contenu wp-content si besoin
