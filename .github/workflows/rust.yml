@@ -30,7 +30,7 @@ jobs:
       # 2️⃣ Télécharger emission
       - name: Download and extract emissions
         run: |
-          wget https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
+          rclone https://drive.proton.me/urls/GQ45T6MAY0#cXPrIfCqElvg
           mkdir -p soundbase/website/emission
           mv GQ45T6MAY0 soundbase/website/emission
 
